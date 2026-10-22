@@ -31,57 +31,54 @@ window.I18N = {
     "thread.p1":
       "Chaque app ici marque une étape de mon évolution technique — de l’outil local au système agentique. La complexité monte, et la sécurité monte avec : ce n’est pas un add-on en fin de parcours, c’est le fil qui relie desktop, RAG, GenAI cloud, workers et cyber offensive assistée.",
     "ronin.chapter": "Chapitre I · Fondations",
-    "ronin.lede": "Traducteur IA — desktop, puis app Android portable.",
+    "ronin.lede": "Un traducteur IA qui reste dans le flux — sur le bureau, puis sur Android.",
     "ronin.body":
-      "Besoin métier : écrire vite en franglais / jargon technique sans perdre le sens des termes protégés (noms de produits, acronymes, formulations figées). Un traducteur « grand public » réécrit trop ; il fallait un outil discret qui respecte un glossaire.",
+      "Quand on écrit en franglais ou en jargon technique, un traducteur classique a tendance à « améliorer » des termes qu’on voulait garder : noms de produits, acronymes, formulations figées. Ronin est né de ce frottement — un outil discret, clavier d’abord, qui s’appuie sur un glossaire pour protéger ce qui ne doit pas bouger.",
     "ronin.body2":
-      "Côté technique : app desktop Python (UI légère, packaging PyInstaller), modèle local ou API, glossaire JSON. Puis version portable Android (Kotlin), même logique produit — pour l’avoir aussi hors du poste de travail.",
+      "Je l’ai d’abord livré en application desktop (Python, interface légère, packaging type PyInstaller), branchée sur un modèle local ou une API. Puis le même contrat produit a suivi sur mobile : une version portable Android en Kotlin, toujours dans un esprit terminal, pour ne pas rester coincé au poste.",
     "ronin.hr":
-      "Pourquoi c’est là : prouver qu’on peut livrer un vrai produit local (pas seulement un notebook), avec une règle métier simple mais dure — le glossaire — et le porter sur mobile.",
+      "Au fond, c’est la première marche du portfolio : prouver qu’on sait sortir un vrai petit produit, avec une règle métier simple mais non négociable, et le faire vivre sur plus d’une plateforme.",
     "ronin.tag": "Glossaire JSON",
     "centinel.chapter": "Chapitre II · Mémoire locale",
-    "centinel.lede": "Base de connaissance cyber offline — pour préparer une mission sans fuite cloud.",
+    "centinel.lede": "Une mémoire cyber qui reste sur la machine — pour préparer sans exposer.",
     "centinel.body":
-      "Besoin métier : un auditeur / pentester doit interroger ISO, DORA, RGPD, NIST, OWASP, PTES rapidement, sans uploader des docs sensibles vers un LLM public. Les réponses « mur de texte » ne servent pas ; il faut une structure utilisable en mission.",
+      "Avant une mission, on a besoin d’interroger vite des référentiels denses — ISO, DORA, RGPD, NIST, OWASP, PTES — sans envoyer des documents sensibles dans un LLM public. Et une réponse en mur de texte ne sert presque à rien sur le terrain : il faut quelque chose qu’on peut suivre.",
     "centinel.body2":
-      "Technique : RAG local (PDF → embeddings → Chroma), LLM offline type Ollama, et réponses en phases quand la question est méthodo. Séparation volontaire règles de conformité vs guides d’exécution.",
+      "Centinel indexe ces PDF en local, les interroge en langage naturel via un modèle offline, et structure les réponses méthodo en phases. Les règles de conformité et les guides d’exécution restent distingués pour que la restitution reste lisible.",
     "centinel.hr":
-      "Pourquoi c’est là : montrer qu’on sait construire un système de connaissance utile au métier cyber, avec la contrainte privacy / offline comme exigence de design — pas un gadget chat.",
+      "C’est le moment où l’outil devient un système de connaissance : utile au métier cyber, avec la contrainte offline comme point de départ, pas comme détail après coup.",
     "voice.chapter": "Chapitre III · Voix & GenAI",
-    "voice.lede":
-      "Faire évoluer un callbot à parcours vers une conversation GenAI sur AWS.",
+    "voice.lede": "Quand le parcours téléphonique ne suffit plus, et que la GenAI doit s’y greffer sans tout casser.",
     "voice.body":
-      "Besoin métier : les bots téléphoniques à parcours figé cassent dès que l’appelant ne suit pas le script. L’objectif n’était pas « mettre de l’IA partout », mais rendre le dialogue plus naturel tout en gardant un socle contact-center fiable (Connect, Lex, parcours existants).",
+      "Un callbot à parcours figé marche tant que l’appelant suit le script. Dès qu’il digresse, le dialogue se brise. L’enjeu n’était pas d’ajouter de l’IA pour la forme, mais d’ouvrir la conversation tout en gardant un contact center solide — Connect, Lex, les parcours déjà en place.",
     "voice.body2":
-      "Technique : couche GenAI additive (Lambda, mémoire courte, Bedrock) branchée sur le bot — sans réécrire tout le parcours d’un coup. Terraform, envs séparés, staging. Le détail du domaine métier reste hors vitrine publique.",
+      "J’ai travaillé une couche GenAI additive sur AWS (Lambda, mémoire courte de conversation, Bedrock), branchée sur le bot existant plutôt que de le remplacer d’un bloc. Terraform, environnements séparés, staging : on peut comparer, reculer, avancer sans brûler le canal.",
     "voice.hr":
-      "Pourquoi c’est là : prouver qu’on sait moderniser un canal client vocal avec GenAI cloud, en respectant l’existant et l’IaC — pas un POC console jetable.",
+      "Ce chapitre montre surtout une modernisation raisonnable d’un canal client vocal — GenAI cloud, mais respect de l’existant et de la livraison industrialisée.",
     "mcp.chapter": "Chapitre IV · Agents qui livrent",
-    "mcp.lede": "Quand le chat doit produire un livrable Office, pas seulement une réponse.",
+    "mcp.lede": "Faire produire un PPT, un Word, un Excel — pas seulement une belle phrase.",
     "mcp.body":
-      "Besoin métier : les équipes veulent que l’agent « fasse » — un PPT, un Word, un Excel — plutôt que de copier-coller. Les scripts one-shot ne scalent pas ; il fallait des outils réutilisables, avec fichiers récupérables de façon contrôlée.",
+      "Les équipes se lassent vite d’un agent qui explique sans jamais livrer. Elles veulent un support, un tableau, un deck. Les scripts jetables ne tiennent pas la distance : il fallait des outils réutilisables, et un moyen propre de récupérer le fichier.",
     "mcp.body2":
-      "Technique : serveur MCP (FastMCP) pour générer pptx/docx/xlsx, dépôt objet (S3), URL signée, déploiement conteneur / Kubernetes à côté de la plateforme d’agents.",
+      "Un serveur MCP (FastMCP) expose la génération Office ; l’agent choisit l’outil, le document est construit, déposé en stockage objet, renvoyé via une URL signée. Le service se déploie en conteneur, à côté de la plateforme d’agents, sans coller tout le monde sur une machine unique.",
     "mcp.hr":
-      "Pourquoi c’est là : montrer le passage agents conversationnels → agents actionnables, avec une vraie intégration cloud et une idée claire de livrable métier.",
+      "C’est le basculement net : l’agent ne se contente plus de parler, il produit quelque chose qu’on peut envoyer à un client ou à un manager.",
     "analyzer.chapter": "Chapitre V · Scan & distance",
-    "analyzer.lede":
-      "Scanner n’importe quel dépôt — qualité de code + posture sécu — sans tout verser dans le LLM.",
+    "analyzer.lede": "Lire un dépôt pour la qualité et la sécu — sans le verser entier dans le modèle.",
     "analyzer.body":
-      "Besoin métier : piloter la qualité / la dette / des signaux de sécurité sur un repo, sans exposer tout le code source à un modèle (coût, fuite, bruit). L’humain ou l’agent doit raisonner sur un rapport, pas sur 50 000 fichiers bruts.",
+      "Dès qu’on parle de dette, de qualité ou de posture de sécurité sur un code, la tentation est d’envoyer tout le dépôt à un LLM. C’est cher, bruyant, et risqué. Ce qu’il faut, c’est un regard synthétique : un rapport sur lequel un humain — ou un agent — peut raisonner.",
     "analyzer.body2":
-      "Technique : worker qui clone et parse (Tree-sitter), API (FastAPI), rapport structuré ; l’orchestrateur IA ne voit que ce rapport. Déploiement type Docker / EKS.",
+      "Un worker clone et parse le dépôt (Tree-sitter), expose une API, écrit un rapport structuré. L’orchestrateur IA ne voit que ce rapport, pas le source brut. Le tout se conteneurise et se déploie comme un service (Docker / EKS).",
     "analyzer.hr":
-      "Pourquoi c’est là : architecture de confiance — l’IA orchestre, l’exécution reste bornée. Compétence utile dès qu’on parle GenAI + code en entreprise.",
+      "L’idée à retenir : faire travailler l’IA là où elle orchestre, et garder l’exécution bornée — surtout quand le sujet, c’est le code de l’entreprise.",
     "codium.chapter": "Chapitre VI · Plan & isolement",
-    "codium.lede":
-      "Structurer un pentest avec l’IA — sans fusionner cerveau et outillage offensif.",
+    "codium.lede": "Accélérer la structure d’un pentest sans lâcher la main à un agent offensif.",
     "codium.body":
-      "Besoin métier : accélérer la phase de structuration (plan, notes, findings) tout en gardant un humain responsable. On ne veut pas un « agent qui pirate tout seul » sur le poste du quotidien.",
+      "En cybersécurité offensive, on gagne du temps sur le plan, les notes, la forme des findings — mais on ne délègue pas le jugement. Personne ne veut d’un agent qui « pirate tout seul » sur le poste du quotidien.",
     "codium.body2":
-      "Technique : plan intelligence (agent) séparé du plan d’exécution (conteneurs / scanners type ZAP), pont de commandes contrôlé, méthodo OWASP. Vitrine architecture uniquement — pas d’exploits.",
+      "L’architecture sépare volontairement deux plans : l’intelligence (l’agent qui aide à structurer) et l’exécution (outils en conteneurs, scanners type ZAP), reliés par un pont contrôlé, dans une logique OWASP. Ici, la vitrine reste méthodo et architecture — volontairement sans exploits.",
     "codium.hr":
-      "Pourquoi c’est là : montrer la cyber « sérieuse » appliquée à l’IA — isolation, supervision humaine, méthodo — pas du theatre offensive.",
+      "Dernière marche du fil : montrer que l’IA et la cyber peuvent se croiser avec discipline — isolation, humain dans la boucle, pas de spectacle offensif.",
     "close.chapter": "Fin",
     "close.title": "EOF — à vous.",
     "close.body":
@@ -121,57 +118,54 @@ window.I18N = {
     "thread.p1":
       "Each app here marks a step in my technical evolution — from a local tool to an agentic system. Complexity rises, and security rises with it: not a bolt-on at the end, but the thread that ties desktop, RAG, cloud GenAI, workers, and assisted offensive cyber together.",
     "ronin.chapter": "Chapter I · Foundations",
-    "ronin.lede": "AI translator — desktop, then a portable Android app.",
+    "ronin.lede": "An AI translator that stays in the flow — on the desktop, then on Android.",
     "ronin.body":
-      "Business need: write fast in mixed language / technical jargon without losing protected terms (product names, acronyms, fixed phrasing). Consumer translators rewrite too much — we needed a quiet tool that respects a glossary.",
+      "When you write in mixed language or technical jargon, a mainstream translator tends to “improve” terms you meant to keep: product names, acronyms, fixed phrasing. Ronin came from that friction — a quiet, keyboard-first tool that leans on a glossary so protected wording stays put.",
     "ronin.body2":
-      "Technical: Python desktop app (light UI, PyInstaller), local or API model, JSON glossary. Then a portable Android twin (Kotlin) with the same product rules — so it leaves the desk too.",
+      "I shipped it first as a desktop app (Python, light UI, PyInstaller-style packaging), wired to a local model or an API. Then the same product contract moved to mobile: a portable Android build in Kotlin, still terminal in spirit, so it wasn’t stuck at the desk.",
     "ronin.hr":
-      "Why it’s here: prove I can ship a real local product (not just a notebook), with one hard business rule — the glossary — and port it to mobile.",
+      "In the end this is the first step of the portfolio: show that I can ship a real small product, with one simple non-negotiable rule, and carry it across more than one platform.",
     "ronin.tag": "JSON glossary",
     "centinel.chapter": "Chapter II · Local memory",
-    "centinel.lede": "Offline cyber knowledge base — prepare a mission without cloud leakage.",
+    "centinel.lede": "Cyber memory that stays on the machine — prepare without exposing.",
     "centinel.body":
-      "Business need: an auditor / pentester must query ISO, DORA, GDPR, NIST, OWASP, PTES quickly without uploading sensitive docs to a public LLM. Wall-of-text answers don’t help; mission-ready structure does.",
+      "Before a mission you need to query dense frameworks quickly — ISO, DORA, GDPR, NIST, OWASP, PTES — without pushing sensitive documents into a public LLM. And a wall of text barely helps in the field: you need something you can follow.",
     "centinel.body2":
-      "Technical: local RAG (PDF → embeddings → Chroma), offline LLM (Ollama-class), phased answers for methodology questions. Deliberate split between compliance rules and execution guides.",
+      "Centinel indexes those PDFs locally, answers in natural language through an offline model, and shapes methodology answers into phases. Compliance rules and execution guides stay distinct so the output stays readable.",
     "centinel.hr":
-      "Why it’s here: show I can build a knowledge system that serves a cyber workflow, with privacy / offline as a design requirement — not a chat gadget.",
+      "This is where a tool becomes a knowledge system: useful for cyber work, with offline as the starting constraint, not a late add-on.",
     "voice.chapter": "Chapter III · Voice & GenAI",
-    "voice.lede":
-      "Evolve a path-based callbot into GenAI conversation on AWS.",
+    "voice.lede": "When a phone journey isn’t enough, and GenAI has to plug in without breaking it.",
     "voice.body":
-      "Business need: rigid phone journeys break as soon as callers leave the script. The goal wasn’t “sprinkle AI everywhere”, but freer dialogue while keeping a reliable contact-center base (Connect, Lex, existing paths).",
+      "A path-locked callbot works until the caller leaves the script. The point wasn’t to sprinkle AI for show — it was to open the dialogue while keeping a solid contact-center base: Connect, Lex, journeys already in place.",
     "voice.body2":
-      "Technical: additive GenAI layer (Lambda, short memory, Bedrock) on top of the bot — without rewriting the whole journey at once. Terraform, separated envs, staging. Domain-specific detail stays out of the public showcase.",
+      "I worked an additive GenAI layer on AWS (Lambda, short conversation memory, Bedrock), attached to the existing bot instead of replacing it overnight. Terraform, separated environments, staging: you can compare, roll back, move forward without burning the channel.",
     "voice.hr":
-      "Why it’s here: prove I can modernize a voice customer channel with cloud GenAI while respecting legacy paths and IaC — not a throwaway console POC.",
+      "This chapter is mainly about a reasonable modernization of a voice customer channel — cloud GenAI, but respect for what already runs and how you ship it.",
     "mcp.chapter": "Chapter IV · Agents that deliver",
-    "mcp.lede": "When chat must produce an Office deliverable, not only an answer.",
+    "mcp.lede": "Make the chat produce a deck, a Word file, a spreadsheet — not only a nice sentence.",
     "mcp.body":
-      "Business need: teams want the agent to *do* something — a deck, a Word doc, a spreadsheet — not copy-paste forever. One-off scripts don’t scale; we needed reusable tools with controlled file delivery.",
+      "Teams tire quickly of an agent that explains and never ships. They want a slide, a table, a document. Throwaway scripts don’t last: we needed reusable tools, and a clean way to get the file back.",
     "mcp.body2":
-      "Technical: MCP server (FastMCP) for pptx/docx/xlsx, object storage (S3), signed URL, container / Kubernetes deploy next to the agent platform.",
+      "An MCP server (FastMCP) exposes Office generation; the agent picks the tool, the document is built, stored in object storage, returned as a signed URL. The service deploys in a container next to the agent platform, instead of living on one laptop.",
     "mcp.hr":
-      "Why it’s here: show the jump from conversational agents to actionable ones, with real cloud integration and a clear business deliverable.",
+      "That’s the clear shift: the agent doesn’t only talk — it produces something you can send to a client or a manager.",
     "analyzer.chapter": "Chapter V · Scan & distance",
-    "analyzer.lede":
-      "Scan any repo — code quality + security posture — without pouring source into the LLM.",
+    "analyzer.lede": "Read a repository for quality and security — without pouring it all into the model.",
     "analyzer.body":
-      "Business need: steer quality / debt / security signals on a codebase without exposing every file to a model (cost, leakage, noise). People and agents should reason over a report, not 50k raw files.",
+      "When the topic is debt, quality, or security posture on a codebase, the temptation is to dump the whole repo into an LLM. That’s costly, noisy, and risky. What you want is a synthetic view: a report a human — or an agent — can reason over.",
     "analyzer.body2":
-      "Technical: worker clones and parses (Tree-sitter), FastAPI, structured report; the AI orchestrator only sees that report. Docker / EKS-style deploy.",
+      "A worker clones and parses the repo (Tree-sitter), exposes an API, writes a structured report. The AI orchestrator only sees that report, not raw source. It containerizes and deploys like a service (Docker / EKS).",
     "analyzer.hr":
-      "Why it’s here: trust architecture — AI orchestrates, execution stays bounded. Useful as soon as GenAI meets enterprise code.",
+      "The takeaway: let AI orchestrate, keep execution bounded — especially when the subject is the company’s own code.",
     "codium.chapter": "Chapter VI · Plan & isolation",
-    "codium.lede":
-      "Structure a pentest with AI — without merging brain and offensive tooling.",
+    "codium.lede": "Speed up pentest structure without handing the keys to an offensive agent.",
     "codium.body":
-      "Business need: speed up structuring (plan, notes, findings) while keeping a human accountable. Nobody wants an “agent that hacks alone” on the daily workstation.",
+      "In offensive security you can save time on the plan, the notes, the shape of findings — but you don’t outsource judgment. Nobody wants an agent that “hacks alone” on the daily workstation.",
     "codium.body2":
-      "Technical: intelligence plane (agent) separated from execution plane (containers / scanners e.g. ZAP), controlled bridge, OWASP methodology. Architecture showcase only — no exploits.",
+      "The architecture deliberately splits two planes: intelligence (the agent that helps structure) and execution (tools in containers, scanners such as ZAP), linked by a controlled bridge, in an OWASP mindset. The public showcase stays methodology and architecture — on purpose, with no exploits.",
     "codium.hr":
-      "Why it’s here: serious cyber applied to AI — isolation, human oversight, methodology — not offensive theatre.",
+      "Last step in the thread: show that AI and cyber can meet with discipline — isolation, human in the loop, no offensive theatre.",
     "close.chapter": "End",
     "close.title": "EOF — your move.",
     "close.body":

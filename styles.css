@@ -220,12 +220,8 @@ h2 {
 }
 
 .article p[data-i18n$=".hr"] {
-  padding: 0.85rem 1rem;
-  border-left: 3px solid var(--ink);
-  background: var(--eggshell);
-  border-radius: 0 12px 12px 0;
-  font-size: 0.98rem;
-  color: var(--ink);
+  color: var(--muted);
+  font-size: 1.02rem;
 }
 
 .article em {
