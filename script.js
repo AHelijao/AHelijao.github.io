@@ -40,20 +40,18 @@ function applyLang() {
   localStorage.setItem("portfolio-lang", lang);
 
   document.querySelectorAll("[data-i18n]").forEach((el) => {
-    const key =
-      el.dataset.i18n === "cover.nudge" && isMobile()
-        ? "cover.nudgeMobile"
-        : el.dataset.i18n;
+    let key = el.getAttribute("data-i18n") || "";
+    if (key === "cover.nudge" && isMobile()) key = "cover.nudgeMobile";
     el.textContent = t(key);
   });
   document.querySelectorAll("[data-i18n-html]").forEach((el) => {
-    el.innerHTML = t(el.dataset.i18nHtml);
+    el.innerHTML = t(el.getAttribute("data-i18n-html") || "");
   });
   document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
-    el.setAttribute("aria-label", t(el.dataset.i18nAria));
+    el.setAttribute("aria-label", t(el.getAttribute("data-i18n-aria") || ""));
   });
   document.querySelectorAll("[data-i18n-content]").forEach((el) => {
-    el.setAttribute("content", t(el.dataset.i18nContent));
+    el.setAttribute("content", t(el.getAttribute("data-i18n-content") || ""));
   });
 
   langBtns.forEach((btn) => {
