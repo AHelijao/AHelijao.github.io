@@ -7,6 +7,7 @@ window.I18N = {
     "nav.next": "Suivant",
     "cover.line": "Engineer in cyber and software.",
     "cover.nudge": "Glisser vers la droite →",
+    "cover.nudgeMobile": "Glisser vers le bas ↓",
     "who.chapter": "Qui",
     "who.title": "Ingénieur logiciel et cybersécurité.",
     "who.p1":
@@ -72,6 +73,7 @@ window.I18N = {
     "nav.next": "Next",
     "cover.line": "Engineer in cyber and software.",
     "cover.nudge": "Swipe right →",
+    "cover.nudgeMobile": "Swipe down ↓",
     "who.chapter": "Who",
     "who.title": "Software and cybersecurity engineer.",
     "who.p1":

@@ -15,6 +15,11 @@ let lang =
       ? "fr"
       : "en";
 
+const mobileMq = window.matchMedia("(max-width: 768px)");
+function isMobile() {
+  return mobileMq.matches;
+}
+
 panels.forEach((_, i) => {
   const b = document.createElement("button");
   b.type = "button";
@@ -35,7 +40,11 @@ function applyLang() {
   localStorage.setItem("portfolio-lang", lang);
 
   document.querySelectorAll("[data-i18n]").forEach((el) => {
-    el.textContent = t(el.dataset.i18n);
+    const key =
+      el.dataset.i18n === "cover.nudge" && isMobile()
+        ? "cover.nudgeMobile"
+        : el.dataset.i18n;
+    el.textContent = t(key);
   });
   document.querySelectorAll("[data-i18n-html]").forEach((el) => {
     el.innerHTML = t(el.dataset.i18nHtml);
@@ -53,6 +62,7 @@ function applyLang() {
     btn.setAttribute("aria-pressed", on ? "true" : "false");
   });
 
+  document.body.classList.toggle("is-mobile", isMobile());
   sync();
 }
 
@@ -60,8 +70,8 @@ function go(i, smooth = true) {
   index = Math.max(0, Math.min(panels.length - 1, i));
   panels[index].scrollIntoView({
     behavior: smooth ? "smooth" : "auto",
-    inline: "start",
-    block: "nearest",
+    inline: isMobile() ? "nearest" : "start",
+    block: isMobile() ? "start" : "nearest",
   });
   sync();
 }
@@ -75,16 +85,27 @@ function sync() {
 }
 
 function nearest() {
-  const left = rail.scrollLeft;
   let best = 0;
   let dist = Infinity;
-  panels.forEach((p, i) => {
-    const d = Math.abs(p.offsetLeft - left);
-    if (d < dist) {
-      dist = d;
-      best = i;
-    }
-  });
+  if (isMobile()) {
+    const top = rail.scrollTop;
+    panels.forEach((p, i) => {
+      const d = Math.abs(p.offsetTop - top);
+      if (d < dist) {
+        dist = d;
+        best = i;
+      }
+    });
+  } else {
+    const left = rail.scrollLeft;
+    panels.forEach((p, i) => {
+      const d = Math.abs(p.offsetLeft - left);
+      if (d < dist) {
+        dist = d;
+        best = i;
+      }
+    });
+  }
   return best;
 }
 
@@ -121,10 +142,16 @@ document.querySelectorAll("[data-go]").forEach((el) => {
 });
 
 window.addEventListener("keydown", (e) => {
-  if (["ArrowRight", "PageDown", " "].includes(e.key)) {
+  const nextKeys = isMobile()
+    ? ["ArrowDown", "ArrowRight", "PageDown", " "]
+    : ["ArrowRight", "PageDown", " "];
+  const prevKeys = isMobile()
+    ? ["ArrowUp", "ArrowLeft", "PageUp"]
+    : ["ArrowLeft", "PageUp"];
+  if (nextKeys.includes(e.key)) {
     e.preventDefault();
     go(index + 1);
-  } else if (["ArrowLeft", "PageUp"].includes(e.key)) {
+  } else if (prevKeys.includes(e.key)) {
     e.preventDefault();
     go(index - 1);
   } else if (e.key === "Home") {
@@ -136,9 +163,11 @@ window.addEventListener("keydown", (e) => {
   }
 });
 
+/* Desktop only: map vertical wheel to horizontal rail */
 rail.addEventListener(
   "wheel",
   (e) => {
+    if (isMobile()) return;
     if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
       e.preventDefault();
       rail.scrollLeft += e.deltaY;
@@ -146,6 +175,42 @@ rail.addEventListener(
   },
   { passive: false }
 );
+
+/* Touch swipe helper on mobile (panel-to-panel) */
+let touchY = null;
+rail.addEventListener(
+  "touchstart",
+  (e) => {
+    if (!isMobile() || e.touches.length !== 1) return;
+    touchY = e.touches[0].clientY;
+  },
+  { passive: true }
+);
+rail.addEventListener(
+  "touchend",
+  (e) => {
+    if (!isMobile() || touchY == null) return;
+    const dy = e.changedTouches[0].clientY - touchY;
+    touchY = null;
+    if (Math.abs(dy) < 56) return;
+    // Don't steal scroll if the active sheet is mid-scroll
+    const sheet = panels[index]?.querySelector(".sheet");
+    if (sheet && sheet.scrollHeight > sheet.clientHeight + 8) {
+      const atTop = sheet.scrollTop <= 2;
+      const atBottom =
+        sheet.scrollTop + sheet.clientHeight >= sheet.scrollHeight - 2;
+      if (dy < 0 && !atBottom) return;
+      if (dy > 0 && !atTop) return;
+    }
+    go(index + (dy < 0 ? 1 : -1));
+  },
+  { passive: true }
+);
+
+mobileMq.addEventListener("change", () => {
+  applyLang();
+  go(index, false);
+});
 
 applyLang();
 rail.focus({ preventScroll: true });
