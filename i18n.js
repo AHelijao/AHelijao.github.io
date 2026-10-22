@@ -61,8 +61,8 @@ window.I18N = {
     "close.title": "EOF — à vous.",
     "close.body":
       "Les agents agissent. Les humains décident. Si ce fil build × cyber vous parle, écrivez-moi.",
-    "soon.link": "Vitrine GitHub →",
-    "soon.linkMethod": "Vitrine méthodo (GitHub) →",
+    "soon.link": "Vitrine GitHub (sans code source) →",
+    "soon.linkMethod": "Vitrine méthodo GitHub (sans exploits) →",
   },
   en: {
     "meta.desc":
@@ -126,7 +126,7 @@ window.I18N = {
     "close.title": "EOF — your move.",
     "close.body":
       "Agents act. Humans decide. If this build × cyber thread lands, write me.",
-    "soon.link": "GitHub showcase →",
-    "soon.linkMethod": "Method showcase (GitHub) →",
+    "soon.link": "GitHub showcase (no source) →",
+    "soon.linkMethod": "Method showcase on GitHub (no exploits) →",
   },
 };
