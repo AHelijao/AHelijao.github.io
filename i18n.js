@@ -31,9 +31,9 @@ window.I18N = {
     "thread.p1":
       "Chaque app ici marque une étape de mon évolution technique — de l’outil local au système agentique. La complexité monte, et la sécurité monte avec : ce n’est pas un add-on en fin de parcours, c’est le fil qui relie desktop, RAG, GenAI cloud, workers et cyber offensive assistée.",
     "ronin.chapter": "Chapitre I · Fondations",
-    "ronin.lede": "Un traducteur IA sur le bureau — discret, fidèle au glossaire.",
+    "ronin.lede": "Traducteur IA — desktop, puis version portable Android.",
     "ronin.body":
-      "L’idée est simple : rester dans le flux quand on écrit en franglais ou en jargon métier. Ronin traduit avec un modèle, mais protège les termes qu’on ne doit pas « améliorer ». Interface minimale, packaging desktop — la première marche : un produit local qui tient dans la main.",
+      "L’idée est simple : rester dans le flux quand on écrit en franglais ou en jargon métier. Ronin traduit avec un modèle, mais protège les termes qu’on ne doit pas « améliorer ». Interface minimale, packaging desktop — puis le même produit en app Android (Kotlin), terminal-style, pour l’avoir aussi sur mobile.",
     "ronin.tag": "Glossaire JSON",
     "centinel.chapter": "Chapitre II · Mémoire locale",
     "centinel.lede": "Une base de connaissance cyber qui ne quitte pas la machine.",
@@ -97,9 +97,9 @@ window.I18N = {
     "thread.p1":
       "Each app here marks a step in my technical evolution — from a local tool to an agentic system. Complexity rises, and security rises with it: not a bolt-on at the end, but the thread that ties desktop, RAG, cloud GenAI, workers, and assisted offensive cyber together.",
     "ronin.chapter": "Chapter I · Foundations",
-    "ronin.lede": "A desktop AI translator — quiet, glossary-true.",
+    "ronin.lede": "AI translator — desktop, then a portable Android app.",
     "ronin.body":
-      "The idea is simple: stay in flow when writing in mixed language or domain jargon. Ronin translates with a model, but protects terms that must not be “improved”. Minimal UI, desktop packaging — the first step: a local product you can hold.",
+      "The idea is simple: stay in flow when writing in mixed language or domain jargon. Ronin translates with a model, but protects terms that must not be “improved”. Minimal UI, desktop packaging — then the same product as an Android app (Kotlin), terminal-style, so it travels on mobile too.",
     "ronin.tag": "JSON glossary",
     "centinel.chapter": "Chapter II · Local memory",
     "centinel.lede": "A cyber knowledge base that never leaves the machine.",
