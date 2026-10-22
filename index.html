@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Helijao Andriamandranto — Portfolio</title>
+  <meta name="description" data-i18n-content="meta.desc" content="Une histoire d’intérêts techniques — du desktop local aux agents et à la cybersécurité." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="fr" class="on" aria-pressed="true">FR</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <p class="progress" id="progress">01 — Intro</p>
+  </header>
+
+  <div class="rail" id="rail" tabindex="0" data-i18n-aria="rail.aria" aria-label="Portfolio — défilement horizontal">
+    <article class="panel is-active" data-i="0" data-label-fr="01 — Intro" data-label-en="01 — Intro">
+      <div class="sheet cover">
+        <h1>Helijao Andriamandranto</h1>
+        <p class="deck-line" data-i18n="cover.line">Engineer in cyber and software.</p>
+        <p class="nudge" data-i18n="cover.nudge">Glisser vers la droite →</p>
+      </div>
+    </article>
+
+    <article class="panel" data-i="1" data-label-fr="02 — Qui" data-label-en="02 — Who">
+      <div class="sheet article">
+        <p class="chapter" data-i18n="who.chapter">Qui</p>
+        <h2 data-i18n="who.title">Ingénieur logiciel et cybersécurité.</h2>
+        <p data-i18n-html="who.p1"></p>
+        <p data-i18n-html="who.p2"></p>
+        <p data-i18n-html="who.p3"></p>
+        <p data-i18n-html="who.p4"></p>
+      </div>
+    </article>
+
+    <article class="panel" data-i="2" data-label-fr="03 — Intérêts" data-label-en="03 — Interests">
+      <div class="sheet article">
+        <p class="chapter" data-i18n="interests.chapter">Intérêts</p>
+        <h2 data-i18n="interests.title">L’IA évolue — la sécurité doit suivre.</h2>
+        <p data-i18n-html="interests.p1"></p>
+        <p data-i18n-html="interests.p2"></p>
+        <p data-i18n="interests.p3"></p>
+      </div>
+    </article>
+
+    <article class="panel" data-i="3" data-label-fr="04 — Fil" data-label-en="04 — Thread">
+      <div class="sheet article">
+        <p class="chapter" data-i18n="thread.chapter">Le fil</p>
+        <h2 data-i18n="thread.title">Six projets, une progression.</h2>
+        <p data-i18n-html="thread.p1"></p>
+        <ol class="toc">
+          <li><button type="button" data-go="4"><span>I</span> Ronin</button></li>
+          <li><button type="button" data-go="5"><span>II</span> Centinel</button></li>
+          <li><button type="button" data-go="6"><span>III</span> Voice Assist</button></li>
+          <li><button type="button" data-go="7"><span>IV</span> MCP Office</button></li>
+          <li><button type="button" data-go="8"><span>V</span> Repo Analyzer</button></li>
+          <li><button type="button" data-go="9"><span>VI</span> Codium Red</button></li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="panel" data-i="4" data-label-fr="05 — Ronin" data-label-en="05 — Ronin">
+      <div class="sheet article">
+        <p class="chapter" data-i18n="ronin.chapter">Chapitre I · Fondations</p>
+        <h2>Ronin</h2>
+        <p class="lede" data-i18n="ronin.lede"></p>
+        <p data-i18n="ronin.body"></p>
+        <p class="meta"><span>Python</span><span>PyInstaller</span><span>API LLM</span><span data-i18n="ronin.tag">Glossaire JSON</span></p>
+        <p class="soon" data-i18n="soon.code"></p>
+      </div>
+    </article>
+
+    <article class="panel" data-i="5" data-label-fr="06 — Centinel" data-label-en="06 — Centinel">
+      <div class="sheet article">
+        <p class="chapter" data-i18n="centinel.chapter">Chapitre II · Mémoire locale</p>
+        <h2>Centinel</h2>
+        <p class="lede" data-i18n="centinel.lede"></p>
+        <p data-i18n="centinel.body"></p>
+        <p class="meta"><span>Python</span><span>ChromaDB</span><span>Ollama</span><span>RAG</span></p>
+        <p class="soon" data-i18n="soon.code"></p>
+      </div>
+    </article>
+
+    <article class="panel" data-i="6" data-label-fr="07 — Voice" data-label-en="07 — Voice">
+      <div class="sheet article">
+        <p class="chapter" data-i18n="voice.chapter">Chapitre III · Voix &amp; contrainte</p>
+        <h2>GenAI Voice Assist</h2>
+        <p class="lede" data-i18n="voice.lede"></p>
+        <p data-i18n="voice.body"></p>
+        <p class="meta"><span>Amazon Connect</span><span>Lex</span><span>Lambda</span><span>Bedrock</span><span>Terraform</span></p>
+        <p class="soon" data-i18n="soon.code"></p>
+      </div>
+    </article>
+
+    <article class="panel" data-i="7" data-label-fr="08 — MCP" data-label-en="08 — MCP">
+      <div class="sheet article">
+        <p class="chapter" data-i18n="mcp.chapter">Chapitre IV · Agents qui livrent</p>
+        <h2>MCP Office Machine</h2>
+        <p class="lede" data-i18n="mcp.lede"></p>
+        <p data-i18n="mcp.body"></p>
+        <p class="meta"><span>FastMCP</span><span>Python</span><span>Docker</span><span>Kubernetes</span><span>S3</span></p>
+        <p class="soon" data-i18n="soon.code"></p>
+      </div>
+    </article>
+
+    <article class="panel" data-i="8" data-label-fr="09 — Analyzer" data-label-en="09 — Analyzer">
+      <div class="sheet article">
+        <p class="chapter" data-i18n="analyzer.chapter">Chapitre V · Worker &amp; distance</p>
+        <h2>Repo Analyzer</h2>
+        <p class="lede" data-i18n="analyzer.lede"></p>
+        <p data-i18n="analyzer.body"></p>
+        <p class="meta"><span>FastAPI</span><span>Tree-sitter</span><span>Python</span><span>Docker</span><span>EKS</span></p>
+        <p class="soon" data-i18n="soon.code"></p>
+      </div>
+    </article>
+
+    <article class="panel" data-i="9" data-label-fr="10 — Codium" data-label-en="10 — Codium">
+      <div class="sheet article">
+        <p class="chapter" data-i18n="codium.chapter">Chapitre VI · Plan &amp; isolement</p>
+        <h2>Codium Red</h2>
+        <p class="lede" data-i18n="codium.lede"></p>
+        <p data-i18n="codium.body"></p>
+        <p class="meta"><span>Python</span><span>Docker</span><span>ZAP</span><span>OWASP</span></p>
+        <p class="soon" data-i18n="soon.method"></p>
+      </div>
+    </article>
+
+    <article class="panel" data-i="10" data-label-fr="11 — Suite" data-label-en="11 — Next">
+      <div class="sheet article">
+        <p class="chapter" data-i18n="close.chapter">Suite</p>
+        <h2 data-i18n="close.title">Si le fil vous parle.</h2>
+        <p data-i18n="close.body"></p>
+        <ul class="links">
+          <li><a href="mailto:helijao.andriamandranto@gmail.com">helijao.andriamandranto@gmail.com</a></li>
+          <li><a href="https://linkedin.com/in/helijaoa" rel="noopener" target="_blank">LinkedIn</a></li>
+          <li><a href="https://github.com/AHelijao" rel="noopener" target="_blank">GitHub</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <footer class="chrome">
+    <button type="button" id="prev" data-i18n-aria="nav.prev" aria-label="Précédent">←</button>
+    <div class="dots" id="dots" aria-hidden="true"></div>
+    <button type="button" id="next" data-i18n-aria="nav.next" aria-label="Suivant">→</button>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
