@@ -61,8 +61,8 @@ window.I18N = {
     "close.title": "EOF — à vous.",
     "close.body":
       "Les agents agissent. Les humains décident. Si ce fil build × cyber vous parle, écrivez-moi.",
-    "soon.code": "Code showcase — bientôt",
-    "soon.method": "Vitrine méthodo · showcase bientôt",
+    "soon.link": "Vitrine GitHub →",
+    "soon.linkMethod": "Vitrine méthodo (GitHub) →",
   },
   en: {
     "meta.desc":
@@ -126,7 +126,7 @@ window.I18N = {
     "close.title": "EOF — your move.",
     "close.body":
       "Agents act. Humans decide. If this build × cyber thread lands, write me.",
-    "soon.code": "Showcase code — coming soon",
-    "soon.method": "Method showcase · coming soon",
+    "soon.link": "GitHub showcase →",
+    "soon.linkMethod": "Method showcase (GitHub) →",
   },
 };

@@ -281,9 +281,19 @@ h2 {
 
 .soon {
   margin-top: 1.25rem !important;
-  font-size: 0.85rem !important;
-  color: var(--muted) !important;
-  opacity: 0.75;
+  font-size: 0.95rem !important;
+  opacity: 1;
+}
+
+.soon a {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+}
+
+.soon a:hover {
+  border-bottom-color: var(--ink);
 }
 
 .links {
