@@ -219,6 +219,15 @@ h2 {
   line-height: 1.45;
 }
 
+.article p[data-i18n$=".hr"] {
+  padding: 0.85rem 1rem;
+  border-left: 3px solid var(--ink);
+  background: var(--eggshell);
+  border-radius: 0 12px 12px 0;
+  font-size: 0.98rem;
+  color: var(--ink);
+}
+
 .article em {
   font-style: italic;
   font-weight: 500;
