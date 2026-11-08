@@ -54,6 +54,13 @@ function applyLang() {
     el.setAttribute("content", t(el.getAttribute("data-i18n-content") || ""));
   });
 
+  const archLang = lang === "fr" ? "fr" : "en";
+  document.querySelectorAll("img.arch-diagram[data-arch]").forEach((img) => {
+    const stem = img.getAttribute("data-arch");
+    if (!stem) return;
+    img.src = `assets/arch-${stem}.${archLang}.svg?v=20261108b`;
+  });
+
   langBtns.forEach((btn) => {
     const on = btn.dataset.lang === lang;
     btn.classList.toggle("on", on);

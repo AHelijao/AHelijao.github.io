@@ -39,6 +39,7 @@ window.I18N = {
     "ronin.hr":
       "Au fond, c’est la première marche du portfolio : prouver qu’on sait sortir un vrai petit produit, avec une règle métier simple mais non négociable, et le faire vivre sur plus d’une plateforme.",
     "ronin.tag": "Glossaire JSON",
+    "arch.caption": "Architecture",
     "centinel.chapter": "Chapitre II · Mémoire locale",
     "centinel.lede": "Une mémoire cyber qui reste sur la machine — pour préparer sans exposer.",
     "centinel.body":
@@ -126,6 +127,7 @@ window.I18N = {
     "ronin.hr":
       "In the end this is the first step of the portfolio: show that I can ship a real small product, with one simple non-negotiable rule, and carry it across more than one platform.",
     "ronin.tag": "JSON glossary",
+    "arch.caption": "Architecture",
     "centinel.chapter": "Chapter II · Local memory",
     "centinel.lede": "Cyber memory that stays on the machine — prepare without exposing.",
     "centinel.body":

@@ -18,10 +18,12 @@ Recommended: user site repo so the URL is clean.
 ```powershell
 cd D:\career-factory\portfolio-site
 git init
-git add index.html styles.css script.js i18n.js README.md
+git add index.html styles.css script.js i18n.js README.md assets
 git commit -m "Portfolio deck for GitHub Pages"
 gh repo create AHelijao.github.io --public --source=. --remote=origin --push
 ```
+
+Architecture diagrams: `assets/arch-<project>.en.svg` + `.fr.svg` (language toggle swaps them). Rebuild with `python _build_arch.py`. Technical product names stay EN; captions/labels are translated.
 
 Then: repo **Settings → Pages → Deploy from branch `main` / root**.
 

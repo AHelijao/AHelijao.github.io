@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 360" role="img" aria-labelledby="t d">
+  <title id="t">Ronin architecture</title>
+  <desc id="d">Desktop uses local AI; Android calls a cloud LLM API. Shared glossary of protected terms.</desc>
+<defs>
+    <marker id="a" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="10" markerHeight="10" orient="auto-start-reverse">
+      <path d="M1 1 L11 6 L1 11 Z" fill="#111"/>
+    </marker>
+    <style>
+      .bg { fill:#fffcf6; }
+      .b { fill:#f4f0e6; stroke:#111; stroke-width:2; }
+      .hi { fill:#fff; stroke:#111; stroke-width:2.4; }
+      .out { fill:none; stroke:#111; stroke-width:1.6; stroke-dasharray:6 5; }
+      .plane { fill:none; stroke:#111; stroke-width:1.8; stroke-dasharray:7 5; }
+      .cloud { fill:none; stroke:#111; stroke-width:1.6; stroke-dasharray:6 5; }
+      .title { font-family:Segoe UI,system-ui,sans-serif; font-size:15px; font-weight:800; letter-spacing:0.08em; fill:#111; }
+      .lab { font-family:Segoe UI,system-ui,sans-serif; font-size:14.5px; font-weight:800; fill:#111; }
+      .sub { font-family:Segoe UI,system-ui,sans-serif; font-size:11.5px; font-weight:500; fill:#3a3a3a; }
+      .cap { font-family:Segoe UI,system-ui,sans-serif; font-size:11px; font-weight:800; letter-spacing:0.12em; fill:#111; }
+      .line { stroke:#111; stroke-width:2.2; fill:none; marker-end:url(#a); stroke-linecap:round; stroke-linejoin:round; }
+      .lbl { font-family:Segoe UI,system-ui,sans-serif; font-size:11px; font-weight:700; fill:#111; }
+      .foot { font-family:Segoe UI,system-ui,sans-serif; font-size:11.5px; font-weight:600; fill:#3a3a3a; }
+    </style>
+  </defs>
+  <rect class="bg" width="560" height="360"/>
+
+  <text x="24" y="30" class="title">TWO SHELLS / SHARED GLOSSARY</text>
+
+  <rect class="out" x="24" y="48" width="248" height="236" rx="14"/>
+  <text x="40" y="74" class="cap">DESKTOP - LOCAL AI</text>
+  <rect class="b" x="48" y="90" width="200" height="48" rx="10"/>
+  <text x="148" y="112" text-anchor="middle" class="lab">Desktop UI</text>
+  <text x="148" y="128" text-anchor="middle" class="sub">Python / light UI</text>
+  <line class="line" x1="148" y1="138" x2="148" y2="164"/>
+  <rect class="b" x="48" y="164" width="200" height="48" rx="10"/>
+  <text x="148" y="186" text-anchor="middle" class="lab">Glossary filter</text>
+  <text x="148" y="202" text-anchor="middle" class="sub">terms kept untouched</text>
+  <line class="line" x1="148" y1="212" x2="148" y2="238"/>
+  <rect class="hi" x="48" y="238" width="200" height="36" rx="10"/>
+  <text x="148" y="261" text-anchor="middle" class="lab">Local LLM</text>
+
+  <rect class="out" x="288" y="48" width="248" height="236" rx="14"/>
+  <text x="304" y="74" class="cap">ANDROID - CLOUD LLM</text>
+  <rect class="b" x="312" y="90" width="200" height="48" rx="10"/>
+  <text x="412" y="112" text-anchor="middle" class="lab">Android UI</text>
+  <text x="412" y="128" text-anchor="middle" class="sub">Kotlin / portable</text>
+  <line class="line" x1="412" y1="138" x2="412" y2="164"/>
+  <rect class="b" x="312" y="164" width="200" height="48" rx="10"/>
+  <text x="412" y="186" text-anchor="middle" class="lab">Glossary filter</text>
+  <text x="412" y="202" text-anchor="middle" class="sub">same protected terms</text>
+  <line class="line" x1="412" y1="212" x2="412" y2="238"/>
+  <rect class="hi" x="312" y="238" width="200" height="36" rx="10"/>
+  <text x="412" y="261" text-anchor="middle" class="lab">Cloud LLM API</text>
+
+  <rect class="b" x="80" y="308" width="400" height="34" rx="8"/>
+  <text x="280" y="330" text-anchor="middle" class="foot">Glossary = list of terms that must stay unchanged</text>
+
+</svg>
