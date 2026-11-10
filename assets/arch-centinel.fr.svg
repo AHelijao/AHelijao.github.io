@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 440" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 500" role="img" aria-labelledby="t d">
   <title id="t">Architecture Centinel</title>
   <desc id="d">PDFs cyber alimentés hors-ligne pour spécialiser une IA cyber locale.</desc>
 <defs>
@@ -36,12 +36,17 @@
         stroke-dasharray: 9 11;
         animation: flow 1.05s linear infinite;
       }
+      .line.gate {
+        stroke-dasharray: 5 7;
+        animation: flow 1.2s linear infinite;
+      }
       .hi.pulse {
         animation: node-pulse 2.6s ease-in-out infinite;
       }
       .lbl.flow-lbl {
         animation: lbl-pulse 2.2s ease-in-out infinite;
       }
+      .chip { fill:#fff; stroke:#111; stroke-width:1.6; }
       .lbl { font-family:Segoe UI,system-ui,sans-serif; font-size:11px; font-weight:700; fill:#111; }
       .foot { font-family:Segoe UI,system-ui,sans-serif; font-size:11.5px; font-weight:600; fill:#3a3a3a; }
       @keyframes flow {
@@ -56,35 +61,36 @@
         50% { opacity: 1; }
       }
       @media (prefers-reduced-motion: reduce) {
-        .line, .line.ingest, .line.return, .line.stem, .hi.pulse, .lbl.flow-lbl { animation: none; }
-        .line, .line.ingest, .line.return, .line.stem { stroke-dasharray: none; }
+        .line, .line.ingest, .line.return, .line.stem, .line.gate, .hi.pulse, .lbl.flow-lbl { animation: none; }
+        .line, .line.ingest, .line.return, .line.stem, .line.gate { stroke-dasharray: none; }
       }
     </style>
   </defs>
-  <rect class="bg" width="560" height="440"/>
+  <rect class="bg" width="560" height="500"/>
 
-  <text x="24" y="32" class="title">IA CYBER LOCALE SPÉCIALISÉE</text>
-  <rect class="out" x="24" y="52" width="512" height="340" rx="14"/>
-  <text x="40" y="82" class="foot">Machine hors-ligne - les refs cyber ne sortent pas</text>
+  <text x="24" y="34" class="title">IA CYBER LOCALE SPÉCIALISÉE</text>
+  <rect class="out" x="24" y="56" width="512" height="390" rx="14"/>
+  <text x="40" y="88" class="foot">Machine hors-ligne - les refs cyber ne sortent pas</text>
 
-  <rect class="b" x="56" y="110" width="160" height="68" rx="10"/>
-  <text x="136" y="138" text-anchor="middle" class="lab">Corpus PDF cyber</text>
-  <text x="136" y="158" text-anchor="middle" class="sub">ISO / NIST / OWASP...</text>
+  <rect class="b" x="56" y="120" width="168" height="72" rx="10"/>
+  <text x="140" y="150" text-anchor="middle" class="lab">Corpus PDF cyber</text>
+  <text x="140" y="170" text-anchor="middle" class="sub">ISO / NIST / OWASP...</text>
 
-  <line class="line ingest" x1="216" y1="144" x2="258" y2="144"/>
-  <text x="218" y="132" class="lbl flow-lbl">alimentation manuelle</text>
+  <line class="line ingest" x1="224" y1="156" x2="268" y2="156"/>
+  <text x="226" y="144" class="lbl flow-lbl">alimentation manuelle</text>
 
-  <rect class="b" x="262" y="110" width="168" height="68" rx="10"/>
-  <text x="346" y="138" text-anchor="middle" class="lab">Spécialisation</text>
-  <text x="346" y="158" text-anchor="middle" class="sub">entraînement / ancrage</text>
+  <rect class="b" x="268" y="120" width="176" height="72" rx="10"/>
+  <text x="356" y="150" text-anchor="middle" class="lab">Spécialisation</text>
+  <text x="356" y="170" text-anchor="middle" class="sub">entraînement / ancrage</text>
 
-  <path class="line ingest" d="M346 178 V210 H280 V250"/>
+  <path class="line ingest" d="M356 192 V250 H280"/>
+  <line class="line ingest" x1="280" y1="250" x2="280" y2="292"/>
 
-  <rect class="hi pulse" x="150" y="250" width="260" height="96" rx="12"/>
-  <text x="280" y="284" text-anchor="middle" class="lab">Spécialiste IA cyber</text>
-  <text x="280" y="306" text-anchor="middle" class="sub">modèle local façonné pour le cyber</text>
-  <text x="280" y="326" text-anchor="middle" class="sub">réponses orientées méthodo</text>
+  <rect class="hi pulse" x="140" y="292" width="280" height="100" rx="12"/>
+  <text x="280" y="328" text-anchor="middle" class="lab">Spécialiste IA cyber</text>
+  <text x="280" y="350" text-anchor="middle" class="sub">modèle local façonné pour le cyber</text>
+  <text x="280" y="370" text-anchor="middle" class="sub">réponses orientées méthodo</text>
 
-  <text x="48" y="372" class="foot">Pas un chat générique sur des fichiers - un spécialiste cyber local.</text>
+  <text x="48" y="422" class="foot">Pas un chat générique sur des fichiers - un spécialiste cyber local.</text>
 
 </svg>

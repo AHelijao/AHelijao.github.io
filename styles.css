@@ -259,8 +259,8 @@ body {
   display: block;
   width: 100%;
   height: auto;
-  max-height: min(74vh, 34rem);
-  aspect-ratio: 560 / 440;
+  max-height: min(78vh, 38rem);
+  aspect-ratio: 560 / 500;
   object-fit: contain;
   object-position: center center;
   border: 0;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 440" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 500" role="img" aria-labelledby="t d">
   <title id="t">Ronin architecture</title>
   <desc id="d">Desktop uses local AI; Android calls a cloud LLM API. Shared glossary of protected terms.</desc>
 <defs>
@@ -36,12 +36,17 @@
         stroke-dasharray: 9 11;
         animation: flow 1.05s linear infinite;
       }
+      .line.gate {
+        stroke-dasharray: 5 7;
+        animation: flow 1.2s linear infinite;
+      }
       .hi.pulse {
         animation: node-pulse 2.6s ease-in-out infinite;
       }
       .lbl.flow-lbl {
         animation: lbl-pulse 2.2s ease-in-out infinite;
       }
+      .chip { fill:#fff; stroke:#111; stroke-width:1.6; }
       .lbl { font-family:Segoe UI,system-ui,sans-serif; font-size:11px; font-weight:700; fill:#111; }
       .foot { font-family:Segoe UI,system-ui,sans-serif; font-size:11.5px; font-weight:600; fill:#3a3a3a; }
       @keyframes flow {
@@ -56,42 +61,42 @@
         50% { opacity: 1; }
       }
       @media (prefers-reduced-motion: reduce) {
-        .line, .line.ingest, .line.return, .line.stem, .hi.pulse, .lbl.flow-lbl { animation: none; }
-        .line, .line.ingest, .line.return, .line.stem { stroke-dasharray: none; }
+        .line, .line.ingest, .line.return, .line.stem, .line.gate, .hi.pulse, .lbl.flow-lbl { animation: none; }
+        .line, .line.ingest, .line.return, .line.stem, .line.gate { stroke-dasharray: none; }
       }
     </style>
   </defs>
-  <rect class="bg" width="560" height="440"/>
+  <rect class="bg" width="560" height="500"/>
 
-  <text x="24" y="32" class="title">TWO SHELLS / SHARED GLOSSARY</text>
+  <text x="24" y="34" class="title">TWO SHELLS / SHARED GLOSSARY</text>
 
-  <rect class="out" x="24" y="52" width="248" height="300" rx="14"/>
-  <text x="40" y="80" class="cap">DESKTOP - LOCAL AI</text>
-  <rect class="b" x="48" y="98" width="200" height="52" rx="10"/>
-  <text x="148" y="122" text-anchor="middle" class="lab">Desktop UI</text>
-  <text x="148" y="140" text-anchor="middle" class="sub">Python / light UI</text>
-  <line class="line" x1="148" y1="150" x2="148" y2="186"/>
-  <rect class="b" x="48" y="186" width="200" height="52" rx="10"/>
-  <text x="148" y="210" text-anchor="middle" class="lab">Glossary filter</text>
-  <text x="148" y="228" text-anchor="middle" class="sub">terms kept untouched</text>
-  <line class="line" x1="148" y1="238" x2="148" y2="274"/>
-  <rect class="hi" x="48" y="274" width="200" height="48" rx="10"/>
-  <text x="148" y="304" text-anchor="middle" class="lab">Local LLM</text>
+  <rect class="out" x="24" y="56" width="248" height="350" rx="14"/>
+  <text x="40" y="86" class="cap">DESKTOP - LOCAL AI</text>
+  <rect class="b" x="48" y="106" width="200" height="56" rx="10"/>
+  <text x="148" y="132" text-anchor="middle" class="lab">Desktop UI</text>
+  <text x="148" y="150" text-anchor="middle" class="sub">Python / light UI</text>
+  <line class="line" x1="148" y1="162" x2="148" y2="208"/>
+  <rect class="b" x="48" y="208" width="200" height="56" rx="10"/>
+  <text x="148" y="234" text-anchor="middle" class="lab">Glossary filter</text>
+  <text x="148" y="252" text-anchor="middle" class="sub">terms kept untouched</text>
+  <line class="line" x1="148" y1="264" x2="148" y2="310"/>
+  <rect class="hi" x="48" y="310" width="200" height="56" rx="10"/>
+  <text x="148" y="344" text-anchor="middle" class="lab">Local LLM</text>
 
-  <rect class="out" x="288" y="52" width="248" height="300" rx="14"/>
-  <text x="304" y="80" class="cap">ANDROID - CLOUD LLM</text>
-  <rect class="b" x="312" y="98" width="200" height="52" rx="10"/>
-  <text x="412" y="122" text-anchor="middle" class="lab">Android UI</text>
-  <text x="412" y="140" text-anchor="middle" class="sub">Kotlin / portable</text>
-  <line class="line" x1="412" y1="150" x2="412" y2="186"/>
-  <rect class="b" x="312" y="186" width="200" height="52" rx="10"/>
-  <text x="412" y="210" text-anchor="middle" class="lab">Glossary filter</text>
-  <text x="412" y="228" text-anchor="middle" class="sub">same protected terms</text>
-  <line class="line" x1="412" y1="238" x2="412" y2="274"/>
-  <rect class="hi" x="312" y="274" width="200" height="48" rx="10"/>
-  <text x="412" y="304" text-anchor="middle" class="lab">Cloud LLM API</text>
+  <rect class="out" x="288" y="56" width="248" height="350" rx="14"/>
+  <text x="304" y="86" class="cap">ANDROID - CLOUD LLM</text>
+  <rect class="b" x="312" y="106" width="200" height="56" rx="10"/>
+  <text x="412" y="132" text-anchor="middle" class="lab">Android UI</text>
+  <text x="412" y="150" text-anchor="middle" class="sub">Kotlin / portable</text>
+  <line class="line" x1="412" y1="162" x2="412" y2="208"/>
+  <rect class="b" x="312" y="208" width="200" height="56" rx="10"/>
+  <text x="412" y="234" text-anchor="middle" class="lab">Glossary filter</text>
+  <text x="412" y="252" text-anchor="middle" class="sub">same protected terms</text>
+  <line class="line" x1="412" y1="264" x2="412" y2="310"/>
+  <rect class="hi" x="312" y="310" width="200" height="56" rx="10"/>
+  <text x="412" y="344" text-anchor="middle" class="lab">Cloud LLM API</text>
 
-  <rect class="b" x="80" y="374" width="400" height="36" rx="8"/>
-  <text x="280" y="397" text-anchor="middle" class="foot">Glossary = list of terms that must stay unchanged</text>
+  <rect class="b" x="80" y="430" width="400" height="38" rx="8"/>
+  <text x="280" y="454" text-anchor="middle" class="foot">Glossary = list of terms that must stay unchanged</text>
 
 </svg>

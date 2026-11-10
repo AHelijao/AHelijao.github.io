@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 440" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 500" role="img" aria-labelledby="t d">
   <title id="t">Architecture Repo Analyzer</title>
   <desc id="d">Flux IA complet avec n8n ; le worker scanne le code ; seul le rapport structuré atteint le modèle.</desc>
 <defs>
@@ -36,12 +36,17 @@
         stroke-dasharray: 9 11;
         animation: flow 1.05s linear infinite;
       }
+      .line.gate {
+        stroke-dasharray: 5 7;
+        animation: flow 1.2s linear infinite;
+      }
       .hi.pulse {
         animation: node-pulse 2.6s ease-in-out infinite;
       }
       .lbl.flow-lbl {
         animation: lbl-pulse 2.2s ease-in-out infinite;
       }
+      .chip { fill:#fff; stroke:#111; stroke-width:1.6; }
       .lbl { font-family:Segoe UI,system-ui,sans-serif; font-size:11px; font-weight:700; fill:#111; }
       .foot { font-family:Segoe UI,system-ui,sans-serif; font-size:11.5px; font-weight:600; fill:#3a3a3a; }
       @keyframes flow {
@@ -56,43 +61,43 @@
         50% { opacity: 1; }
       }
       @media (prefers-reduced-motion: reduce) {
-        .line, .line.ingest, .line.return, .line.stem, .hi.pulse, .lbl.flow-lbl { animation: none; }
-        .line, .line.ingest, .line.return, .line.stem { stroke-dasharray: none; }
+        .line, .line.ingest, .line.return, .line.stem, .line.gate, .hi.pulse, .lbl.flow-lbl { animation: none; }
+        .line, .line.ingest, .line.return, .line.stem, .line.gate { stroke-dasharray: none; }
       }
     </style>
   </defs>
-  <rect class="bg" width="560" height="440"/>
+  <rect class="bg" width="560" height="500"/>
 
-  <text x="24" y="32" class="title">FLUX IA COMPLET + N8N</text>
+  <text x="24" y="34" class="title">FLUX IA COMPLET + N8N</text>
 
-  <rect class="b" x="170" y="56" width="220" height="48" rx="10"/>
-  <text x="280" y="78" text-anchor="middle" class="lab">Opérateur</text>
-  <text x="280" y="94" text-anchor="middle" class="sub">demande à l'IA de scanner un dépôt</text>
-  <line class="line" x1="280" y1="104" x2="280" y2="132"/>
+  <rect class="b" x="170" y="60" width="220" height="52" rx="10"/>
+  <text x="280" y="84" text-anchor="middle" class="lab">Opérateur</text>
+  <text x="280" y="100" text-anchor="middle" class="sub">demande à l'IA de scanner un dépôt</text>
+  <line class="line" x1="280" y1="112" x2="280" y2="148"/>
 
-  <rect class="hi" x="150" y="132" width="260" height="56" rx="10"/>
-  <text x="280" y="158" text-anchor="middle" class="lab">IA orchestratrice</text>
-  <text x="280" y="176" text-anchor="middle" class="sub">chemin conversationnel full IA</text>
+  <rect class="hi" x="150" y="148" width="260" height="60" rx="10"/>
+  <text x="280" y="176" text-anchor="middle" class="lab">IA orchestratrice</text>
+  <text x="280" y="194" text-anchor="middle" class="sub">chemin conversationnel full IA</text>
 
-  <line class="line" x1="280" y1="188" x2="280" y2="218"/>
-  <text x="292" y="210" class="lbl">workflow n8n</text>
+  <line class="line" x1="280" y1="208" x2="280" y2="248"/>
+  <text x="292" y="236" class="lbl">workflow n8n</text>
 
-  <rect class="b" x="150" y="218" width="260" height="54" rx="10"/>
-  <text x="280" y="242" text-anchor="middle" class="lab">Automatisation n8n</text>
-  <text x="280" y="260" text-anchor="middle" class="sub">relie l'IA aux étapes d'analyse</text>
+  <rect class="b" x="150" y="248" width="260" height="56" rx="10"/>
+  <text x="280" y="274" text-anchor="middle" class="lab">Automatisation n8n</text>
+  <text x="280" y="292" text-anchor="middle" class="sub">relie l'IA aux étapes d'analyse</text>
 
-  <line class="line stem" x1="280" y1="272" x2="280" y2="348"/>
-  <path class="line ingest" d="M280 348 H262"/>
-  <path class="line return" d="M280 348 H298"/>
+  <line class="line stem" x1="280" y1="304" x2="280" y2="348"/>
+  <path class="line ingest" d="M280 348 H147 V372"/>
+  <path class="line return" d="M280 348 H413 V372"/>
 
-  <rect class="b" x="32" y="322" width="230" height="56" rx="10"/>
-  <text x="147" y="348" text-anchor="middle" class="lab">Worker d'analyse</text>
-  <text x="147" y="366" text-anchor="middle" class="sub">scanne le code / construit le rapport</text>
+  <rect class="b" x="32" y="372" width="230" height="60" rx="10"/>
+  <text x="147" y="400" text-anchor="middle" class="lab">Worker d'analyse</text>
+  <text x="147" y="418" text-anchor="middle" class="sub">scanne le code / construit le rapport</text>
 
-  <rect class="hi pulse" x="298" y="322" width="230" height="56" rx="10"/>
-  <text x="413" y="348" text-anchor="middle" class="lab">Rapport structuré</text>
-  <text x="413" y="366" text-anchor="middle" class="sub">seul ceci atteint l'IA</text>
+  <rect class="hi pulse" x="298" y="372" width="230" height="60" rx="10"/>
+  <text x="413" y="400" text-anchor="middle" class="lab">Rapport structuré</text>
+  <text x="413" y="418" text-anchor="middle" class="sub">seul ceci atteint l'IA</text>
 
-  <text x="24" y="416" class="foot">Vue client : l'IA scanne le code. Le modèle ne voit jamais l'arbre source brut.</text>
+  <text x="24" y="470" class="foot">Vue client : l'IA scanne le code. Le modèle ne voit jamais l'arbre source brut.</text>
 
 </svg>

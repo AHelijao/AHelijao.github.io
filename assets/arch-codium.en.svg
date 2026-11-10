@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 440" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 500" role="img" aria-labelledby="t d">
   <title id="t">Codium Red architecture</title>
   <desc id="d">Intelligence plane plans; Kali pentest engine executes; human approves, reviews, controls.</desc>
 <defs>
@@ -36,12 +36,17 @@
         stroke-dasharray: 9 11;
         animation: flow 1.05s linear infinite;
       }
+      .line.gate {
+        stroke-dasharray: 5 7;
+        animation: flow 1.2s linear infinite;
+      }
       .hi.pulse {
         animation: node-pulse 2.6s ease-in-out infinite;
       }
       .lbl.flow-lbl {
         animation: lbl-pulse 2.2s ease-in-out infinite;
       }
+      .chip { fill:#fff; stroke:#111; stroke-width:1.6; }
       .lbl { font-family:Segoe UI,system-ui,sans-serif; font-size:11px; font-weight:700; fill:#111; }
       .foot { font-family:Segoe UI,system-ui,sans-serif; font-size:11.5px; font-weight:600; fill:#3a3a3a; }
       @keyframes flow {
@@ -56,43 +61,52 @@
         50% { opacity: 1; }
       }
       @media (prefers-reduced-motion: reduce) {
-        .line, .line.ingest, .line.return, .line.stem, .hi.pulse, .lbl.flow-lbl { animation: none; }
-        .line, .line.ingest, .line.return, .line.stem { stroke-dasharray: none; }
+        .line, .line.ingest, .line.return, .line.stem, .line.gate, .hi.pulse, .lbl.flow-lbl { animation: none; }
+        .line, .line.ingest, .line.return, .line.stem, .line.gate { stroke-dasharray: none; }
       }
     </style>
   </defs>
-  <rect class="bg" width="560" height="440"/>
+  <rect class="bg" width="560" height="500"/>
 
-  <text x="24" y="32" class="title">PLANES + FULL HUMAN CONTROL</text>
+  <text x="24" y="34" class="title">PLANES + FULL HUMAN CONTROL</text>
 
-  <rect class="hi" x="400" y="56" width="136" height="312" rx="12"/>
-  <text x="468" y="96" text-anchor="middle" class="lab">Human</text>
-  <text x="468" y="118" text-anchor="middle" class="lab">in the loop</text>
-  <text x="468" y="160" text-anchor="middle" class="sub">approves</text>
-  <text x="468" y="184" text-anchor="middle" class="sub">reviews</text>
-  <text x="468" y="208" text-anchor="middle" class="sub">controls</text>
-  <text x="468" y="248" text-anchor="middle" class="lbl">every step</text>
-  <text x="468" y="288" text-anchor="middle" class="sub">agent never</text>
-  <text x="468" y="310" text-anchor="middle" class="sub">acts alone</text>
+  <rect class="plane" x="24" y="64" width="340" height="130" rx="14"/>
+  <text x="40" y="92" class="cap">INTELLIGENCE PLANE</text>
+  <rect class="b" x="44" y="108" width="140" height="60" rx="10"/>
+  <text x="114" y="134" text-anchor="middle" class="lab">Agentic planner</text>
+  <text x="114" y="152" text-anchor="middle" class="sub">structure / next steps</text>
+  <rect class="b" x="200" y="108" width="140" height="60" rx="10"/>
+  <text x="270" y="134" text-anchor="middle" class="lab">Reports / method</text>
+  <text x="270" y="152" text-anchor="middle" class="sub">OWASP-oriented</text>
 
-  <rect class="plane" x="24" y="56" width="352" height="120" rx="14"/>
-  <text x="40" y="84" class="cap">INTELLIGENCE PLANE</text>
-  <rect class="b" x="44" y="100" width="148" height="54" rx="10"/>
-  <text x="118" y="124" text-anchor="middle" class="lab">Agentic planner</text>
-  <text x="118" y="142" text-anchor="middle" class="sub">structure / next steps</text>
-  <rect class="b" x="208" y="100" width="148" height="54" rx="10"/>
-  <text x="282" y="124" text-anchor="middle" class="lab">Reports / method</text>
-  <text x="282" y="142" text-anchor="middle" class="sub">OWASP-oriented</text>
+  <line class="line" x1="194" y1="194" x2="194" y2="246"/>
+  <text x="206" y="228" class="lbl">gated command bridge</text>
 
-  <line class="line" x1="200" y1="176" x2="200" y2="220"/>
-  <text x="212" y="206" class="lbl">gated command bridge</text>
+  <rect class="plane" x="24" y="246" width="340" height="150" rx="14"/>
+  <text x="40" y="276" class="cap">EXECUTION PLANE</text>
+  <rect class="hi" x="44" y="294" width="300" height="76" rx="10"/>
+  <text x="194" y="328" text-anchor="middle" class="lab">Kali pentest engine</text>
+  <text x="194" y="348" text-anchor="middle" class="sub">isolated execution environment</text>
 
-  <rect class="plane" x="24" y="220" width="352" height="148" rx="14"/>
-  <text x="40" y="248" class="cap">EXECUTION PLANE</text>
-  <rect class="hi" x="44" y="268" width="312" height="72" rx="10"/>
-  <text x="200" y="300" text-anchor="middle" class="lab">Kali pentest engine</text>
-  <text x="200" y="322" text-anchor="middle" class="sub">isolated execution environment</text>
+  <rect class="hi pulse" x="388" y="64" width="148" height="332" rx="14"/>
+  <text x="462" y="96" text-anchor="middle" class="cap">HUMAN</text>
+  <text x="462" y="116" text-anchor="middle" class="lab">in the loop</text>
 
-  <text x="24" y="408" class="foot">Human gates planning and execution. No unsupervised offensive actions.</text>
+  <rect class="chip" x="404" y="140" width="116" height="36" rx="8"/>
+  <text x="462" y="163" text-anchor="middle" class="lbl">approves</text>
+  <rect class="chip" x="404" y="188" width="116" height="36" rx="8"/>
+  <text x="462" y="211" text-anchor="middle" class="lbl">reviews</text>
+  <rect class="chip" x="404" y="236" width="116" height="36" rx="8"/>
+  <text x="462" y="259" text-anchor="middle" class="lbl">controls</text>
+
+  <text x="462" y="308" text-anchor="middle" class="sub">every step</text>
+  <text x="462" y="330" text-anchor="middle" class="sub">agent never</text>
+  <text x="462" y="348" text-anchor="middle" class="sub">acts alone</text>
+  <text x="462" y="374" text-anchor="middle" class="lbl flow-lbl">gates both planes</text>
+
+  <path class="line gate" d="M388 158 H364"/>
+  <path class="line gate" d="M388 332 H364"/>
+
+  <text x="24" y="460" class="foot">Human gates planning and execution. No unsupervised offensive actions.</text>
 
 </svg>
