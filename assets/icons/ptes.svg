@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="PTES">
+  <path fill="#1a1a1a" d="M32 4 58 19v26L32 60 6 45V19L32 4zm0 6.2L12 21.1v21.8L32 53.8l20-10.9V21.1L32 10.2z"/>
+  <text x="32" y="37" text-anchor="middle" font-family="Segoe UI,system-ui,sans-serif" font-size="12" font-weight="700" fill="#1a1a1a">PTES</text>
+</svg>

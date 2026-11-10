@@ -98,18 +98,22 @@
   <text x="280" y="562" text-anchor="middle" class="sub">Isolated execution behind the IDE</text>
 
   <rect class="chip" x="72" y="580" width="196" height="56" rx="8"/>
-  <text x="170" y="604" text-anchor="middle" class="lbl">Kali CLI + Tools</text>
-  <text x="170" y="622" text-anchor="middle" class="sub">Pentest toolkit</text>
+  <image href="assets/icons/kalilinux.svg" x="84" y="598" width="16" height="16" preserveAspectRatio="xMidYMid meet"/>
+  <text x="178" y="604" text-anchor="middle" class="lbl">Kali CLI + Tools</text>
+  <text x="178" y="622" text-anchor="middle" class="sub">Pentest toolkit</text>
   <rect class="chip" x="292" y="580" width="196" height="56" rx="8"/>
-  <text x="390" y="604" text-anchor="middle" class="lbl">Python Playground</text>
-  <text x="390" y="622" text-anchor="middle" class="sub">AI writes &amp; runs code</text>
+  <image href="assets/icons/python.svg" x="304" y="598" width="16" height="16" preserveAspectRatio="xMidYMid meet"/>
+  <text x="398" y="604" text-anchor="middle" class="lbl">Python Playground</text>
+  <text x="398" y="622" text-anchor="middle" class="sub">AI writes &amp; runs code</text>
 
   <rect class="chip" x="72" y="652" width="196" height="56" rx="8"/>
-  <text x="170" y="676" text-anchor="middle" class="lbl">HTTP Server</text>
-  <text x="170" y="694" text-anchor="middle" class="sub">Stand up listeners</text>
+  <image href="assets/icons/https.svg" x="84" y="670" width="16" height="16" preserveAspectRatio="xMidYMid meet"/>
+  <text x="178" y="676" text-anchor="middle" class="lbl">HTTPS Server</text>
+  <text x="178" y="694" text-anchor="middle" class="sub">Stand up listeners</text>
   <rect class="chip" x="292" y="652" width="196" height="56" rx="8"/>
-  <text x="390" y="676" text-anchor="middle" class="lbl">Stealth VPN</text>
-  <text x="390" y="694" text-anchor="middle" class="sub">Quiet path to target</text>
+  <image href="assets/icons/openvpn.svg" x="304" y="670" width="16" height="16" preserveAspectRatio="xMidYMid meet"/>
+  <text x="398" y="676" text-anchor="middle" class="lbl">OpenVPN</text>
+  <text x="398" y="694" text-anchor="middle" class="sub">Quiet path to target</text>
 
   <line class="line ingest" x1="280" y1="760" x2="280" y2="830"/>
   <text x="300" y="802" class="lbl flow-lbl">Connect · Code · Assess</text>

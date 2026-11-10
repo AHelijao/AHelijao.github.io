@@ -418,13 +418,29 @@ h2 {
 }
 
 .meta span {
-  padding: 0.28rem 0.7rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.28rem 0.7rem 0.28rem 0.55rem;
   border-radius: 999px;
   border: 1px solid var(--line);
   background: var(--eggshell);
   font-size: 0.75rem;
   font-weight: 500;
   color: var(--muted);
+}
+
+.meta span:not([data-icon]) {
+  padding-left: 0.7rem;
+}
+
+.meta .meta-icon {
+  width: 0.9rem;
+  height: 0.9rem;
+  flex: 0 0 auto;
+  display: block;
+  object-fit: contain;
+  opacity: 0.88;
 }
 
 .soon {

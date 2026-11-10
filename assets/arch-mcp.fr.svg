@@ -98,6 +98,7 @@
   <text x="72" y="546" class="cap">AWS · EXÉCUTION MOINDRE PRIVILÈGE</text>
 
   <rect class="hi pulse" x="80" y="566" width="400" height="48" rx="10"/>
+  <image href="assets/icons/amazonwebservices.svg" x="96" y="578" width="16" height="16" preserveAspectRatio="xMidYMid meet"/>
   <text x="280" y="588" text-anchor="middle" class="lab">Rôle IAM via IRSA</text>
   <text x="280" y="606" text-anchor="middle" class="sub">Rôle pod / task — écriture S3 bornée, pas de clés longues</text>
 

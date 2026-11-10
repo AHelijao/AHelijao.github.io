@@ -80,7 +80,7 @@ window.I18N = {
     "codium.chapter": "Chapitre VI · Plan & isolement",
     "codium.lede": "Un assistant pentest IA dans l’IDE — moteur Kali local, chaque action sous approbation humaine.",
     "codium.body":
-      "L’idée : un IDE type Cursor, branché à une IA, pour engager une appli web. Derrière, un moteur conteneur isolé — Kali en CLI avec outils pentest, playground Python vide, serveur HTTP, VPN discret. L’IA s’en sert pour se connecter à la cible, lever un serveur, écrire son propre code Python, enchaîner l’engagement.",
+      "L’idée : un IDE type Cursor, branché à une IA, pour engager une appli web. Derrière, un moteur conteneur isolé — Kali en CLI avec outils pentest, playground Python vide, serveur HTTPS, OpenVPN. L’IA s’en sert pour se connecter à la cible, lever un serveur, écrire son propre code Python, enchaîner l’engagement.",
     "codium.body2":
       "L’agent est borné : restrictions + dictionnaire méthodo nourri de PTES, MITRE ATT&CK et CVE. Chaque action attend l’approbation du pentester. En fin de run : un rapport de findings. Le moteur est local d’abord, intégrable en cloud. La vitrine reste méthodo et architecture — volontairement sans exploits.",
     "codium.hr":
@@ -177,7 +177,7 @@ window.I18N = {
     "codium.chapter": "Chapter VI · Plan & isolation",
     "codium.lede": "An AI pentest assistant in the IDE — local Kali engine, every action under human approval.",
     "codium.body":
-      "The idea: a Cursor-like IDE wired to an AI, aimed at any web app. Behind it, an isolated container engine — Kali CLI with pentest tools, an empty Python playground, an HTTP server, a stealth VPN. The AI uses that engine to reach the target, stand up a server, write its own Python, and run the engagement.",
+      "The idea: a Cursor-like IDE wired to an AI, aimed at any web app. Behind it, an isolated container engine — Kali CLI with pentest tools, an empty Python playground, an HTTPS server, OpenVPN. The AI uses that engine to reach the target, stand up a server, write its own Python, and run the engagement.",
     "codium.body2":
       "The agent is bounded: restrictions plus a methodology dictionary fed with PTES, MITRE ATT&CK, and CVE docs. Every action waits for the pentester’s approval. When the run finishes: a findings report. The engine is local first, cloud-integrable. The public showcase stays methodology and architecture — on purpose, with no exploits.",
     "codium.hr":

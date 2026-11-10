@@ -74,6 +74,14 @@ DEFS = """
 """.strip()
 
 
+def ico(slug: str, x: float, y: float, s: float = 16) -> str:
+    """Local stack logo for architecture SVGs (path relative to site root)."""
+    return (
+        f'<image href="assets/icons/{slug}.svg" x="{x}" y="{y}" '
+        f'width="{s}" height="{s}" preserveAspectRatio="xMidYMid meet"/>'
+    )
+
+
 def save(stem: str, lang: str, body: str, title: str, desc: str, vh: int | None = None) -> None:
     h = vh if vh is not None else VH
     svg = f"""<?xml version="1.0" encoding="UTF-8"?>
@@ -109,6 +117,9 @@ save(
   <text x="300" y="182" class="lbl flow-lbl">Grounds the Lock</text>
 
   <rect class="b" x="100" y="210" width="360" height="64" rx="12"/>
+  """
+    + ico("python", 118, 228, 18)
+    + """
   <text x="280" y="238" text-anchor="middle" class="lab">Desktop UI</text>
   <text x="280" y="258" text-anchor="middle" class="sub">Written in Python</text>
 
@@ -121,12 +132,18 @@ save(
   <line class="line" x1="280" y1="408" x2="280" y2="478"/>
 
   <rect class="b" x="100" y="478" width="360" height="64" rx="12"/>
+  """
+    + ico("fastapi", 118, 496, 18)
+    + """
   <text x="280" y="506" text-anchor="middle" class="lab">FastAPI Bridge</text>
   <text x="280" y="526" text-anchor="middle" class="sub">Low-latency translate call</text>
 
   <line class="line" x1="280" y1="542" x2="280" y2="612"/>
 
   <rect class="hi" x="100" y="612" width="360" height="52" rx="12"/>
+  """
+    + ico("ollama", 118, 628, 18)
+    + """
   <text x="280" y="644" text-anchor="middle" class="lab">Local LLM</text>
 
   <rect class="b" x="100" y="680" width="360" height="28" rx="8"/>
@@ -153,6 +170,9 @@ save(
   <text x="300" y="182" class="lbl flow-lbl">Ancre le Verrou</text>
 
   <rect class="b" x="100" y="210" width="360" height="64" rx="12"/>
+  """
+    + ico("python", 118, 228, 18)
+    + """
   <text x="280" y="238" text-anchor="middle" class="lab">Interface Desktop</text>
   <text x="280" y="258" text-anchor="middle" class="sub">Écrite en Python</text>
 
@@ -165,12 +185,18 @@ save(
   <line class="line" x1="280" y1="408" x2="280" y2="478"/>
 
   <rect class="b" x="100" y="478" width="360" height="64" rx="12"/>
+  """
+    + ico("fastapi", 118, 496, 18)
+    + """
   <text x="280" y="506" text-anchor="middle" class="lab">Pont FastAPI</text>
   <text x="280" y="526" text-anchor="middle" class="sub">Appel traduction rapide</text>
 
   <line class="line" x1="280" y1="542" x2="280" y2="612"/>
 
   <rect class="hi" x="100" y="612" width="360" height="52" rx="12"/>
+  """
+    + ico("ollama", 118, 628, 18)
+    + """
   <text x="280" y="644" text-anchor="middle" class="lab">LLM Local</text>
 
   <rect class="b" x="100" y="680" width="360" height="28" rx="8"/>
@@ -192,6 +218,10 @@ save(
   <text x="24" y="48" class="foot">Not RAG over PDFs — full training on the frameworks</text>
 
   <rect class="b" x="100" y="64" width="360" height="56" rx="12"/>
+  """
+    + ico("huggingface", 118, 78, 18)
+    + ico("qwen", 142, 78, 18)
+    + """
   <text x="280" y="90" text-anchor="middle" class="lab">Hugging Face Base</text>
   <text x="280" y="108" text-anchor="middle" class="sub">Abliterated Qwen3</text>
 
@@ -214,6 +244,9 @@ save(
   <text x="280" y="436" text-anchor="middle" class="lab">Prepare Dataset</text>
   <line class="line" x1="280" y1="454" x2="280" y2="524"/>
   <rect class="b" x="100" y="524" width="360" height="48" rx="10"/>
+  """
+    + ico("googlecolab", 118, 538, 16)
+    + """
   <text x="280" y="554" text-anchor="middle" class="lab">Fine-Tune (Unsloth + LoRA/SFT)</text>
   <line class="line" x1="280" y1="572" x2="280" y2="642"/>
   <rect class="b" x="100" y="642" width="360" height="48" rx="10"/>
@@ -243,6 +276,10 @@ save(
   <text x="24" y="48" class="foot">Pas du RAG sur des PDF — entraînement complet sur les référentiels</text>
 
   <rect class="b" x="100" y="64" width="360" height="56" rx="12"/>
+  """
+    + ico("huggingface", 118, 78, 18)
+    + ico("qwen", 142, 78, 18)
+    + """
   <text x="280" y="90" text-anchor="middle" class="lab">Base Hugging Face</text>
   <text x="280" y="108" text-anchor="middle" class="sub">Abliterated Qwen3</text>
 
@@ -265,6 +302,9 @@ save(
   <text x="280" y="436" text-anchor="middle" class="lab">Préparer le Dataset</text>
   <line class="line" x1="280" y1="454" x2="280" y2="524"/>
   <rect class="b" x="100" y="524" width="360" height="48" rx="10"/>
+  """
+    + ico("googlecolab", 118, 538, 16)
+    + """
   <text x="280" y="554" text-anchor="middle" class="lab">Fine-Tune (Unsloth + LoRA/SFT)</text>
   <line class="line" x1="280" y1="572" x2="280" y2="642"/>
   <rect class="b" x="100" y="642" width="360" height="48" rx="10"/>
@@ -302,6 +342,9 @@ save(
   <line class="line" x1="280" y1="116" x2="280" y2="186"/>
 
   <rect class="hi" x="120" y="186" width="320" height="68" rx="12"/>
+  """
+    + ico("amazonwebservices", 140, 208, 18)
+    + """
   <text x="280" y="216" text-anchor="middle" class="lab">Amazon Connect + Lex</text>
   <text x="280" y="236" text-anchor="middle" class="sub">Shared Contact-Center Baseline</text>
 
@@ -354,6 +397,9 @@ save(
   <line class="line" x1="280" y1="116" x2="280" y2="186"/>
 
   <rect class="hi" x="120" y="186" width="320" height="68" rx="12"/>
+  """
+    + ico("amazonwebservices", 140, 208, 18)
+    + """
   <text x="280" y="216" text-anchor="middle" class="lab">Amazon Connect + Lex</text>
   <text x="280" y="236" text-anchor="middle" class="sub">Socle Contact Center Partagé</text>
 
@@ -430,6 +476,9 @@ save(
   <text x="72" y="546" class="cap">AWS · LEAST-PRIVILEGE EXECUTION</text>
 
   <rect class="hi pulse" x="80" y="566" width="400" height="48" rx="10"/>
+  """
+    + ico("amazonwebservices", 96, 578, 16)
+    + """
   <text x="280" y="588" text-anchor="middle" class="lab">IAM Role via IRSA</text>
   <text x="280" y="606" text-anchor="middle" class="sub">Pod / task role — scoped S3 write, no long-lived keys</text>
 
@@ -487,6 +536,9 @@ save(
   <text x="72" y="546" class="cap">AWS · EXÉCUTION MOINDRE PRIVILÈGE</text>
 
   <rect class="hi pulse" x="80" y="566" width="400" height="48" rx="10"/>
+  """
+    + ico("amazonwebservices", 96, 578, 16)
+    + """
   <text x="280" y="588" text-anchor="middle" class="lab">Rôle IAM via IRSA</text>
   <text x="280" y="606" text-anchor="middle" class="sub">Rôle pod / task — écriture S3 bornée, pas de clés longues</text>
 
@@ -696,18 +748,30 @@ save(
   <text x="280" y="562" text-anchor="middle" class="sub">Isolated execution behind the IDE</text>
 
   <rect class="chip" x="72" y="580" width="196" height="56" rx="8"/>
-  <text x="170" y="604" text-anchor="middle" class="lbl">Kali CLI + Tools</text>
-  <text x="170" y="622" text-anchor="middle" class="sub">Pentest toolkit</text>
+  """
+    + ico("kalilinux", 84, 598, 16)
+    + """
+  <text x="178" y="604" text-anchor="middle" class="lbl">Kali CLI + Tools</text>
+  <text x="178" y="622" text-anchor="middle" class="sub">Pentest toolkit</text>
   <rect class="chip" x="292" y="580" width="196" height="56" rx="8"/>
-  <text x="390" y="604" text-anchor="middle" class="lbl">Python Playground</text>
-  <text x="390" y="622" text-anchor="middle" class="sub">AI writes &amp; runs code</text>
+  """
+    + ico("python", 304, 598, 16)
+    + """
+  <text x="398" y="604" text-anchor="middle" class="lbl">Python Playground</text>
+  <text x="398" y="622" text-anchor="middle" class="sub">AI writes &amp; runs code</text>
 
   <rect class="chip" x="72" y="652" width="196" height="56" rx="8"/>
-  <text x="170" y="676" text-anchor="middle" class="lbl">HTTP Server</text>
-  <text x="170" y="694" text-anchor="middle" class="sub">Stand up listeners</text>
+  """
+    + ico("https", 84, 670, 16)
+    + """
+  <text x="178" y="676" text-anchor="middle" class="lbl">HTTPS Server</text>
+  <text x="178" y="694" text-anchor="middle" class="sub">Stand up listeners</text>
   <rect class="chip" x="292" y="652" width="196" height="56" rx="8"/>
-  <text x="390" y="676" text-anchor="middle" class="lbl">Stealth VPN</text>
-  <text x="390" y="694" text-anchor="middle" class="sub">Quiet path to target</text>
+  """
+    + ico("openvpn", 304, 670, 16)
+    + """
+  <text x="398" y="676" text-anchor="middle" class="lbl">OpenVPN</text>
+  <text x="398" y="694" text-anchor="middle" class="sub">Quiet path to target</text>
 
   <line class="line ingest" x1="280" y1="760" x2="280" y2="830"/>
   <text x="300" y="802" class="lbl flow-lbl">Connect · Code · Assess</text>
@@ -761,18 +825,30 @@ save(
   <text x="280" y="562" text-anchor="middle" class="sub">Exécution isolée derrière l'IDE</text>
 
   <rect class="chip" x="72" y="580" width="196" height="56" rx="8"/>
-  <text x="170" y="604" text-anchor="middle" class="lbl">Kali CLI + Outils</text>
-  <text x="170" y="622" text-anchor="middle" class="sub">Boîte à outils pentest</text>
+  """
+    + ico("kalilinux", 84, 598, 16)
+    + """
+  <text x="178" y="604" text-anchor="middle" class="lbl">Kali CLI + Outils</text>
+  <text x="178" y="622" text-anchor="middle" class="sub">Boîte à outils pentest</text>
   <rect class="chip" x="292" y="580" width="196" height="56" rx="8"/>
-  <text x="390" y="604" text-anchor="middle" class="lbl">Playground Python</text>
-  <text x="390" y="622" text-anchor="middle" class="sub">L'IA écrit &amp; exécute</text>
+  """
+    + ico("python", 304, 598, 16)
+    + """
+  <text x="398" y="604" text-anchor="middle" class="lbl">Playground Python</text>
+  <text x="398" y="622" text-anchor="middle" class="sub">L'IA écrit &amp; exécute</text>
 
   <rect class="chip" x="72" y="652" width="196" height="56" rx="8"/>
-  <text x="170" y="676" text-anchor="middle" class="lbl">Serveur HTTP</text>
-  <text x="170" y="694" text-anchor="middle" class="sub">Lève des listeners</text>
+  """
+    + ico("https", 84, 670, 16)
+    + """
+  <text x="178" y="676" text-anchor="middle" class="lbl">Serveur HTTPS</text>
+  <text x="178" y="694" text-anchor="middle" class="sub">Lève des listeners</text>
   <rect class="chip" x="292" y="652" width="196" height="56" rx="8"/>
-  <text x="390" y="676" text-anchor="middle" class="lbl">VPN Discret</text>
-  <text x="390" y="694" text-anchor="middle" class="sub">Chemin calme vers la cible</text>
+  """
+    + ico("openvpn", 304, 670, 16)
+    + """
+  <text x="398" y="676" text-anchor="middle" class="lbl">OpenVPN</text>
+  <text x="398" y="694" text-anchor="middle" class="sub">Chemin calme vers la cible</text>
 
   <line class="line ingest" x1="280" y1="760" x2="280" y2="830"/>
   <text x="300" y="802" class="lbl flow-lbl">Connecter · Coder · Évaluer</text>

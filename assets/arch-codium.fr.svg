@@ -98,18 +98,22 @@
   <text x="280" y="562" text-anchor="middle" class="sub">Exécution isolée derrière l'IDE</text>
 
   <rect class="chip" x="72" y="580" width="196" height="56" rx="8"/>
-  <text x="170" y="604" text-anchor="middle" class="lbl">Kali CLI + Outils</text>
-  <text x="170" y="622" text-anchor="middle" class="sub">Boîte à outils pentest</text>
+  <image href="assets/icons/kalilinux.svg" x="84" y="598" width="16" height="16" preserveAspectRatio="xMidYMid meet"/>
+  <text x="178" y="604" text-anchor="middle" class="lbl">Kali CLI + Outils</text>
+  <text x="178" y="622" text-anchor="middle" class="sub">Boîte à outils pentest</text>
   <rect class="chip" x="292" y="580" width="196" height="56" rx="8"/>
-  <text x="390" y="604" text-anchor="middle" class="lbl">Playground Python</text>
-  <text x="390" y="622" text-anchor="middle" class="sub">L'IA écrit &amp; exécute</text>
+  <image href="assets/icons/python.svg" x="304" y="598" width="16" height="16" preserveAspectRatio="xMidYMid meet"/>
+  <text x="398" y="604" text-anchor="middle" class="lbl">Playground Python</text>
+  <text x="398" y="622" text-anchor="middle" class="sub">L'IA écrit &amp; exécute</text>
 
   <rect class="chip" x="72" y="652" width="196" height="56" rx="8"/>
-  <text x="170" y="676" text-anchor="middle" class="lbl">Serveur HTTP</text>
-  <text x="170" y="694" text-anchor="middle" class="sub">Lève des listeners</text>
+  <image href="assets/icons/https.svg" x="84" y="670" width="16" height="16" preserveAspectRatio="xMidYMid meet"/>
+  <text x="178" y="676" text-anchor="middle" class="lbl">Serveur HTTPS</text>
+  <text x="178" y="694" text-anchor="middle" class="sub">Lève des listeners</text>
   <rect class="chip" x="292" y="652" width="196" height="56" rx="8"/>
-  <text x="390" y="676" text-anchor="middle" class="lbl">VPN Discret</text>
-  <text x="390" y="694" text-anchor="middle" class="sub">Chemin calme vers la cible</text>
+  <image href="assets/icons/openvpn.svg" x="304" y="670" width="16" height="16" preserveAspectRatio="xMidYMid meet"/>
+  <text x="398" y="676" text-anchor="middle" class="lbl">OpenVPN</text>
+  <text x="398" y="694" text-anchor="middle" class="sub">Chemin calme vers la cible</text>
 
   <line class="line ingest" x1="280" y1="760" x2="280" y2="830"/>
   <text x="300" y="802" class="lbl flow-lbl">Connecter · Coder · Évaluer</text>

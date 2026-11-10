@@ -7,7 +7,7 @@ const edgeNext = document.getElementById("edgeNext");
 const langBtns = [...document.querySelectorAll(".lang [data-lang]")];
 
 /** Cache-bust for architecture SVGs (keep in sync with index.html). */
-const ARCH_VER = "20261110iam1";
+const ARCH_VER = "20261110icons5";
 /** Inlined SVG text by URL — CSS @keyframes do not run inside <img>. */
 const archSvgCache = new Map();
 
@@ -115,13 +115,50 @@ async function loadArchDiagrams(archLang) {
   );
 }
 
+/** Pin slugs that moved between Simple Icons releases. */
+const ICON_SI_VER = {
+  amazonwebservices: "v13",
+};
+
+/** Stack logos for meta pills. Text label stays. Local: data-icon="local:ptes" */
+function enhanceMetaIcons() {
+  document.querySelectorAll(".meta [data-icon]").forEach((el) => {
+    const slug = el.getAttribute("data-icon");
+    if (!slug || el.querySelector(".meta-icon")) return;
+    const img = document.createElement("img");
+    img.className = "meta-icon";
+    img.alt = "";
+    img.width = 14;
+    img.height = 14;
+    img.decoding = "async";
+    img.loading = "lazy";
+    if (slug.startsWith("local:")) {
+      img.src = `assets/icons/${slug.slice(6)}.svg?v=${ARCH_VER}`;
+    } else {
+      const ver = ICON_SI_VER[slug] || "v16";
+      img.src = `https://cdn.jsdelivr.net/npm/simple-icons@${ver}/icons/${encodeURIComponent(slug)}.svg`;
+    }
+    img.addEventListener(
+      "error",
+      () => {
+        img.remove();
+      },
+      { once: true }
+    );
+    el.insertBefore(img, el.firstChild);
+  });
+}
+
 function applyLang() {
   document.documentElement.lang = lang;
   localStorage.setItem("portfolio-lang", lang);
 
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n") || "";
+    // Keep logo <img> when refreshing i18n text on tagged pills
+    const icon = el.querySelector(".meta-icon");
     el.textContent = t(key);
+    if (icon) el.insertBefore(icon, el.firstChild);
   });
   document.querySelectorAll("[data-i18n-html]").forEach((el) => {
     el.innerHTML = t(el.getAttribute("data-i18n-html") || "");
@@ -132,6 +169,8 @@ function applyLang() {
   document.querySelectorAll("[data-i18n-content]").forEach((el) => {
     el.setAttribute("content", t(el.getAttribute("data-i18n-content") || ""));
   });
+
+  enhanceMetaIcons();
 
   const archLang = lang === "fr" ? "fr" : "en";
   loadArchDiagrams(archLang);
