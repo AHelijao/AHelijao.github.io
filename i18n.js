@@ -40,14 +40,14 @@ window.I18N = {
       "Au fond, c’est la première marche du portfolio : prouver qu’on sait sortir un vrai petit produit, avec une règle métier simple mais non négociable, et le faire vivre sur plus d’une plateforme.",
     "ronin.tag": "Glossaire JSON",
     "arch.caption": "Architecture",
-    "centinel.chapter": "Chapitre II · Mémoire locale",
-    "centinel.lede": "Une mémoire cyber qui reste sur la machine — pour préparer sans exposer.",
+    "centinel.chapter": "Chapitre II · Modèle spécialisé",
+    "centinel.lede": "Une IA cyber entraînée sur les référentiels — pas un chat générique sur des PDF.",
     "centinel.body":
-      "Avant une mission, on a besoin d’interroger vite des référentiels denses — ISO, DORA, RGPD, NIST, OWASP, PTES — sans envoyer des documents sensibles dans un LLM public. Et une réponse en mur de texte ne sert presque à rien sur le terrain : il faut quelque chose qu’on peut suivre.",
+      "Avant une mission, on a besoin d’interroger vite des référentiels denses — ISO, DORA, RGPD, NIST, OWASP, PTES — sans dépendre d’un LLM public qui n’a pas ces cadres en tête. Un mur de texte ne sert presque à rien sur le terrain : il faut quelque chose qu’on peut suivre.",
     "centinel.body2":
-      "Centinel indexe ces PDF en local, les interroge en langage naturel via un modèle offline, et structure les réponses méthodo en phases. Les règles de conformité et les guides d’exécution restent distingués pour que la restitution reste lisible.",
+      "J’ai pris une base Abliterated Qwen3 sur Hugging Face, puis un notebook Google Colab avec Unsloth pour tout le pipeline d’entraînement — préparer le dataset, fine-tune (LoRA/SFT), éval / export — sur le corpus de refs cyber. En sortie : un modèle local spécialisé sur ces référentiels, avec des réponses orientées méthodo.",
     "centinel.hr":
-      "C’est le moment où l’outil devient un système de connaissance : utile au métier cyber, avec la contrainte offline comme point de départ, pas comme détail après coup.",
+      "C’est le moment où l’outil devient un vrai spécialiste : les refs sont le point, pas un add-on — utile au métier cyber, prêt mission.",
     "voice.chapter": "Chapitre III · Voix & GenAI",
     "voice.lede": "Quand le parcours téléphonique ne suffit plus, et que la GenAI doit s’y greffer sans tout casser.",
     "voice.body":
@@ -55,7 +55,7 @@ window.I18N = {
     "voice.body2":
       "J’ai travaillé une couche GenAI additive sur AWS (Lambda, mémoire courte de conversation, Bedrock), branchée sur le bot existant plutôt que de le remplacer d’un bloc. Terraform, environnements séparés, staging : on peut comparer, reculer, avancer sans brûler le canal.",
     "voice.hr":
-      "Ce chapitre montre surtout une modernisation raisonnable d’un canal client vocal — GenAI cloud, mais respect de l’existant et de la livraison industrialisée.",
+      "Contrainte non négociable : aucun accès aux données personnelles — expliquer et guider seulement, isolé du bot scripté live. GenAI cloud, mais bornée, et livrée sans brûler le canal.",
     "mcp.chapter": "Chapitre IV · Agents qui livrent",
     "mcp.lede": "Faire produire un PPT, un Word, un Excel — pas seulement une belle phrase.",
     "mcp.body":
@@ -63,27 +63,31 @@ window.I18N = {
     "mcp.body2":
       "Un serveur MCP (FastMCP) expose la génération Office ; l’agent choisit l’outil, le document est construit, déposé en stockage objet, renvoyé via une URL signée. Le service se déploie en conteneur, à côté de la plateforme d’agents, sans coller tout le monde sur une machine unique.",
     "mcp.hr":
-      "C’est le basculement net : l’agent ne se contente plus de parler, il produit quelque chose qu’on peut envoyer à un client ou à un manager.",
+      "Sécurité côté OpenWebUI (session / auth), puis URL signée bornée : seul l’utilisateur qui a demandé le fichier peut le télécharger. L’agent ne parle plus seulement — il livre.",
     "analyzer.chapter": "Chapitre V · Scan & distance",
-    "analyzer.lede": "Lire un dépôt pour la qualité et la sécu — sans le verser entier dans le modèle.",
+    "analyzer.lede": "Qualifier un dépôt — qualité et posture sécu — sans le verser entier dans le modèle.",
     "analyzer.body":
-      "Dès qu’on parle de dette, de qualité ou de posture de sécurité sur un code, la tentation est d’envoyer tout le dépôt à un LLM. C’est cher, bruyant, et risqué. Ce qu’il faut, c’est un regard synthétique : un rapport sur lequel un humain — ou un agent — peut raisonner.",
+      "Dès qu’on parle dette, qualité ou posture de sécurité sur un code, la tentation est d’envoyer tout le dépôt à un LLM. C’est cher, bruyant, et risqué. Ce qu’il faut : un regard synthétique. L’utilisateur arrive depuis n’importe quel chat (OWUI, local, cloud) avec un lien GitHub, GitLab ou Bitbucket ; n8n + l’IA câblent le job.",
     "analyzer.body2":
-      "Un worker clone et parse le dépôt (Tree-sitter), expose une API, écrit un rapport structuré. L’orchestrateur IA ne voit que ce rapport, pas le source brut. Le tout se conteneurise et se déploie comme un service (Docker / EKS).",
+      "Le MCP prend le relais : Tree-sitter lit l’arbre du code, puis descend niveau par niveau. On peut trancher dans le temps — début de projet, +2 mois, +1 an — et scorer la qualité via la complexité cyclomatique, avec des signaux sécurité. Seule une Spec sheet structurée revient au chat : ce qu’est le projet, utile pour un développeur.",
     "analyzer.hr":
-      "L’idée à retenir : faire travailler l’IA là où elle orchestre, et garder l’exécution bornée — surtout quand le sujet, c’est le code de l’entreprise.",
+      "L’idée à retenir : l’IA orchestre, le MCP exécute, le source reste hors du modèle. La Spec sheet est le contrat — pas un dump de dépôt.",
     "codium.chapter": "Chapitre VI · Plan & isolement",
-    "codium.lede": "Accélérer la structure d’un pentest sans lâcher la main à un agent offensif.",
+    "codium.lede": "Un assistant pentest IA dans l’IDE — moteur Kali local, chaque action sous approbation humaine.",
     "codium.body":
-      "En cybersécurité offensive, on gagne du temps sur le plan, les notes, la forme des findings — mais on ne délègue pas le jugement. Personne ne veut d’un agent qui « pirate tout seul » sur le poste du quotidien.",
+      "L’idée : un IDE type Cursor, branché à une IA, pour engager une appli web. Derrière, un moteur conteneur isolé — Kali en CLI avec outils pentest, playground Python vide, serveur HTTP, VPN discret. L’IA s’en sert pour se connecter à la cible, lever un serveur, écrire son propre code Python, enchaîner l’engagement.",
     "codium.body2":
-      "L’architecture sépare volontairement deux plans : l’intelligence (l’agent qui aide à structurer) et l’exécution (outils en conteneurs, scanners type ZAP), reliés par un pont contrôlé, dans une logique OWASP. Ici, la vitrine reste méthodo et architecture — volontairement sans exploits.",
+      "L’agent est borné : restrictions + dictionnaire méthodo nourri de PTES, MITRE ATT&CK et CVE. Chaque action attend l’approbation du pentester. En fin de run : un rapport de findings. Le moteur est local d’abord, intégrable en cloud. La vitrine reste méthodo et architecture — volontairement sans exploits.",
     "codium.hr":
-      "Dernière marche du fil : montrer que l’IA et la cyber peuvent se croiser avec discipline — isolation, humain dans la boucle, pas de spectacle offensif.",
-    "close.chapter": "Fin",
-    "close.title": "EOF — à vous.",
-    "close.body":
-      "Les agents agissent. Les humains décident. Si ce fil build × cyber vous parle, écrivez-moi.",
+      "Dernière marche : IDE + IA planifient, le conteneur exécute, l’humain garde la main — isolation, pas de spectacle offensif.",
+    "close.chapter": "Contact",
+    "close.title": "On en parle.",
+    "close.p1":
+      "Vous venez de parcourir six projets — du desktop local aux agents, du cloud GenAI au pentest assisté. Le fil commun : construire des systèmes utiles, et les border dès le design.",
+    "close.p2":
+      "Je cherche des missions et des équipes où software engineering et cybersécurité se croisent vraiment — AppSec, agents GenAI bornés, infra cloud, méthodo offensive avec un humain dans la boucle.",
+    "close.p3":
+      "Un poste, une collab, une question sur un projet : écrivez-moi. Les vitrines GitHub sont sanitizées ; le détail et le code, on en discute directement.",
     "soon.link": "Vitrine GitHub (sans code source) →",
     "soon.linkMethod": "Vitrine méthodo GitHub (sans exploits) →",
   },
@@ -128,14 +132,14 @@ window.I18N = {
       "In the end this is the first step of the portfolio: show that I can ship a real small product, with one simple non-negotiable rule, and carry it across more than one platform.",
     "ronin.tag": "JSON glossary",
     "arch.caption": "Architecture",
-    "centinel.chapter": "Chapter II · Local memory",
-    "centinel.lede": "Cyber memory that stays on the machine — prepare without exposing.",
+    "centinel.chapter": "Chapter II · Specialized model",
+    "centinel.lede": "A cyber AI trained on the frameworks — not generic chat over PDFs.",
     "centinel.body":
-      "Before a mission you need to query dense frameworks quickly — ISO, DORA, GDPR, NIST, OWASP, PTES — without pushing sensitive documents into a public LLM. And a wall of text barely helps in the field: you need something you can follow.",
+      "Before a mission you need to query dense frameworks quickly — ISO, DORA, GDPR, NIST, OWASP, PTES — without depending on a public LLM that doesn’t really know those refs. A wall of text barely helps in the field: you need something you can follow.",
     "centinel.body2":
-      "Centinel indexes those PDFs locally, answers in natural language through an offline model, and shapes methodology answers into phases. Compliance rules and execution guides stay distinct so the output stays readable.",
+      "I pulled an Abliterated Qwen3 base from Hugging Face, then ran a Google Colab notebook with Unsloth for the full training pipeline — prepare dataset, fine-tune (LoRA/SFT), eval / export — on the cyber refs corpus. The output is a local model specialized on those frameworks, with methodology-aware answers.",
     "centinel.hr":
-      "This is where a tool becomes a knowledge system: useful for cyber work, with offline as the starting constraint, not a late add-on.",
+      "This is where the tool becomes a real specialist: the refs are the point, not an add-on — useful for cyber work, mission-ready.",
     "voice.chapter": "Chapter III · Voice & GenAI",
     "voice.lede": "When a phone journey isn’t enough, and GenAI has to plug in without breaking it.",
     "voice.body":
@@ -143,7 +147,7 @@ window.I18N = {
     "voice.body2":
       "I worked an additive GenAI layer on AWS (Lambda, short conversation memory, Bedrock), attached to the existing bot instead of replacing it overnight. Terraform, separated environments, staging: you can compare, roll back, move forward without burning the channel.",
     "voice.hr":
-      "This chapter is mainly about a reasonable modernization of a voice customer channel — cloud GenAI, but respect for what already runs and how you ship it.",
+      "Non-negotiable constraint: no personal-data access — explain and guide only, isolated from the live scripted bot. Cloud GenAI, but bounded, shipped without burning the channel.",
     "mcp.chapter": "Chapter IV · Agents that deliver",
     "mcp.lede": "Make the chat produce a deck, a Word file, a spreadsheet — not only a nice sentence.",
     "mcp.body":
@@ -151,27 +155,31 @@ window.I18N = {
     "mcp.body2":
       "An MCP server (FastMCP) exposes Office generation; the agent picks the tool, the document is built, stored in object storage, returned as a signed URL. The service deploys in a container next to the agent platform, instead of living on one laptop.",
     "mcp.hr":
-      "That’s the clear shift: the agent doesn’t only talk — it produces something you can send to a client or a manager.",
+      "OpenWebUI security (session / auth), then a scoped presigned URL: only the user who requested the file can download it. The agent doesn’t only talk — it delivers.",
     "analyzer.chapter": "Chapter V · Scan & distance",
-    "analyzer.lede": "Read a repository for quality and security — without pouring it all into the model.",
+    "analyzer.lede": "Qualify a repository — quality and security posture — without pouring it into the model.",
     "analyzer.body":
-      "When the topic is debt, quality, or security posture on a codebase, the temptation is to dump the whole repo into an LLM. That’s costly, noisy, and risky. What you want is a synthetic view: a report a human — or an agent — can reason over.",
+      "When the topic is debt, quality, or security posture on a codebase, the temptation is to dump the whole repo into an LLM. That’s costly, noisy, and risky. What you want is a synthetic view. The user comes from whatever chat they already use (OWUI, local, cloud) with a GitHub, GitLab, or Bitbucket link; n8n + AI wire the job.",
     "analyzer.body2":
-      "A worker clones and parses the repo (Tree-sitter), exposes an API, writes a structured report. The AI orchestrator only sees that report, not raw source. It containerizes and deploys like a service (Docker / EKS).",
+      "MCP takes over: Tree-sitter reads the code tree first, then drills level by level. Scans can be sliced in time — project start, +2 months, +1 year — and quality scored with cyclomatic complexity plus security-relevant signals. Only a structured Spec sheet returns to the chat: what this project is, something a developer can use.",
     "analyzer.hr":
-      "The takeaway: let AI orchestrate, keep execution bounded — especially when the subject is the company’s own code.",
+      "The takeaway: AI orchestrates, MCP executes, source stays out of the model. The Spec sheet is the contract — not a raw dump of the repo.",
     "codium.chapter": "Chapter VI · Plan & isolation",
-    "codium.lede": "Speed up pentest structure without handing the keys to an offensive agent.",
+    "codium.lede": "An AI pentest assistant in the IDE — local Kali engine, every action under human approval.",
     "codium.body":
-      "In offensive security you can save time on the plan, the notes, the shape of findings — but you don’t outsource judgment. Nobody wants an agent that “hacks alone” on the daily workstation.",
+      "The idea: a Cursor-like IDE wired to an AI, aimed at any web app. Behind it, an isolated container engine — Kali CLI with pentest tools, an empty Python playground, an HTTP server, a stealth VPN. The AI uses that engine to reach the target, stand up a server, write its own Python, and run the engagement.",
     "codium.body2":
-      "The architecture deliberately splits two planes: intelligence (the agent that helps structure) and execution (tools in containers, scanners such as ZAP), linked by a controlled bridge, in an OWASP mindset. The public showcase stays methodology and architecture — on purpose, with no exploits.",
+      "The agent is bounded: restrictions plus a methodology dictionary fed with PTES, MITRE ATT&CK, and CVE docs. Every action waits for the pentester’s approval. When the run finishes: a findings report. The engine is local first, cloud-integrable. The public showcase stays methodology and architecture — on purpose, with no exploits.",
     "codium.hr":
-      "Last step in the thread: show that AI and cyber can meet with discipline — isolation, human in the loop, no offensive theatre.",
-    "close.chapter": "End",
-    "close.title": "EOF — your move.",
-    "close.body":
-      "Agents act. Humans decide. If this build × cyber thread lands, write me.",
+      "Last step: IDE + AI plan, the container executes, the human keeps the keys — isolation, no offensive theatre.",
+    "close.chapter": "Contact",
+    "close.title": "Let’s talk.",
+    "close.p1":
+      "You’ve just walked six projects — from local desktop tools to agents, cloud GenAI to AI-assisted pentest. The common thread: build systems that are useful, and bound them in the design.",
+    "close.p2":
+      "I’m looking for missions and teams where software engineering and cybersecurity actually meet — AppSec, bounded GenAI agents, cloud infra, offensive methodology with a human in the loop.",
+    "close.p3":
+      "A role, a collab, a question on a project: write me. The GitHub showcases are sanitized; depth and source are a conversation, not a public dump.",
     "soon.link": "GitHub showcase (no source) →",
     "soon.linkMethod": "Method showcase on GitHub (no exploits) →",
   },

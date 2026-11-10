@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 500" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 820" role="img" aria-labelledby="t d">
   <title id="t">GenAI Voice Assist architecture</title>
-  <desc id="d">Shared Connect+Lex baseline with Connect-native and custom Lambda GenAI prototypes.</desc>
+  <desc id="d">Shared Connect+Lex baseline, two GenAI prototypes, hard AI restrictions: no personal-data access.</desc>
 <defs>
     <marker id="a" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="10" markerHeight="10" orient="auto-start-reverse">
       <path d="M1 1 L11 6 L1 11 Z" fill="#111"/>
@@ -18,27 +18,27 @@
       .sub { font-family:Segoe UI,system-ui,sans-serif; font-size:11.5px; font-weight:500; fill:#3a3a3a; }
       .cap { font-family:Segoe UI,system-ui,sans-serif; font-size:11px; font-weight:800; letter-spacing:0.12em; fill:#111; }
       .line {
-        stroke:#111; stroke-width:2.2; fill:none; marker-end:url(#a);
+        stroke:#111; stroke-width:2.8; fill:none; marker-end:url(#a);
         stroke-linecap:round; stroke-linejoin:round;
-        stroke-dasharray:9 11;
-        animation: flow 1.05s linear infinite;
+        stroke-dasharray:8 18;
+        animation: flow 1.35s linear infinite;
       }
       .line.ingest {
-        stroke-dasharray: 4 16;
-        animation: flow 1.7s linear infinite;
+        stroke-dasharray: 6 20;
+        animation: flow 1.55s linear infinite;
       }
       .line.return {
-        stroke-dasharray: 10 8;
-        animation: flow 0.85s linear infinite;
+        stroke-dasharray: 10 16;
+        animation: flow 1.15s linear infinite;
       }
       .line.stem {
         marker-end: none;
-        stroke-dasharray: 9 11;
-        animation: flow 1.05s linear infinite;
+        stroke-dasharray: 8 18;
+        animation: flow 1.35s linear infinite;
       }
       .line.gate {
-        stroke-dasharray: 5 7;
-        animation: flow 1.2s linear infinite;
+        stroke-dasharray: 6 14;
+        animation: flow 1.4s linear infinite;
       }
       .hi.pulse {
         animation: node-pulse 2.6s ease-in-out infinite;
@@ -50,7 +50,7 @@
       .lbl { font-family:Segoe UI,system-ui,sans-serif; font-size:11px; font-weight:700; fill:#111; }
       .foot { font-family:Segoe UI,system-ui,sans-serif; font-size:11.5px; font-weight:600; fill:#3a3a3a; }
       @keyframes flow {
-        to { stroke-dashoffset: -20; }
+        to { stroke-dashoffset: -52; }
       }
       @keyframes node-pulse {
         0%, 100% { stroke-width: 2.4; }
@@ -66,35 +66,49 @@
       }
     </style>
   </defs>
-  <rect class="bg" width="560" height="500"/>
+  <rect class="bg" width="560" height="820"/>
 
-  <text x="24" y="34" class="title">ONE BASELINE / TWO GENAI PROTOTYPES</text>
+  <text x="24" y="28" class="title">ONE BASELINE / TWO GENAI PROTOTYPES</text>
+  <text x="24" y="48" class="foot">Same entry — GenAI attaches without rewriting the parcours</text>
 
-  <rect class="b" x="200" y="60" width="160" height="44" rx="10"/>
-  <text x="280" y="88" text-anchor="middle" class="lab">Caller</text>
-  <line class="line" x1="280" y1="104" x2="280" y2="140"/>
+  <rect class="b" x="190" y="68" width="180" height="48" rx="12"/>
+  <text x="280" y="98" text-anchor="middle" class="lab">Caller</text>
 
-  <rect class="hi" x="140" y="140" width="280" height="60" rx="10"/>
-  <text x="280" y="168" text-anchor="middle" class="lab">Amazon Connect + Lex</text>
-  <text x="280" y="186" text-anchor="middle" class="sub">shared contact-center baseline</text>
+  <line class="line" x1="280" y1="116" x2="280" y2="186"/>
 
-  <path class="line" d="M200 200 V230 H148 V262"/>
-  <path class="line" d="M360 200 V230 H412 V262"/>
+  <rect class="hi" x="120" y="186" width="320" height="68" rx="12"/>
+  <text x="280" y="216" text-anchor="middle" class="lab">Amazon Connect + Lex</text>
+  <text x="280" y="236" text-anchor="middle" class="sub">Shared Contact-Center Baseline</text>
 
-  <rect class="out" x="36" y="262" width="224" height="168" rx="12"/>
-  <text x="52" y="292" class="cap">PROTOTYPE A</text>
-  <rect class="hi" x="52" y="308" width="192" height="100" rx="10"/>
-  <text x="148" y="344" text-anchor="middle" class="lab">Connect-native GenAI</text>
-  <text x="148" y="366" text-anchor="middle" class="sub">GenAI inside Connect</text>
-  <text x="148" y="386" text-anchor="middle" class="sub">native conversation path</text>
+  <path class="line" d="M200 254 V330 H148 V400"/>
+  <path class="line" d="M360 254 V330 H412 V400"/>
+  <text x="280" y="318" text-anchor="middle" class="lbl flow-lbl">Fork GenAI Attach</text>
 
-  <rect class="out" x="300" y="262" width="224" height="168" rx="12"/>
-  <text x="316" y="292" class="cap">PROTOTYPE B</text>
-  <rect class="hi" x="316" y="308" width="192" height="100" rx="10"/>
-  <text x="412" y="344" text-anchor="middle" class="lab">Custom Lambda GenAI</text>
-  <text x="412" y="366" text-anchor="middle" class="sub">Lambda brain + memory</text>
-  <text x="412" y="386" text-anchor="middle" class="sub">Bedrock / managed LLM</text>
+  <rect class="out" x="28" y="400" width="240" height="168" rx="14"/>
+  <text x="44" y="428" class="cap">PROTOTYPE A</text>
+  <rect class="hi" x="48" y="444" width="200" height="104" rx="12"/>
+  <text x="148" y="484" text-anchor="middle" class="lab">Connect-native GenAI</text>
+  <text x="148" y="508" text-anchor="middle" class="sub">GenAI inside Connect</text>
+  <text x="148" y="528" text-anchor="middle" class="sub">Native conversation path</text>
 
-  <text x="24" y="468" class="foot">Same entry. Two ways to attach GenAI without rewriting the parcours.</text>
+  <rect class="out" x="292" y="400" width="240" height="168" rx="14"/>
+  <text x="308" y="428" class="cap">PROTOTYPE B</text>
+  <rect class="hi" x="312" y="444" width="200" height="104" rx="12"/>
+  <text x="412" y="484" text-anchor="middle" class="lab">Custom Lambda GenAI</text>
+  <text x="412" y="508" text-anchor="middle" class="sub">Lambda Brain + Memory</text>
+  <text x="412" y="528" text-anchor="middle" class="sub">Bedrock / Managed LLM</text>
+
+  <path class="line" d="M148 568 V620"/>
+  <path class="line" d="M412 568 V620"/>
+  <text x="280" y="602" text-anchor="middle" class="lbl flow-lbl">Both Bound By</text>
+
+  <rect class="hi pulse" x="28" y="620" width="504" height="100" rx="14"/>
+  <text x="280" y="650" text-anchor="middle" class="cap">AI RESTRICTIONS · HARD LOCK</text>
+  <text x="280" y="676" text-anchor="middle" class="lab">No Personal Data Access</text>
+  <text x="280" y="698" text-anchor="middle" class="sub">Explain / guide only · no data files · isolated from live scripted bot</text>
+
+  <rect class="b" x="28" y="744" width="504" height="52" rx="10"/>
+  <text x="280" y="766" text-anchor="middle" class="foot">Connect+Lex stays; GenAI plugs in as A or B — privacy constraint is non-negotiable</text>
+  <text x="280" y="784" text-anchor="middle" class="foot">Staging / Terraform isolation so the live channel is never burned</text>
 
 </svg>

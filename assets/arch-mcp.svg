@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 500" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 820" role="img" aria-labelledby="t d">
   <title id="t">MCP Office Machine architecture</title>
-  <desc id="d">MCP between OpenWebUI and AWS; auth-scoped presigned URL returns to the OpenWebUI entry.</desc>
+  <desc id="d">Secured OpenWebUI chat → MCP Office tools → Bedrock/S3 in AWS → user-scoped presigned URL back to the OWUI entry.</desc>
 <defs>
     <marker id="a" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="10" markerHeight="10" orient="auto-start-reverse">
       <path d="M1 1 L11 6 L1 11 Z" fill="#111"/>
@@ -18,27 +18,27 @@
       .sub { font-family:Segoe UI,system-ui,sans-serif; font-size:11.5px; font-weight:500; fill:#3a3a3a; }
       .cap { font-family:Segoe UI,system-ui,sans-serif; font-size:11px; font-weight:800; letter-spacing:0.12em; fill:#111; }
       .line {
-        stroke:#111; stroke-width:2.2; fill:none; marker-end:url(#a);
+        stroke:#111; stroke-width:2.8; fill:none; marker-end:url(#a);
         stroke-linecap:round; stroke-linejoin:round;
-        stroke-dasharray:9 11;
-        animation: flow 1.05s linear infinite;
+        stroke-dasharray:8 18;
+        animation: flow 1.35s linear infinite;
       }
       .line.ingest {
-        stroke-dasharray: 4 16;
-        animation: flow 1.7s linear infinite;
+        stroke-dasharray: 6 20;
+        animation: flow 1.55s linear infinite;
       }
       .line.return {
-        stroke-dasharray: 10 8;
-        animation: flow 0.85s linear infinite;
+        stroke-dasharray: 10 16;
+        animation: flow 1.15s linear infinite;
       }
       .line.stem {
         marker-end: none;
-        stroke-dasharray: 9 11;
-        animation: flow 1.05s linear infinite;
+        stroke-dasharray: 8 18;
+        animation: flow 1.35s linear infinite;
       }
       .line.gate {
-        stroke-dasharray: 5 7;
-        animation: flow 1.2s linear infinite;
+        stroke-dasharray: 6 14;
+        animation: flow 1.4s linear infinite;
       }
       .hi.pulse {
         animation: node-pulse 2.6s ease-in-out infinite;
@@ -50,7 +50,7 @@
       .lbl { font-family:Segoe UI,system-ui,sans-serif; font-size:11px; font-weight:700; fill:#111; }
       .foot { font-family:Segoe UI,system-ui,sans-serif; font-size:11.5px; font-weight:600; fill:#3a3a3a; }
       @keyframes flow {
-        to { stroke-dashoffset: -20; }
+        to { stroke-dashoffset: -52; }
       }
       @keyframes node-pulse {
         0%, 100% { stroke-width: 2.4; }
@@ -66,34 +66,49 @@
       }
     </style>
   </defs>
-  <rect class="bg" width="560" height="500"/>
+  <rect class="bg" width="560" height="820"/>
 
-  <text x="24" y="34" class="title">OPENWEBUI - MCP - AWS</text>
+  <text x="24" y="28" class="title">OPENWEBUI · MCP · AWS</text>
+  <text x="24" y="48" class="foot">Chat asks for a PPT — agent acts via MCP, Bedrock works in AWS, file returns to the same entry</text>
 
-  <rect class="hi pulse" x="32" y="120" width="132" height="88" rx="10"/>
-  <text x="98" y="154" text-anchor="middle" class="lab">OpenWebUI</text>
-  <text x="98" y="174" text-anchor="middle" class="sub">user prompt / chat</text>
-  <text x="98" y="192" text-anchor="middle" class="sub">+ download result</text>
-  <line class="line" x1="164" y1="164" x2="206" y2="164"/>
+  <rect class="b" x="120" y="68" width="320" height="52" rx="12"/>
+  <text x="280" y="92" text-anchor="middle" class="lab">User Chat Request</text>
+  <text x="280" y="110" text-anchor="middle" class="sub">e.g. “Generate a PPT…”</text>
 
-  <rect class="hi pulse" x="210" y="108" width="132" height="112" rx="10"/>
-  <text x="276" y="148" text-anchor="middle" class="lab">MCP layer</text>
-  <text x="276" y="170" text-anchor="middle" class="sub">Office tools</text>
-  <text x="276" y="190" text-anchor="middle" class="sub">pptx / docx / xlsx</text>
-  <line class="line" x1="342" y1="164" x2="386" y2="164"/>
+  <line class="line" x1="280" y1="120" x2="280" y2="178"/>
 
-  <rect class="cloud" x="390" y="80" width="140" height="220" rx="12"/>
-  <text x="408" y="110" class="cap">AWS</text>
-  <rect class="b" x="408" y="128" width="104" height="42" rx="8"/>
-  <text x="460" y="155" text-anchor="middle" class="lab">Bedrock</text>
-  <rect class="b" x="408" y="182" width="104" height="42" rx="8"/>
-  <text x="460" y="209" text-anchor="middle" class="lab">S3</text>
-  <rect class="b" x="408" y="236" width="104" height="36" rx="8"/>
-  <text x="460" y="259" text-anchor="middle" class="sub">+ other services</text>
+  <rect class="hi pulse" x="88" y="178" width="384" height="112" rx="14"/>
+  <text x="280" y="210" text-anchor="middle" class="cap">OPENWEBUI · SECURED ENTRY</text>
+  <text x="280" y="236" text-anchor="middle" class="lab">Auth / Session-Bound Chat</text>
+  <text x="280" y="258" text-anchor="middle" class="sub">Only the signed-in user reaches this flow</text>
+  <text x="280" y="276" text-anchor="middle" class="sub">Download lands back here — same chat entry</text>
 
-  <path class="line return" d="M460 300 V360 H98 V208"/>
-  <text x="280" y="348" text-anchor="middle" class="lbl flow-lbl">presigned URL (auth-scoped) → back to chat</text>
+  <line class="line" x1="280" y1="290" x2="280" y2="360"/>
+  <text x="300" y="332" class="lbl flow-lbl">Agent Thinks → Calls Tools</text>
 
-  <text x="32" y="420" class="foot">MCP sits between chat UI and AWS - result returns in the same OpenWebUI entry.</text>
+  <rect class="hi" x="100" y="360" width="360" height="80" rx="12"/>
+  <text x="280" y="388" text-anchor="middle" class="lab">MCP Layer (FastMCP)</text>
+  <text x="280" y="410" text-anchor="middle" class="sub">Office tools — pptx / docx / xlsx</text>
+  <text x="280" y="428" text-anchor="middle" class="sub">Orchestrates generation outside the chat</text>
+
+  <line class="line ingest" x1="280" y1="440" x2="280" y2="510"/>
+  <text x="300" y="482" class="lbl flow-lbl">Into AWS</text>
+
+  <rect class="cloud" x="88" y="510" width="384" height="148" rx="14"/>
+  <text x="104" y="538" class="cap">AWS ENVIRONMENT</text>
+  <rect class="b" x="112" y="556" width="160" height="72" rx="10"/>
+  <text x="192" y="586" text-anchor="middle" class="lab">Bedrock</text>
+  <text x="192" y="608" text-anchor="middle" class="sub">AI reasoning / gen</text>
+  <rect class="b" x="292" y="556" width="160" height="72" rx="10"/>
+  <text x="372" y="586" text-anchor="middle" class="lab">S3</text>
+  <text x="372" y="608" text-anchor="middle" class="sub">Store Office file</text>
+
+  <path class="line return" d="M280 658 V720 H40 V234 H88"/>
+  <text x="56" y="470" class="lbl flow-lbl" transform="rotate(-90 56 470)">Presigned URL → OWUI Entry</text>
+  <text x="200" y="744" text-anchor="middle" class="sub">User-scoped — only that requester can download</text>
+
+  <rect class="b" x="100" y="748" width="360" height="48" rx="10"/>
+  <text x="280" y="770" text-anchor="middle" class="foot">OWUI security + per-user presigned URL</text>
+  <text x="280" y="786" text-anchor="middle" class="foot">Same chat entry · bounded delivery</text>
 
 </svg>

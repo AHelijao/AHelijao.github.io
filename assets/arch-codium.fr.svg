@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 500" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 1080" role="img" aria-labelledby="t d">
   <title id="t">Architecture Codium Red</title>
-  <desc id="d">Plan d'intelligence ; moteur pentest Kali ; humain dans la boucle mis en avant sous le schéma.</desc>
+  <desc id="d">IDE avec assistant IA, base méthodo, porte d'approbation humaine, moteur conteneur Kali avec Python/HTTP/VPN, rapport de findings.</desc>
 <defs>
     <marker id="a" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="10" markerHeight="10" orient="auto-start-reverse">
       <path d="M1 1 L11 6 L1 11 Z" fill="#111"/>
@@ -18,27 +18,27 @@
       .sub { font-family:Segoe UI,system-ui,sans-serif; font-size:11.5px; font-weight:500; fill:#3a3a3a; }
       .cap { font-family:Segoe UI,system-ui,sans-serif; font-size:11px; font-weight:800; letter-spacing:0.12em; fill:#111; }
       .line {
-        stroke:#111; stroke-width:2.2; fill:none; marker-end:url(#a);
+        stroke:#111; stroke-width:2.8; fill:none; marker-end:url(#a);
         stroke-linecap:round; stroke-linejoin:round;
-        stroke-dasharray:9 11;
-        animation: flow 1.05s linear infinite;
+        stroke-dasharray:8 18;
+        animation: flow 1.35s linear infinite;
       }
       .line.ingest {
-        stroke-dasharray: 4 16;
-        animation: flow 1.7s linear infinite;
+        stroke-dasharray: 6 20;
+        animation: flow 1.55s linear infinite;
       }
       .line.return {
-        stroke-dasharray: 10 8;
-        animation: flow 0.85s linear infinite;
+        stroke-dasharray: 10 16;
+        animation: flow 1.15s linear infinite;
       }
       .line.stem {
         marker-end: none;
-        stroke-dasharray: 9 11;
-        animation: flow 1.05s linear infinite;
+        stroke-dasharray: 8 18;
+        animation: flow 1.35s linear infinite;
       }
       .line.gate {
-        stroke-dasharray: 5 7;
-        animation: flow 1.2s linear infinite;
+        stroke-dasharray: 6 14;
+        animation: flow 1.4s linear infinite;
       }
       .hi.pulse {
         animation: node-pulse 2.6s ease-in-out infinite;
@@ -50,7 +50,7 @@
       .lbl { font-family:Segoe UI,system-ui,sans-serif; font-size:11px; font-weight:700; fill:#111; }
       .foot { font-family:Segoe UI,system-ui,sans-serif; font-size:11.5px; font-weight:600; fill:#3a3a3a; }
       @keyframes flow {
-        to { stroke-dashoffset: -20; }
+        to { stroke-dashoffset: -52; }
       }
       @keyframes node-pulse {
         0%, 100% { stroke-width: 2.4; }
@@ -66,30 +66,62 @@
       }
     </style>
   </defs>
-  <rect class="bg" width="560" height="500"/>
+  <rect class="bg" width="560" height="1080"/>
 
-  <text x="24" y="34" class="title">PLANS + CONTRÔLE HUMAIN TOTAL</text>
+  <text x="24" y="28" class="title">CODIUM RED · ASSISTANT PENTEST IA</text>
+  <text x="24" y="48" class="foot">IDE + IA pilotent un moteur Kali local — chaque action attend l'approbation humaine</text>
 
-  <rect class="plane" x="56" y="64" width="448" height="130" rx="14"/>
-  <text x="72" y="92" class="cap">PLAN D'INTELLIGENCE</text>
-  <rect class="b" x="88" y="108" width="180" height="60" rx="10"/>
-  <text x="178" y="134" text-anchor="middle" class="lab">Planificateur</text>
-  <text x="178" y="152" text-anchor="middle" class="sub">structure / prochaines étapes</text>
-  <rect class="b" x="292" y="108" width="180" height="60" rx="10"/>
-  <text x="382" y="134" text-anchor="middle" class="lab">Rapports / méthodo</text>
-  <text x="382" y="152" text-anchor="middle" class="sub">orienté OWASP</text>
+  <rect class="hi" x="88" y="68" width="384" height="72" rx="12"/>
+  <text x="280" y="96" text-anchor="middle" class="lab">IDE + IA Connectée</text>
+  <text x="280" y="118" text-anchor="middle" class="sub">Espace type Cursor · cibler toute appli web</text>
 
-  <line class="line" x1="280" y1="194" x2="280" y2="246"/>
-  <text x="292" y="228" class="lbl">pont de commandes contrôlé</text>
+  <line class="line" x1="280" y1="140" x2="280" y2="210"/>
+  <text x="300" y="182" class="lbl flow-lbl">Planifie Contre la Cible</text>
 
-  <rect class="plane" x="56" y="246" width="448" height="140" rx="14"/>
-  <text x="72" y="276" class="cap">PLAN D'EXÉCUTION</text>
-  <rect class="hi" x="88" y="294" width="384" height="68" rx="10"/>
-  <text x="280" y="324" text-anchor="middle" class="lab">Moteur pentest Kali</text>
-  <text x="280" y="344" text-anchor="middle" class="sub">environnement d'exécution isolé</text>
+  <rect class="b" x="72" y="210" width="416" height="88" rx="12"/>
+  <text x="280" y="238" text-anchor="middle" class="lab">Restrictions IA + Base Méthodo</text>
+  <text x="280" y="260" text-anchor="middle" class="sub">Dictionnaire nourri de PTES · MITRE ATT&amp;CK · CVE</text>
+  <text x="280" y="280" text-anchor="middle" class="sub">Agent borné — méthode avant freestyle</text>
 
-  <rect class="hi pulse" x="56" y="412" width="448" height="52" rx="12"/>
-  <text x="280" y="434" text-anchor="middle" class="lab">Humain dans la boucle</text>
-  <text x="280" y="452" text-anchor="middle" class="sub">approuve · revue · contrôle chaque étape — l'agent n'agit jamais seul</text>
+  <line class="line gate" x1="280" y1="298" x2="280" y2="368"/>
+  <text x="300" y="340" class="lbl flow-lbl">Propose une Action</text>
+
+  <rect class="hi pulse" x="72" y="368" width="416" height="72" rx="12"/>
+  <text x="280" y="396" text-anchor="middle" class="lab">Porte d'Approbation Pentester</text>
+  <text x="280" y="418" text-anchor="middle" class="sub">Chaque étape · approuver · revoir · refuser — l'agent n'agit jamais seul</text>
+
+  <line class="line" x1="280" y1="440" x2="280" y2="510"/>
+  <text x="300" y="482" class="lbl flow-lbl">Approuvé → Moteur</text>
+
+  <rect class="out" x="48" y="510" width="464" height="250" rx="14"/>
+  <text x="68" y="540" class="cap">MOTEUR CONTENEUR · LOCAL · PRÊT CLOUD</text>
+  <text x="280" y="562" text-anchor="middle" class="sub">Exécution isolée derrière l'IDE</text>
+
+  <rect class="chip" x="72" y="580" width="196" height="56" rx="8"/>
+  <text x="170" y="604" text-anchor="middle" class="lbl">Kali CLI + Outils</text>
+  <text x="170" y="622" text-anchor="middle" class="sub">Boîte à outils pentest</text>
+  <rect class="chip" x="292" y="580" width="196" height="56" rx="8"/>
+  <text x="390" y="604" text-anchor="middle" class="lbl">Playground Python</text>
+  <text x="390" y="622" text-anchor="middle" class="sub">L'IA écrit &amp; exécute</text>
+
+  <rect class="chip" x="72" y="652" width="196" height="56" rx="8"/>
+  <text x="170" y="676" text-anchor="middle" class="lbl">Serveur HTTP</text>
+  <text x="170" y="694" text-anchor="middle" class="sub">Lève des listeners</text>
+  <rect class="chip" x="292" y="652" width="196" height="56" rx="8"/>
+  <text x="390" y="676" text-anchor="middle" class="lbl">VPN Discret</text>
+  <text x="390" y="694" text-anchor="middle" class="sub">Chemin calme vers la cible</text>
+
+  <line class="line ingest" x1="280" y1="760" x2="280" y2="830"/>
+  <text x="300" y="802" class="lbl flow-lbl">Connecter · Coder · Évaluer</text>
+
+  <rect class="hi pulse" x="72" y="830" width="416" height="88" rx="12"/>
+  <text x="280" y="858" text-anchor="middle" class="lab">Rapport de Findings</text>
+  <text x="280" y="880" text-anchor="middle" class="sub">Rapport d'engagement structuré en fin de run</text>
+  <text x="280" y="900" text-anchor="middle" class="sub">Retour à l'IDE — l'humain garde la décision</text>
+
+  <rect class="b" x="72" y="942" width="416" height="108" rx="10"/>
+  <text x="280" y="972" text-anchor="middle" class="foot">Pattern : IDE + IA planifient · le moteur conteneur exécute</text>
+  <text x="280" y="994" text-anchor="middle" class="foot">Porte humaine sur chaque action · borné par la méthodo</text>
+  <text x="280" y="1016" text-anchor="middle" class="foot">Local d'abord · intégrable dans un environnement cloud</text>
 
 </svg>

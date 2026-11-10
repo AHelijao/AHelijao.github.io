@@ -259,8 +259,8 @@ body {
   display: block;
   width: 100%;
   height: auto;
-  max-height: min(78vh, 38rem);
-  aspect-ratio: 560 / 500;
+  max-height: min(92vh, 56rem);
+  aspect-ratio: auto;
   object-fit: contain;
   object-position: center center;
   border: 0;
@@ -506,7 +506,7 @@ h2 {
   .arch img,
   .arch object.arch-diagram,
   .arch svg.arch-diagram {
-    max-height: min(64vh, 26rem);
+    max-height: min(72vh, 34rem);
   }
 
   .sheet.project {
