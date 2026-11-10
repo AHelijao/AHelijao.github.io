@@ -20,9 +20,45 @@ DEFS = """
       .lab { font-family:Segoe UI,system-ui,sans-serif; font-size:14.5px; font-weight:800; fill:#111; }
       .sub { font-family:Segoe UI,system-ui,sans-serif; font-size:11.5px; font-weight:500; fill:#3a3a3a; }
       .cap { font-family:Segoe UI,system-ui,sans-serif; font-size:11px; font-weight:800; letter-spacing:0.12em; fill:#111; }
-      .line { stroke:#111; stroke-width:2.2; fill:none; marker-end:url(#a); stroke-linecap:round; stroke-linejoin:round; }
+      .line {
+        stroke:#111; stroke-width:2.2; fill:none; marker-end:url(#a);
+        stroke-linecap:round; stroke-linejoin:round;
+        stroke-dasharray:9 11;
+        animation: flow 1.05s linear infinite;
+      }
+      /* RAG / corpus / ingest: slower packets */
+      .line.ingest {
+        stroke-dasharray: 4 16;
+        animation: flow 1.7s linear infinite;
+      }
+      /* Return / report path: slightly quicker */
+      .line.return {
+        stroke-dasharray: 10 8;
+        animation: flow 0.85s linear infinite;
+      }
+      .hi.pulse {
+        animation: node-pulse 2.6s ease-in-out infinite;
+      }
+      .lbl.flow-lbl {
+        animation: lbl-pulse 2.2s ease-in-out infinite;
+      }
       .lbl { font-family:Segoe UI,system-ui,sans-serif; font-size:11px; font-weight:700; fill:#111; }
       .foot { font-family:Segoe UI,system-ui,sans-serif; font-size:11.5px; font-weight:600; fill:#3a3a3a; }
+      @keyframes flow {
+        to { stroke-dashoffset: -20; }
+      }
+      @keyframes node-pulse {
+        0%, 100% { stroke-width: 2.4; }
+        50% { stroke-width: 3.4; }
+      }
+      @keyframes lbl-pulse {
+        0%, 100% { opacity: 0.55; }
+        50% { opacity: 1; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .line, .line.ingest, .line.return, .hi.pulse, .lbl.flow-lbl { animation: none; }
+        .line, .line.ingest, .line.return { stroke-dasharray: none; }
+      }
     </style>
   </defs>
 """.strip()
@@ -135,16 +171,16 @@ save(
   <text x="136" y="122" text-anchor="middle" class="lab">Cyber PDF corpus</text>
   <text x="136" y="140" text-anchor="middle" class="sub">ISO / NIST / OWASP...</text>
 
-  <line class="line" x1="216" y1="128" x2="258" y2="128"/>
-  <text x="224" y="116" class="lbl">manual feed</text>
+  <line class="line ingest" x1="216" y1="128" x2="258" y2="128"/>
+  <text x="224" y="116" class="lbl flow-lbl">manual feed</text>
 
   <rect class="b" x="262" y="96" width="168" height="64" rx="10"/>
   <text x="346" y="122" text-anchor="middle" class="lab">Specialization</text>
   <text x="346" y="140" text-anchor="middle" class="sub">train / ground on refs</text>
 
-  <path class="line" d="M346 160 V182 H280 V206"/>
+  <path class="line ingest" d="M346 160 V182 H280 V206"/>
 
-  <rect class="hi" x="150" y="206" width="260" height="88" rx="12"/>
+  <rect class="hi pulse" x="150" y="206" width="260" height="88" rx="12"/>
   <text x="280" y="238" text-anchor="middle" class="lab">AI Cyber specialist</text>
   <text x="280" y="258" text-anchor="middle" class="sub">local model shaped for cyber work</text>
   <text x="280" y="276" text-anchor="middle" class="sub">methodology-aware answers</text>
@@ -167,16 +203,16 @@ save(
   <text x="136" y="122" text-anchor="middle" class="lab">Corpus PDF cyber</text>
   <text x="136" y="140" text-anchor="middle" class="sub">ISO / NIST / OWASP...</text>
 
-  <line class="line" x1="216" y1="128" x2="258" y2="128"/>
-  <text x="218" y="116" class="lbl">alimentation manuelle</text>
+  <line class="line ingest" x1="216" y1="128" x2="258" y2="128"/>
+  <text x="218" y="116" class="lbl flow-lbl">alimentation manuelle</text>
 
   <rect class="b" x="262" y="96" width="168" height="64" rx="10"/>
   <text x="346" y="122" text-anchor="middle" class="lab">Spécialisation</text>
   <text x="346" y="140" text-anchor="middle" class="sub">entraînement / ancrage</text>
 
-  <path class="line" d="M346 160 V182 H280 V206"/>
+  <path class="line ingest" d="M346 160 V182 H280 V206"/>
 
-  <rect class="hi" x="150" y="206" width="260" height="88" rx="12"/>
+  <rect class="hi pulse" x="150" y="206" width="260" height="88" rx="12"/>
   <text x="280" y="238" text-anchor="middle" class="lab">Spécialiste IA cyber</text>
   <text x="280" y="258" text-anchor="middle" class="sub">modèle local façonné pour le cyber</text>
   <text x="280" y="276" text-anchor="middle" class="sub">réponses orientées méthodo</text>
@@ -274,7 +310,7 @@ save(
   <text x="98" y="114" text-anchor="middle" class="sub">user prompt / chat</text>
   <line class="line" x1="164" y1="102" x2="206" y2="102"/>
 
-  <rect class="hi" x="210" y="54" width="132" height="96" rx="10"/>
+  <rect class="hi pulse" x="210" y="54" width="132" height="96" rx="10"/>
   <text x="276" y="86" text-anchor="middle" class="lab">MCP layer</text>
   <text x="276" y="106" text-anchor="middle" class="sub">Office tools</text>
   <text x="276" y="124" text-anchor="middle" class="sub">pptx / docx / xlsx</text>
@@ -289,10 +325,10 @@ save(
   <rect class="b" x="408" y="180" width="104" height="24" rx="8"/>
   <text x="460" y="197" text-anchor="middle" class="sub">+ other services</text>
 
-  <path class="line" d="M460 214 V250 H196"/>
-  <text x="280" y="242" class="lbl">presigned URL (auth-scoped)</text>
+  <path class="line return" d="M460 214 V250 H196"/>
+  <text x="280" y="242" class="lbl flow-lbl">presigned URL (auth-scoped)</text>
 
-  <rect class="hi" x="32" y="250" width="320" height="56" rx="10"/>
+  <rect class="hi pulse" x="32" y="250" width="320" height="56" rx="10"/>
   <text x="192" y="274" text-anchor="middle" class="lab">Back to OpenWebUI</text>
   <text x="192" y="292" text-anchor="middle" class="sub">see / download only what you created</text>
 
@@ -313,7 +349,7 @@ save(
   <text x="98" y="114" text-anchor="middle" class="sub">prompt / chat utilisateur</text>
   <line class="line" x1="164" y1="102" x2="206" y2="102"/>
 
-  <rect class="hi" x="210" y="54" width="132" height="96" rx="10"/>
+  <rect class="hi pulse" x="210" y="54" width="132" height="96" rx="10"/>
   <text x="276" y="86" text-anchor="middle" class="lab">Couche MCP</text>
   <text x="276" y="106" text-anchor="middle" class="sub">Outils Office</text>
   <text x="276" y="124" text-anchor="middle" class="sub">pptx / docx / xlsx</text>
@@ -328,10 +364,10 @@ save(
   <rect class="b" x="408" y="180" width="104" height="24" rx="8"/>
   <text x="460" y="197" text-anchor="middle" class="sub">+ autres services</text>
 
-  <path class="line" d="M460 214 V250 H196"/>
-  <text x="268" y="242" class="lbl">URL signée (auth limitée)</text>
+  <path class="line return" d="M460 214 V250 H196"/>
+  <text x="268" y="242" class="lbl flow-lbl">URL signée (auth limitée)</text>
 
-  <rect class="hi" x="32" y="250" width="320" height="56" rx="10"/>
+  <rect class="hi pulse" x="32" y="250" width="320" height="56" rx="10"/>
   <text x="192" y="274" text-anchor="middle" class="lab">Retour OpenWebUI</text>
   <text x="192" y="292" text-anchor="middle" class="sub">voir / télécharger seulement ce que vous avez créé</text>
 
@@ -364,15 +400,15 @@ save(
   <text x="280" y="212" text-anchor="middle" class="lab">n8n automation</text>
   <text x="280" y="228" text-anchor="middle" class="sub">wires AI to analysis steps</text>
 
-  <line class="line" x1="280" y1="238" x2="280" y2="258"/>
-  <path class="line" d="M280 258 V270 H150"/>
-  <path class="line" d="M280 270 H410"/>
+  <line class="line ingest" x1="280" y1="238" x2="280" y2="258"/>
+  <path class="line ingest" d="M280 258 V270 H150"/>
+  <path class="line return" d="M280 270 H410"/>
 
   <rect class="b" x="32" y="270" width="230" height="52" rx="10"/>
   <text x="147" y="294" text-anchor="middle" class="lab">Analysis worker</text>
   <text x="147" y="310" text-anchor="middle" class="sub">scans code / builds report</text>
 
-  <rect class="hi" x="298" y="270" width="230" height="52" rx="10"/>
+  <rect class="hi pulse" x="298" y="270" width="230" height="52" rx="10"/>
   <text x="413" y="294" text-anchor="middle" class="lab">Structured report</text>
   <text x="413" y="310" text-anchor="middle" class="sub">only this reaches the AI</text>
 
@@ -404,15 +440,15 @@ save(
   <text x="280" y="212" text-anchor="middle" class="lab">Automatisation n8n</text>
   <text x="280" y="228" text-anchor="middle" class="sub">relie l'IA aux étapes d'analyse</text>
 
-  <line class="line" x1="280" y1="238" x2="280" y2="258"/>
-  <path class="line" d="M280 258 V270 H150"/>
-  <path class="line" d="M280 270 H410"/>
+  <line class="line ingest" x1="280" y1="238" x2="280" y2="258"/>
+  <path class="line ingest" d="M280 258 V270 H150"/>
+  <path class="line return" d="M280 270 H410"/>
 
   <rect class="b" x="32" y="270" width="230" height="52" rx="10"/>
   <text x="147" y="294" text-anchor="middle" class="lab">Worker d'analyse</text>
   <text x="147" y="310" text-anchor="middle" class="sub">scanne le code / construit le rapport</text>
 
-  <rect class="hi" x="298" y="270" width="230" height="52" rx="10"/>
+  <rect class="hi pulse" x="298" y="270" width="230" height="52" rx="10"/>
   <text x="413" y="294" text-anchor="middle" class="lab">Rapport structuré</text>
   <text x="413" y="310" text-anchor="middle" class="sub">seul ceci atteint l'IA</text>
 

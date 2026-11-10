@@ -17,9 +17,45 @@
       .lab { font-family:Segoe UI,system-ui,sans-serif; font-size:14.5px; font-weight:800; fill:#111; }
       .sub { font-family:Segoe UI,system-ui,sans-serif; font-size:11.5px; font-weight:500; fill:#3a3a3a; }
       .cap { font-family:Segoe UI,system-ui,sans-serif; font-size:11px; font-weight:800; letter-spacing:0.12em; fill:#111; }
-      .line { stroke:#111; stroke-width:2.2; fill:none; marker-end:url(#a); stroke-linecap:round; stroke-linejoin:round; }
+      .line {
+        stroke:#111; stroke-width:2.2; fill:none; marker-end:url(#a);
+        stroke-linecap:round; stroke-linejoin:round;
+        stroke-dasharray:9 11;
+        animation: flow 1.05s linear infinite;
+      }
+      /* RAG / corpus / ingest: slower packets */
+      .line.ingest {
+        stroke-dasharray: 4 16;
+        animation: flow 1.7s linear infinite;
+      }
+      /* Return / report path: slightly quicker */
+      .line.return {
+        stroke-dasharray: 10 8;
+        animation: flow 0.85s linear infinite;
+      }
+      .hi.pulse {
+        animation: node-pulse 2.6s ease-in-out infinite;
+      }
+      .lbl.flow-lbl {
+        animation: lbl-pulse 2.2s ease-in-out infinite;
+      }
       .lbl { font-family:Segoe UI,system-ui,sans-serif; font-size:11px; font-weight:700; fill:#111; }
       .foot { font-family:Segoe UI,system-ui,sans-serif; font-size:11.5px; font-weight:600; fill:#3a3a3a; }
+      @keyframes flow {
+        to { stroke-dashoffset: -20; }
+      }
+      @keyframes node-pulse {
+        0%, 100% { stroke-width: 2.4; }
+        50% { stroke-width: 3.4; }
+      }
+      @keyframes lbl-pulse {
+        0%, 100% { opacity: 0.55; }
+        50% { opacity: 1; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .line, .line.ingest, .line.return, .hi.pulse, .lbl.flow-lbl { animation: none; }
+        .line, .line.ingest, .line.return { stroke-dasharray: none; }
+      }
     </style>
   </defs>
   <rect class="bg" width="560" height="360"/>
@@ -42,15 +78,15 @@
   <text x="280" y="212" text-anchor="middle" class="lab">n8n automation</text>
   <text x="280" y="228" text-anchor="middle" class="sub">wires AI to analysis steps</text>
 
-  <line class="line" x1="280" y1="238" x2="280" y2="258"/>
-  <path class="line" d="M280 258 V270 H150"/>
-  <path class="line" d="M280 270 H410"/>
+  <line class="line ingest" x1="280" y1="238" x2="280" y2="258"/>
+  <path class="line ingest" d="M280 258 V270 H150"/>
+  <path class="line return" d="M280 270 H410"/>
 
   <rect class="b" x="32" y="270" width="230" height="52" rx="10"/>
   <text x="147" y="294" text-anchor="middle" class="lab">Analysis worker</text>
   <text x="147" y="310" text-anchor="middle" class="sub">scans code / builds report</text>
 
-  <rect class="hi" x="298" y="270" width="230" height="52" rx="10"/>
+  <rect class="hi pulse" x="298" y="270" width="230" height="52" rx="10"/>
   <text x="413" y="294" text-anchor="middle" class="lab">Structured report</text>
   <text x="413" y="310" text-anchor="middle" class="sub">only this reaches the AI</text>
 
