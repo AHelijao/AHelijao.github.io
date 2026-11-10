@@ -86,9 +86,8 @@
   <text x="280" y="274" text-anchor="middle" class="lab">n8n automation</text>
   <text x="280" y="292" text-anchor="middle" class="sub">wires AI to analysis steps</text>
 
-  <line class="line stem" x1="280" y1="304" x2="280" y2="348"/>
-  <path class="line ingest" d="M280 348 H147 V372"/>
-  <path class="line return" d="M280 348 H413 V372"/>
+  <path class="line ingest" d="M210 304 V340 H147 V372"/>
+  <path class="line return" d="M350 304 V340 H413 V372"/>
 
   <rect class="b" x="32" y="372" width="230" height="60" rx="10"/>
   <text x="147" y="400" text-anchor="middle" class="lab">Analysis worker</text>

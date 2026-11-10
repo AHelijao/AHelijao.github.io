@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 500" role="img" aria-labelledby="t d">
   <title id="t">Architecture Codium Red</title>
-  <desc id="d">Plan d'intelligence ; moteur pentest Kali ; l'humain approuve, revoit et contrôle.</desc>
+  <desc id="d">Plan d'intelligence ; moteur pentest Kali ; humain dans la boucle mis en avant sous le schéma.</desc>
 <defs>
     <marker id="a" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="10" markerHeight="10" orient="auto-start-reverse">
       <path d="M1 1 L11 6 L1 11 Z" fill="#111"/>
@@ -70,43 +70,26 @@
 
   <text x="24" y="34" class="title">PLANS + CONTRÔLE HUMAIN TOTAL</text>
 
-  <rect class="plane" x="24" y="64" width="340" height="130" rx="14"/>
-  <text x="40" y="92" class="cap">PLAN D'INTELLIGENCE</text>
-  <rect class="b" x="44" y="108" width="140" height="60" rx="10"/>
-  <text x="114" y="134" text-anchor="middle" class="lab">Planificateur</text>
-  <text x="114" y="152" text-anchor="middle" class="sub">structure / prochaines étapes</text>
-  <rect class="b" x="200" y="108" width="140" height="60" rx="10"/>
-  <text x="270" y="134" text-anchor="middle" class="lab">Rapports / méthodo</text>
-  <text x="270" y="152" text-anchor="middle" class="sub">orienté OWASP</text>
+  <rect class="plane" x="56" y="64" width="448" height="130" rx="14"/>
+  <text x="72" y="92" class="cap">PLAN D'INTELLIGENCE</text>
+  <rect class="b" x="88" y="108" width="180" height="60" rx="10"/>
+  <text x="178" y="134" text-anchor="middle" class="lab">Planificateur</text>
+  <text x="178" y="152" text-anchor="middle" class="sub">structure / prochaines étapes</text>
+  <rect class="b" x="292" y="108" width="180" height="60" rx="10"/>
+  <text x="382" y="134" text-anchor="middle" class="lab">Rapports / méthodo</text>
+  <text x="382" y="152" text-anchor="middle" class="sub">orienté OWASP</text>
 
-  <line class="line" x1="194" y1="194" x2="194" y2="246"/>
-  <text x="206" y="228" class="lbl">pont de commandes contrôlé</text>
+  <line class="line" x1="280" y1="194" x2="280" y2="246"/>
+  <text x="292" y="228" class="lbl">pont de commandes contrôlé</text>
 
-  <rect class="plane" x="24" y="246" width="340" height="150" rx="14"/>
-  <text x="40" y="276" class="cap">PLAN D'EXÉCUTION</text>
-  <rect class="hi" x="44" y="294" width="300" height="76" rx="10"/>
-  <text x="194" y="328" text-anchor="middle" class="lab">Moteur pentest Kali</text>
-  <text x="194" y="348" text-anchor="middle" class="sub">environnement d'exécution isolé</text>
+  <rect class="plane" x="56" y="246" width="448" height="140" rx="14"/>
+  <text x="72" y="276" class="cap">PLAN D'EXÉCUTION</text>
+  <rect class="hi" x="88" y="294" width="384" height="68" rx="10"/>
+  <text x="280" y="324" text-anchor="middle" class="lab">Moteur pentest Kali</text>
+  <text x="280" y="344" text-anchor="middle" class="sub">environnement d'exécution isolé</text>
 
-  <rect class="hi pulse" x="388" y="64" width="148" height="332" rx="14"/>
-  <text x="462" y="96" text-anchor="middle" class="cap">HUMAIN</text>
-  <text x="462" y="116" text-anchor="middle" class="lab">dans la boucle</text>
-
-  <rect class="chip" x="404" y="140" width="116" height="36" rx="8"/>
-  <text x="462" y="163" text-anchor="middle" class="lbl">approuve</text>
-  <rect class="chip" x="404" y="188" width="116" height="36" rx="8"/>
-  <text x="462" y="211" text-anchor="middle" class="lbl">revue</text>
-  <rect class="chip" x="404" y="236" width="116" height="36" rx="8"/>
-  <text x="462" y="259" text-anchor="middle" class="lbl">contrôle</text>
-
-  <text x="462" y="308" text-anchor="middle" class="sub">chaque étape</text>
-  <text x="462" y="330" text-anchor="middle" class="sub">l'agent n'agit</text>
-  <text x="462" y="348" text-anchor="middle" class="sub">jamais seul</text>
-  <text x="462" y="374" text-anchor="middle" class="lbl flow-lbl">contrôle les 2 plans</text>
-
-  <path class="line gate" d="M388 158 H364"/>
-  <path class="line gate" d="M388 332 H364"/>
-
-  <text x="24" y="460" class="foot">L'humain valide planification et exécution. Aucune action offensive autonome.</text>
+  <rect class="hi pulse" x="56" y="412" width="448" height="52" rx="12"/>
+  <text x="280" y="434" text-anchor="middle" class="lab">Humain dans la boucle</text>
+  <text x="280" y="452" text-anchor="middle" class="sub">approuve · revue · contrôle chaque étape — l'agent n'agit jamais seul</text>
 
 </svg>

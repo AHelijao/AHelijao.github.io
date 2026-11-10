@@ -168,35 +168,34 @@ save(
     "Le desktop utilise une IA locale ; Android appelle une API LLM cloud. Glossaire partagé de termes protégés.",
 )
 
-# --- CENTINEL ---
+# --- CENTINEL --- (single vertical stack)
 save(
     "centinel",
     "en",
     """
   <text x="24" y="34" class="title">SPECIALIZED LOCAL CYBER AI</text>
-  <rect class="out" x="24" y="56" width="512" height="390" rx="14"/>
-  <text x="40" y="88" class="foot">Offline machine - cyber refs never leave</text>
+  <rect class="out" x="100" y="56" width="360" height="390" rx="14"/>
+  <text x="120" y="88" class="foot">Offline machine - cyber refs never leave</text>
 
-  <rect class="b" x="56" y="120" width="168" height="72" rx="10"/>
-  <text x="140" y="150" text-anchor="middle" class="lab">Cyber PDF corpus</text>
-  <text x="140" y="170" text-anchor="middle" class="sub">ISO / NIST / OWASP...</text>
+  <rect class="b" x="150" y="112" width="260" height="64" rx="10"/>
+  <text x="280" y="140" text-anchor="middle" class="lab">Cyber PDF corpus</text>
+  <text x="280" y="158" text-anchor="middle" class="sub">ISO / NIST / OWASP...</text>
 
-  <line class="line ingest" x1="224" y1="156" x2="268" y2="156"/>
-  <text x="232" y="144" class="lbl flow-lbl">manual feed</text>
+  <line class="line ingest" x1="280" y1="176" x2="280" y2="214"/>
+  <text x="292" y="202" class="lbl flow-lbl">manual feed</text>
 
-  <rect class="b" x="268" y="120" width="176" height="72" rx="10"/>
-  <text x="356" y="150" text-anchor="middle" class="lab">Specialization</text>
-  <text x="356" y="170" text-anchor="middle" class="sub">train / ground on refs</text>
+  <rect class="b" x="150" y="214" width="260" height="64" rx="10"/>
+  <text x="280" y="242" text-anchor="middle" class="lab">Specialization</text>
+  <text x="280" y="260" text-anchor="middle" class="sub">train / ground on refs</text>
 
-  <path class="line ingest" d="M356 192 V250 H280"/>
-  <line class="line ingest" x1="280" y1="250" x2="280" y2="292"/>
+  <line class="line ingest" x1="280" y1="278" x2="280" y2="316"/>
 
-  <rect class="hi pulse" x="140" y="292" width="280" height="100" rx="12"/>
-  <text x="280" y="328" text-anchor="middle" class="lab">AI Cyber specialist</text>
-  <text x="280" y="350" text-anchor="middle" class="sub">local model shaped for cyber work</text>
-  <text x="280" y="370" text-anchor="middle" class="sub">methodology-aware answers</text>
+  <rect class="hi pulse" x="150" y="316" width="260" height="88" rx="12"/>
+  <text x="280" y="348" text-anchor="middle" class="lab">AI Cyber specialist</text>
+  <text x="280" y="368" text-anchor="middle" class="sub">local model shaped for cyber work</text>
+  <text x="280" y="386" text-anchor="middle" class="sub">methodology-aware answers</text>
 
-  <text x="48" y="422" class="foot">Not generic chat over files - a local cyber specialist.</text>
+  <text x="120" y="430" class="foot">Not generic chat over files - a local cyber specialist.</text>
 """,
     "Centinel architecture",
     "Cyber PDFs fed offline to specialize a local AI cyber assistant.",
@@ -207,29 +206,28 @@ save(
     "fr",
     """
   <text x="24" y="34" class="title">IA CYBER LOCALE SPÉCIALISÉE</text>
-  <rect class="out" x="24" y="56" width="512" height="390" rx="14"/>
-  <text x="40" y="88" class="foot">Machine hors-ligne - les refs cyber ne sortent pas</text>
+  <rect class="out" x="100" y="56" width="360" height="390" rx="14"/>
+  <text x="120" y="88" class="foot">Machine hors-ligne - les refs cyber ne sortent pas</text>
 
-  <rect class="b" x="56" y="120" width="168" height="72" rx="10"/>
-  <text x="140" y="150" text-anchor="middle" class="lab">Corpus PDF cyber</text>
-  <text x="140" y="170" text-anchor="middle" class="sub">ISO / NIST / OWASP...</text>
+  <rect class="b" x="150" y="112" width="260" height="64" rx="10"/>
+  <text x="280" y="140" text-anchor="middle" class="lab">Corpus PDF cyber</text>
+  <text x="280" y="158" text-anchor="middle" class="sub">ISO / NIST / OWASP...</text>
 
-  <line class="line ingest" x1="224" y1="156" x2="268" y2="156"/>
-  <text x="226" y="144" class="lbl flow-lbl">alimentation manuelle</text>
+  <line class="line ingest" x1="280" y1="176" x2="280" y2="214"/>
+  <text x="292" y="202" class="lbl flow-lbl">alimentation manuelle</text>
 
-  <rect class="b" x="268" y="120" width="176" height="72" rx="10"/>
-  <text x="356" y="150" text-anchor="middle" class="lab">Spécialisation</text>
-  <text x="356" y="170" text-anchor="middle" class="sub">entraînement / ancrage</text>
+  <rect class="b" x="150" y="214" width="260" height="64" rx="10"/>
+  <text x="280" y="242" text-anchor="middle" class="lab">Spécialisation</text>
+  <text x="280" y="260" text-anchor="middle" class="sub">entraînement / ancrage</text>
 
-  <path class="line ingest" d="M356 192 V250 H280"/>
-  <line class="line ingest" x1="280" y1="250" x2="280" y2="292"/>
+  <line class="line ingest" x1="280" y1="278" x2="280" y2="316"/>
 
-  <rect class="hi pulse" x="140" y="292" width="280" height="100" rx="12"/>
-  <text x="280" y="328" text-anchor="middle" class="lab">Spécialiste IA cyber</text>
-  <text x="280" y="350" text-anchor="middle" class="sub">modèle local façonné pour le cyber</text>
-  <text x="280" y="370" text-anchor="middle" class="sub">réponses orientées méthodo</text>
+  <rect class="hi pulse" x="150" y="316" width="260" height="88" rx="12"/>
+  <text x="280" y="348" text-anchor="middle" class="lab">Spécialiste IA cyber</text>
+  <text x="280" y="368" text-anchor="middle" class="sub">modèle local façonné pour le cyber</text>
+  <text x="280" y="386" text-anchor="middle" class="sub">réponses orientées méthodo</text>
 
-  <text x="48" y="422" class="foot">Pas un chat générique sur des fichiers - un spécialiste cyber local.</text>
+  <text x="120" y="430" class="foot">Pas un chat générique sur des fichiers - un spécialiste cyber local.</text>
 """,
     "Architecture Centinel",
     "PDFs cyber alimentés hors-ligne pour spécialiser une IA cyber locale.",
@@ -311,44 +309,41 @@ save(
 )
 
 # --- MCP ---
-# Return arrow hits RIGHT side mid of "Back to OpenWebUI"
+# Forward: OpenWebUI → MCP → AWS; return loops back into OpenWebUI entry
 save(
     "mcp",
     "en",
     """
   <text x="24" y="34" class="title">OPENWEBUI - MCP - AWS</text>
 
-  <rect class="b" x="32" y="78" width="132" height="76" rx="10"/>
-  <text x="98" y="110" text-anchor="middle" class="lab">OpenWebUI</text>
-  <text x="98" y="130" text-anchor="middle" class="sub">user prompt / chat</text>
-  <line class="line" x1="164" y1="116" x2="206" y2="116"/>
+  <rect class="hi pulse" x="32" y="120" width="132" height="88" rx="10"/>
+  <text x="98" y="154" text-anchor="middle" class="lab">OpenWebUI</text>
+  <text x="98" y="174" text-anchor="middle" class="sub">user prompt / chat</text>
+  <text x="98" y="192" text-anchor="middle" class="sub">+ download result</text>
+  <line class="line" x1="164" y1="164" x2="206" y2="164"/>
 
-  <rect class="hi pulse" x="210" y="64" width="132" height="104" rx="10"/>
-  <text x="276" y="100" text-anchor="middle" class="lab">MCP layer</text>
-  <text x="276" y="122" text-anchor="middle" class="sub">Office tools</text>
-  <text x="276" y="142" text-anchor="middle" class="sub">pptx / docx / xlsx</text>
-  <line class="line" x1="342" y1="116" x2="386" y2="116"/>
+  <rect class="hi pulse" x="210" y="108" width="132" height="112" rx="10"/>
+  <text x="276" y="148" text-anchor="middle" class="lab">MCP layer</text>
+  <text x="276" y="170" text-anchor="middle" class="sub">Office tools</text>
+  <text x="276" y="190" text-anchor="middle" class="sub">pptx / docx / xlsx</text>
+  <line class="line" x1="342" y1="164" x2="386" y2="164"/>
 
-  <rect class="cloud" x="390" y="56" width="140" height="200" rx="12"/>
-  <text x="408" y="84" class="cap">AWS</text>
-  <rect class="b" x="408" y="100" width="104" height="40" rx="8"/>
-  <text x="460" y="126" text-anchor="middle" class="lab">Bedrock</text>
-  <rect class="b" x="408" y="152" width="104" height="40" rx="8"/>
-  <text x="460" y="178" text-anchor="middle" class="lab">S3</text>
-  <rect class="b" x="408" y="204" width="104" height="32" rx="8"/>
-  <text x="460" y="225" text-anchor="middle" class="sub">+ other services</text>
+  <rect class="cloud" x="390" y="80" width="140" height="220" rx="12"/>
+  <text x="408" y="110" class="cap">AWS</text>
+  <rect class="b" x="408" y="128" width="104" height="42" rx="8"/>
+  <text x="460" y="155" text-anchor="middle" class="lab">Bedrock</text>
+  <rect class="b" x="408" y="182" width="104" height="42" rx="8"/>
+  <text x="460" y="209" text-anchor="middle" class="lab">S3</text>
+  <rect class="b" x="408" y="236" width="104" height="36" rx="8"/>
+  <text x="460" y="259" text-anchor="middle" class="sub">+ other services</text>
 
-  <path class="line return" d="M460 256 V372 H312"/>
-  <text x="386" y="358" text-anchor="middle" class="lbl flow-lbl">presigned URL (auth-scoped)</text>
+  <path class="line return" d="M460 300 V360 H98 V208"/>
+  <text x="280" y="348" text-anchor="middle" class="lbl flow-lbl">presigned URL (auth-scoped) → back to chat</text>
 
-  <rect class="hi pulse" x="32" y="340" width="280" height="64" rx="10"/>
-  <text x="172" y="368" text-anchor="middle" class="lab">Back to OpenWebUI</text>
-  <text x="172" y="388" text-anchor="middle" class="sub">see / download only what you created</text>
-
-  <text x="32" y="460" class="foot">MCP sits between chat UI and AWS - result returns in chat.</text>
+  <text x="32" y="420" class="foot">MCP sits between chat UI and AWS - result returns in the same OpenWebUI entry.</text>
 """,
     "MCP Office Machine architecture",
-    "MCP between OpenWebUI and AWS; auth-scoped presigned URL returns to the user.",
+    "MCP between OpenWebUI and AWS; auth-scoped presigned URL returns to the OpenWebUI entry.",
 )
 
 save(
@@ -357,41 +352,38 @@ save(
     """
   <text x="24" y="34" class="title">OPENWEBUI - MCP - AWS</text>
 
-  <rect class="b" x="32" y="78" width="132" height="76" rx="10"/>
-  <text x="98" y="110" text-anchor="middle" class="lab">OpenWebUI</text>
-  <text x="98" y="130" text-anchor="middle" class="sub">prompt / chat utilisateur</text>
-  <line class="line" x1="164" y1="116" x2="206" y2="116"/>
+  <rect class="hi pulse" x="32" y="120" width="132" height="88" rx="10"/>
+  <text x="98" y="154" text-anchor="middle" class="lab">OpenWebUI</text>
+  <text x="98" y="174" text-anchor="middle" class="sub">prompt / chat</text>
+  <text x="98" y="192" text-anchor="middle" class="sub">+ téléchargement</text>
+  <line class="line" x1="164" y1="164" x2="206" y2="164"/>
 
-  <rect class="hi pulse" x="210" y="64" width="132" height="104" rx="10"/>
-  <text x="276" y="100" text-anchor="middle" class="lab">Couche MCP</text>
-  <text x="276" y="122" text-anchor="middle" class="sub">Outils Office</text>
-  <text x="276" y="142" text-anchor="middle" class="sub">pptx / docx / xlsx</text>
-  <line class="line" x1="342" y1="116" x2="386" y2="116"/>
+  <rect class="hi pulse" x="210" y="108" width="132" height="112" rx="10"/>
+  <text x="276" y="148" text-anchor="middle" class="lab">Couche MCP</text>
+  <text x="276" y="170" text-anchor="middle" class="sub">Outils Office</text>
+  <text x="276" y="190" text-anchor="middle" class="sub">pptx / docx / xlsx</text>
+  <line class="line" x1="342" y1="164" x2="386" y2="164"/>
 
-  <rect class="cloud" x="390" y="56" width="140" height="200" rx="12"/>
-  <text x="408" y="84" class="cap">AWS</text>
-  <rect class="b" x="408" y="100" width="104" height="40" rx="8"/>
-  <text x="460" y="126" text-anchor="middle" class="lab">Bedrock</text>
-  <rect class="b" x="408" y="152" width="104" height="40" rx="8"/>
-  <text x="460" y="178" text-anchor="middle" class="lab">S3</text>
-  <rect class="b" x="408" y="204" width="104" height="32" rx="8"/>
-  <text x="460" y="225" text-anchor="middle" class="sub">+ autres services</text>
+  <rect class="cloud" x="390" y="80" width="140" height="220" rx="12"/>
+  <text x="408" y="110" class="cap">AWS</text>
+  <rect class="b" x="408" y="128" width="104" height="42" rx="8"/>
+  <text x="460" y="155" text-anchor="middle" class="lab">Bedrock</text>
+  <rect class="b" x="408" y="182" width="104" height="42" rx="8"/>
+  <text x="460" y="209" text-anchor="middle" class="lab">S3</text>
+  <rect class="b" x="408" y="236" width="104" height="36" rx="8"/>
+  <text x="460" y="259" text-anchor="middle" class="sub">+ autres services</text>
 
-  <path class="line return" d="M460 256 V372 H312"/>
-  <text x="386" y="358" text-anchor="middle" class="lbl flow-lbl">URL signée (auth limitée)</text>
+  <path class="line return" d="M460 300 V360 H98 V208"/>
+  <text x="280" y="348" text-anchor="middle" class="lbl flow-lbl">URL signée (auth limitée) → retour chat</text>
 
-  <rect class="hi pulse" x="32" y="340" width="280" height="64" rx="10"/>
-  <text x="172" y="368" text-anchor="middle" class="lab">Retour OpenWebUI</text>
-  <text x="172" y="388" text-anchor="middle" class="sub">voir / télécharger seulement ce que vous avez créé</text>
-
-  <text x="32" y="460" class="foot">Le MCP s'intercale entre le chat et AWS - le résultat revient dans le chat.</text>
+  <text x="32" y="420" class="foot">Le MCP s'intercale entre le chat et AWS - le résultat revient dans le même OpenWebUI.</text>
 """,
     "Architecture MCP Office Machine",
-    "MCP entre OpenWebUI et AWS ; URL signée à portée limitée pour l'utilisateur.",
+    "MCP entre OpenWebUI et AWS ; URL signée qui revient à l'entrée OpenWebUI.",
 )
 
 # --- ANALYZER ---
-# Classic fork: stem down, then into TOP centers of worker + report
+# Two independent elbows from n8n (no shared horizontal = no double-headed T)
 save(
     "analyzer",
     "en",
@@ -414,9 +406,8 @@ save(
   <text x="280" y="274" text-anchor="middle" class="lab">n8n automation</text>
   <text x="280" y="292" text-anchor="middle" class="sub">wires AI to analysis steps</text>
 
-  <line class="line stem" x1="280" y1="304" x2="280" y2="348"/>
-  <path class="line ingest" d="M280 348 H147 V372"/>
-  <path class="line return" d="M280 348 H413 V372"/>
+  <path class="line ingest" d="M210 304 V340 H147 V372"/>
+  <path class="line return" d="M350 304 V340 H413 V372"/>
 
   <rect class="b" x="32" y="372" width="230" height="60" rx="10"/>
   <text x="147" y="400" text-anchor="middle" class="lab">Analysis worker</text>
@@ -454,9 +445,8 @@ save(
   <text x="280" y="274" text-anchor="middle" class="lab">Automatisation n8n</text>
   <text x="280" y="292" text-anchor="middle" class="sub">relie l'IA aux étapes d'analyse</text>
 
-  <line class="line stem" x1="280" y1="304" x2="280" y2="348"/>
-  <path class="line ingest" d="M280 348 H147 V372"/>
-  <path class="line return" d="M280 348 H413 V372"/>
+  <path class="line ingest" d="M210 304 V340 H147 V372"/>
+  <path class="line return" d="M350 304 V340 H413 V372"/>
 
   <rect class="b" x="32" y="372" width="230" height="60" rx="10"/>
   <text x="147" y="400" text-anchor="middle" class="lab">Worker d'analyse</text>
@@ -473,54 +463,37 @@ save(
 )
 
 # --- CODIUM ---
-# Human panel: checklist card + gate arrows into both planes
+# No side Human panel — highlight under the schema instead
 save(
     "codium",
     "en",
     """
   <text x="24" y="34" class="title">PLANES + FULL HUMAN CONTROL</text>
 
-  <rect class="plane" x="24" y="64" width="340" height="130" rx="14"/>
-  <text x="40" y="92" class="cap">INTELLIGENCE PLANE</text>
-  <rect class="b" x="44" y="108" width="140" height="60" rx="10"/>
-  <text x="114" y="134" text-anchor="middle" class="lab">Agentic planner</text>
-  <text x="114" y="152" text-anchor="middle" class="sub">structure / next steps</text>
-  <rect class="b" x="200" y="108" width="140" height="60" rx="10"/>
-  <text x="270" y="134" text-anchor="middle" class="lab">Reports / method</text>
-  <text x="270" y="152" text-anchor="middle" class="sub">OWASP-oriented</text>
+  <rect class="plane" x="56" y="64" width="448" height="130" rx="14"/>
+  <text x="72" y="92" class="cap">INTELLIGENCE PLANE</text>
+  <rect class="b" x="88" y="108" width="180" height="60" rx="10"/>
+  <text x="178" y="134" text-anchor="middle" class="lab">Agentic planner</text>
+  <text x="178" y="152" text-anchor="middle" class="sub">structure / next steps</text>
+  <rect class="b" x="292" y="108" width="180" height="60" rx="10"/>
+  <text x="382" y="134" text-anchor="middle" class="lab">Reports / method</text>
+  <text x="382" y="152" text-anchor="middle" class="sub">OWASP-oriented</text>
 
-  <line class="line" x1="194" y1="194" x2="194" y2="246"/>
-  <text x="206" y="228" class="lbl">gated command bridge</text>
+  <line class="line" x1="280" y1="194" x2="280" y2="246"/>
+  <text x="292" y="228" class="lbl">gated command bridge</text>
 
-  <rect class="plane" x="24" y="246" width="340" height="150" rx="14"/>
-  <text x="40" y="276" class="cap">EXECUTION PLANE</text>
-  <rect class="hi" x="44" y="294" width="300" height="76" rx="10"/>
-  <text x="194" y="328" text-anchor="middle" class="lab">Kali pentest engine</text>
-  <text x="194" y="348" text-anchor="middle" class="sub">isolated execution environment</text>
+  <rect class="plane" x="56" y="246" width="448" height="140" rx="14"/>
+  <text x="72" y="276" class="cap">EXECUTION PLANE</text>
+  <rect class="hi" x="88" y="294" width="384" height="68" rx="10"/>
+  <text x="280" y="324" text-anchor="middle" class="lab">Kali pentest engine</text>
+  <text x="280" y="344" text-anchor="middle" class="sub">isolated execution environment</text>
 
-  <rect class="hi pulse" x="388" y="64" width="148" height="332" rx="14"/>
-  <text x="462" y="96" text-anchor="middle" class="cap">HUMAN</text>
-  <text x="462" y="116" text-anchor="middle" class="lab">in the loop</text>
-
-  <rect class="chip" x="404" y="140" width="116" height="36" rx="8"/>
-  <text x="462" y="163" text-anchor="middle" class="lbl">approves</text>
-  <rect class="chip" x="404" y="188" width="116" height="36" rx="8"/>
-  <text x="462" y="211" text-anchor="middle" class="lbl">reviews</text>
-  <rect class="chip" x="404" y="236" width="116" height="36" rx="8"/>
-  <text x="462" y="259" text-anchor="middle" class="lbl">controls</text>
-
-  <text x="462" y="308" text-anchor="middle" class="sub">every step</text>
-  <text x="462" y="330" text-anchor="middle" class="sub">agent never</text>
-  <text x="462" y="348" text-anchor="middle" class="sub">acts alone</text>
-  <text x="462" y="374" text-anchor="middle" class="lbl flow-lbl">gates both planes</text>
-
-  <path class="line gate" d="M388 158 H364"/>
-  <path class="line gate" d="M388 332 H364"/>
-
-  <text x="24" y="460" class="foot">Human gates planning and execution. No unsupervised offensive actions.</text>
+  <rect class="hi pulse" x="56" y="412" width="448" height="52" rx="12"/>
+  <text x="280" y="434" text-anchor="middle" class="lab">Human in the loop</text>
+  <text x="280" y="452" text-anchor="middle" class="sub">approves · reviews · controls every step — agent never acts alone</text>
 """,
     "Codium Red architecture",
-    "Intelligence plane plans; Kali pentest engine executes; human approves, reviews, controls.",
+    "Intelligence plane plans; Kali pentest engine executes; human-in-the-loop highlighted under the schema.",
 )
 
 save(
@@ -529,47 +502,30 @@ save(
     """
   <text x="24" y="34" class="title">PLANS + CONTRÔLE HUMAIN TOTAL</text>
 
-  <rect class="plane" x="24" y="64" width="340" height="130" rx="14"/>
-  <text x="40" y="92" class="cap">PLAN D'INTELLIGENCE</text>
-  <rect class="b" x="44" y="108" width="140" height="60" rx="10"/>
-  <text x="114" y="134" text-anchor="middle" class="lab">Planificateur</text>
-  <text x="114" y="152" text-anchor="middle" class="sub">structure / prochaines étapes</text>
-  <rect class="b" x="200" y="108" width="140" height="60" rx="10"/>
-  <text x="270" y="134" text-anchor="middle" class="lab">Rapports / méthodo</text>
-  <text x="270" y="152" text-anchor="middle" class="sub">orienté OWASP</text>
+  <rect class="plane" x="56" y="64" width="448" height="130" rx="14"/>
+  <text x="72" y="92" class="cap">PLAN D'INTELLIGENCE</text>
+  <rect class="b" x="88" y="108" width="180" height="60" rx="10"/>
+  <text x="178" y="134" text-anchor="middle" class="lab">Planificateur</text>
+  <text x="178" y="152" text-anchor="middle" class="sub">structure / prochaines étapes</text>
+  <rect class="b" x="292" y="108" width="180" height="60" rx="10"/>
+  <text x="382" y="134" text-anchor="middle" class="lab">Rapports / méthodo</text>
+  <text x="382" y="152" text-anchor="middle" class="sub">orienté OWASP</text>
 
-  <line class="line" x1="194" y1="194" x2="194" y2="246"/>
-  <text x="206" y="228" class="lbl">pont de commandes contrôlé</text>
+  <line class="line" x1="280" y1="194" x2="280" y2="246"/>
+  <text x="292" y="228" class="lbl">pont de commandes contrôlé</text>
 
-  <rect class="plane" x="24" y="246" width="340" height="150" rx="14"/>
-  <text x="40" y="276" class="cap">PLAN D'EXÉCUTION</text>
-  <rect class="hi" x="44" y="294" width="300" height="76" rx="10"/>
-  <text x="194" y="328" text-anchor="middle" class="lab">Moteur pentest Kali</text>
-  <text x="194" y="348" text-anchor="middle" class="sub">environnement d'exécution isolé</text>
+  <rect class="plane" x="56" y="246" width="448" height="140" rx="14"/>
+  <text x="72" y="276" class="cap">PLAN D'EXÉCUTION</text>
+  <rect class="hi" x="88" y="294" width="384" height="68" rx="10"/>
+  <text x="280" y="324" text-anchor="middle" class="lab">Moteur pentest Kali</text>
+  <text x="280" y="344" text-anchor="middle" class="sub">environnement d'exécution isolé</text>
 
-  <rect class="hi pulse" x="388" y="64" width="148" height="332" rx="14"/>
-  <text x="462" y="96" text-anchor="middle" class="cap">HUMAIN</text>
-  <text x="462" y="116" text-anchor="middle" class="lab">dans la boucle</text>
-
-  <rect class="chip" x="404" y="140" width="116" height="36" rx="8"/>
-  <text x="462" y="163" text-anchor="middle" class="lbl">approuve</text>
-  <rect class="chip" x="404" y="188" width="116" height="36" rx="8"/>
-  <text x="462" y="211" text-anchor="middle" class="lbl">revue</text>
-  <rect class="chip" x="404" y="236" width="116" height="36" rx="8"/>
-  <text x="462" y="259" text-anchor="middle" class="lbl">contrôle</text>
-
-  <text x="462" y="308" text-anchor="middle" class="sub">chaque étape</text>
-  <text x="462" y="330" text-anchor="middle" class="sub">l'agent n'agit</text>
-  <text x="462" y="348" text-anchor="middle" class="sub">jamais seul</text>
-  <text x="462" y="374" text-anchor="middle" class="lbl flow-lbl">contrôle les 2 plans</text>
-
-  <path class="line gate" d="M388 158 H364"/>
-  <path class="line gate" d="M388 332 H364"/>
-
-  <text x="24" y="460" class="foot">L'humain valide planification et exécution. Aucune action offensive autonome.</text>
+  <rect class="hi pulse" x="56" y="412" width="448" height="52" rx="12"/>
+  <text x="280" y="434" text-anchor="middle" class="lab">Humain dans la boucle</text>
+  <text x="280" y="452" text-anchor="middle" class="sub">approuve · revue · contrôle chaque étape — l'agent n'agit jamais seul</text>
 """,
     "Architecture Codium Red",
-    "Plan d'intelligence ; moteur pentest Kali ; l'humain approuve, revoit et contrôle.",
+    "Plan d'intelligence ; moteur pentest Kali ; humain dans la boucle mis en avant sous le schéma.",
 )
 
 for stem in ("ronin", "centinel", "voice", "mcp", "analyzer", "codium"):
