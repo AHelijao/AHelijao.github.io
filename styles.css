@@ -142,9 +142,56 @@ body {
 .sheet.article .meta,
 .sheet.article .soon,
 .sheet.article .links,
-.sheet.article .lede {
+.sheet.article .lede,
+.sheet.article .who-copy,
+.sheet.article .who-intro {
   max-width: none;
   width: 100%;
+}
+
+.who-intro {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  margin-bottom: 1.35rem;
+}
+
+.who-photo {
+  flex: 0 0 auto;
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 18%;
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 24px rgba(26, 26, 26, 0.08);
+}
+
+.who-heading {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.who-heading .chapter {
+  margin-bottom: 0.45rem;
+}
+
+.who-heading h2 {
+  margin-bottom: 0;
+}
+
+.who-copy {
+  max-width: 42rem;
+}
+
+.who-copy p {
+  margin: 0 0 1rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.who-copy p:last-child {
+  margin-bottom: 0;
 }
 
 .sheet.project {
@@ -499,6 +546,16 @@ h2 {
 
   .nudge {
     margin-top: 1.75rem;
+  }
+
+  .who-intro {
+    gap: 0.9rem;
+    margin-bottom: 1.1rem;
+  }
+
+  .who-photo {
+    width: 4.5rem;
+    height: 4.5rem;
   }
 
   .project-grid {
