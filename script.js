@@ -7,7 +7,7 @@ const nextBtn = document.getElementById("next");
 const langBtns = [...document.querySelectorAll(".lang [data-lang]")];
 
 /** Cache-bust for architecture SVGs (keep in sync with index.html). */
-const ARCH_VER = "20261110flow4";
+const ARCH_VER = "20261110tall";
 /** Inlined SVG text by URL — CSS @keyframes do not run inside <img>. */
 const archSvgCache = new Map();
 
