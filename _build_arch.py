@@ -36,6 +36,11 @@ DEFS = """
         stroke-dasharray: 10 8;
         animation: flow 0.85s linear infinite;
       }
+      .line.stem {
+        marker-end: none;
+        stroke-dasharray: 9 11;
+        animation: flow 1.05s linear infinite;
+      }
       .hi.pulse {
         animation: node-pulse 2.6s ease-in-out infinite;
       }
@@ -56,8 +61,8 @@ DEFS = """
         50% { opacity: 1; }
       }
       @media (prefers-reduced-motion: reduce) {
-        .line, .line.ingest, .line.return, .hi.pulse, .lbl.flow-lbl { animation: none; }
-        .line, .line.ingest, .line.return { stroke-dasharray: none; }
+        .line, .line.ingest, .line.return, .line.stem, .hi.pulse, .lbl.flow-lbl { animation: none; }
+        .line, .line.ingest, .line.return, .line.stem { stroke-dasharray: none; }
       }
     </style>
   </defs>
@@ -325,8 +330,8 @@ save(
   <rect class="b" x="408" y="180" width="104" height="24" rx="8"/>
   <text x="460" y="197" text-anchor="middle" class="sub">+ other services</text>
 
-  <path class="line return" d="M460 214 V250 H196"/>
-  <text x="280" y="242" class="lbl flow-lbl">presigned URL (auth-scoped)</text>
+  <path class="line return" d="M460 214 V278 H352"/>
+  <text x="404" y="268" text-anchor="middle" class="lbl flow-lbl">presigned URL (auth-scoped)</text>
 
   <rect class="hi pulse" x="32" y="250" width="320" height="56" rx="10"/>
   <text x="192" y="274" text-anchor="middle" class="lab">Back to OpenWebUI</text>
@@ -364,8 +369,8 @@ save(
   <rect class="b" x="408" y="180" width="104" height="24" rx="8"/>
   <text x="460" y="197" text-anchor="middle" class="sub">+ autres services</text>
 
-  <path class="line return" d="M460 214 V250 H196"/>
-  <text x="268" y="242" class="lbl flow-lbl">URL signée (auth limitée)</text>
+  <path class="line return" d="M460 214 V278 H352"/>
+  <text x="404" y="268" text-anchor="middle" class="lbl flow-lbl">URL signée (auth limitée)</text>
 
   <rect class="hi pulse" x="32" y="250" width="320" height="56" rx="10"/>
   <text x="192" y="274" text-anchor="middle" class="lab">Retour OpenWebUI</text>
@@ -400,9 +405,9 @@ save(
   <text x="280" y="212" text-anchor="middle" class="lab">n8n automation</text>
   <text x="280" y="228" text-anchor="middle" class="sub">wires AI to analysis steps</text>
 
-  <line class="line ingest" x1="280" y1="238" x2="280" y2="258"/>
-  <path class="line ingest" d="M280 258 V270 H150"/>
-  <path class="line return" d="M280 270 H410"/>
+  <line class="line stem" x1="280" y1="238" x2="280" y2="296"/>
+  <path class="line ingest" d="M280 296 H262"/>
+  <path class="line return" d="M280 296 H298"/>
 
   <rect class="b" x="32" y="270" width="230" height="52" rx="10"/>
   <text x="147" y="294" text-anchor="middle" class="lab">Analysis worker</text>
@@ -440,9 +445,9 @@ save(
   <text x="280" y="212" text-anchor="middle" class="lab">Automatisation n8n</text>
   <text x="280" y="228" text-anchor="middle" class="sub">relie l'IA aux étapes d'analyse</text>
 
-  <line class="line ingest" x1="280" y1="238" x2="280" y2="258"/>
-  <path class="line ingest" d="M280 258 V270 H150"/>
-  <path class="line return" d="M280 270 H410"/>
+  <line class="line stem" x1="280" y1="238" x2="280" y2="296"/>
+  <path class="line ingest" d="M280 296 H262"/>
+  <path class="line return" d="M280 296 H298"/>
 
   <rect class="b" x="32" y="270" width="230" height="52" rx="10"/>
   <text x="147" y="294" text-anchor="middle" class="lab">Worker d'analyse</text>

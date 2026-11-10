@@ -6,6 +6,11 @@ const prevBtn = document.getElementById("prev");
 const nextBtn = document.getElementById("next");
 const langBtns = [...document.querySelectorAll(".lang [data-lang]")];
 
+/** Cache-bust for architecture SVGs (keep in sync with index.html). */
+const ARCH_VER = "20261110flow4";
+/** Inlined SVG text by URL — CSS @keyframes do not run inside <img>. */
+const archSvgCache = new Map();
+
 let index = 0;
 const saved = localStorage.getItem("portfolio-lang");
 let lang =
@@ -35,6 +40,76 @@ function t(key) {
   return pack[key] ?? window.I18N?.en?.[key] ?? key;
 }
 
+/**
+ * Inline architecture SVGs so stroke-dash flow animations run.
+ * Prefixed marker/title IDs avoid collisions across diagrams on one page.
+ */
+async function loadArchDiagrams(archLang) {
+  const hosts = [...document.querySelectorAll(".arch-diagram[data-arch]")];
+  await Promise.all(
+    hosts.map(async (host) => {
+      const stem = host.getAttribute("data-arch");
+      if (!stem) return;
+      const url = `assets/arch-${stem}.${archLang}.svg?v=${ARCH_VER}`;
+      let text = archSvgCache.get(url);
+      if (!text) {
+        try {
+          const res = await fetch(url);
+          if (!res.ok) throw new Error(String(res.status));
+          text = await res.text();
+          archSvgCache.set(url, text);
+        } catch {
+          return;
+        }
+      }
+      const doc = new DOMParser().parseFromString(text, "image/svg+xml");
+      if (doc.querySelector("parsererror")) return;
+      const svg = doc.documentElement.cloneNode(true);
+      const prefix = `arch-${stem}-`;
+      svg.querySelectorAll("[id]").forEach((node) => {
+        const id = node.getAttribute("id");
+        if (!id) return;
+        node.setAttribute("id", prefix + id);
+      });
+      svg.querySelectorAll("[aria-labelledby]").forEach((node) => {
+        const v = node.getAttribute("aria-labelledby");
+        if (!v) return;
+        node.setAttribute(
+          "aria-labelledby",
+          v
+            .split(/\s+/)
+            .map((id) => prefix + id)
+            .join(" ")
+        );
+      });
+      svg.querySelectorAll("[marker-end], [style]").forEach((node) => {
+        const me = node.getAttribute("marker-end");
+        if (me && me.includes("url(#")) {
+          node.setAttribute(
+            "marker-end",
+            me.replace(/url\(#([^)]+)\)/g, `url(#${prefix}$1)`)
+          );
+        }
+      });
+      // CSS in <style> uses marker-end:url(#a) — rewrite there too
+      svg.querySelectorAll("style").forEach((styleEl) => {
+        styleEl.textContent = (styleEl.textContent || "").replace(
+          /url\(#([^)]+)\)/g,
+          `url(#${prefix}$1)`
+        );
+      });
+      svg.classList.add("arch-diagram");
+      svg.setAttribute("data-arch", stem);
+      svg.removeAttribute("width");
+      svg.removeAttribute("height");
+      svg.setAttribute("preserveAspectRatio", "xMidYMid meet");
+      const label = host.getAttribute("aria-label");
+      if (label) svg.setAttribute("aria-label", label);
+      host.replaceWith(svg);
+    })
+  );
+}
+
 function applyLang() {
   document.documentElement.lang = lang;
   localStorage.setItem("portfolio-lang", lang);
@@ -55,11 +130,7 @@ function applyLang() {
   });
 
   const archLang = lang === "fr" ? "fr" : "en";
-  document.querySelectorAll("img.arch-diagram[data-arch]").forEach((img) => {
-    const stem = img.getAttribute("data-arch");
-    if (!stem) return;
-    img.src = `assets/arch-${stem}.${archLang}.svg?v=20261108b`;
-  });
+  loadArchDiagrams(archLang);
 
   langBtns.forEach((btn) => {
     const on = btn.dataset.lang === lang;

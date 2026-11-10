@@ -253,13 +253,20 @@ body {
   color: var(--muted);
 }
 
-.arch img {
+.arch img,
+.arch object.arch-diagram,
+.arch svg.arch-diagram {
   display: block;
   width: 100%;
   height: auto;
   max-height: min(68vh, 28rem);
+  aspect-ratio: 560 / 360;
   object-fit: contain;
   object-position: center center;
+  border: 0;
+  background: transparent;
+  overflow: hidden;
+  pointer-events: none;
 }
 
 .panel.is-active .sheet {
@@ -496,7 +503,9 @@ h2 {
     gap: 1rem;
   }
 
-  .arch img {
+  .arch img,
+  .arch object.arch-diagram,
+  .arch svg.arch-diagram {
     max-height: min(58vh, 22rem);
   }
 
@@ -568,7 +577,9 @@ h2 {
     justify-content: flex-start;
   }
 
-  .arch img {
+  .arch img,
+  .arch object.arch-diagram,
+  .arch svg.arch-diagram {
     max-height: min(42vh, 18rem);
   }
 
