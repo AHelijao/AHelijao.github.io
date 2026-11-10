@@ -394,14 +394,14 @@ save(
 )
 
 # --- MCP ---
-# Chat → big secured OWUI → MCP → AWS; return elbow back to OWUI entry with user-scoped URL
-MCP_H = 820
+# Chat → secured OWUI identity → MCP → AWS under IRSA → user-scoped presigned URL back
+MCP_H = 920
 save(
     "mcp",
     "en",
     """
-  <text x="24" y="28" class="title">OPENWEBUI · MCP · AWS</text>
-  <text x="24" y="48" class="foot">Chat asks for a PPT — agent acts via MCP, Bedrock works in AWS, file returns to the same entry</text>
+  <text x="24" y="28" class="title">OPENWEBUI · MCP · IAM / AWS</text>
+  <text x="24" y="48" class="foot">Identity at the door · least-privilege IRSA in AWS · user-scoped file back to the same chat</text>
 
   <rect class="b" x="120" y="68" width="320" height="52" rx="12"/>
   <text x="280" y="92" text-anchor="middle" class="lab">User Chat Request</text>
@@ -409,42 +409,47 @@ save(
 
   <line class="line" x1="280" y1="120" x2="280" y2="178"/>
 
-  <rect class="hi pulse" x="88" y="178" width="384" height="112" rx="14"/>
-  <text x="280" y="210" text-anchor="middle" class="cap">OPENWEBUI · SECURED ENTRY</text>
-  <text x="280" y="236" text-anchor="middle" class="lab">Auth / Session-Bound Chat</text>
-  <text x="280" y="258" text-anchor="middle" class="sub">Only the signed-in user reaches this flow</text>
-  <text x="280" y="276" text-anchor="middle" class="sub">Download lands back here — same chat entry</text>
+  <rect class="hi pulse" x="72" y="178" width="416" height="120" rx="14"/>
+  <text x="280" y="208" text-anchor="middle" class="cap">OPENWEBUI · IDENTITY GATE</text>
+  <text x="280" y="236" text-anchor="middle" class="lab">Session / SSO-Bound Auth</text>
+  <text x="280" y="258" text-anchor="middle" class="sub">Signed-in identity only — no anonymous tool calls</text>
+  <text x="280" y="278" text-anchor="middle" class="sub">Download returns here — same user, same entry</text>
 
-  <line class="line" x1="280" y1="290" x2="280" y2="360"/>
-  <text x="300" y="332" class="lbl flow-lbl">Agent Thinks → Calls Tools</text>
+  <line class="line" x1="280" y1="298" x2="280" y2="368"/>
+  <text x="300" y="340" class="lbl flow-lbl">Agent Thinks → Calls Tools</text>
 
-  <rect class="hi" x="100" y="360" width="360" height="80" rx="12"/>
-  <text x="280" y="388" text-anchor="middle" class="lab">MCP Layer (FastMCP)</text>
-  <text x="280" y="410" text-anchor="middle" class="sub">Office tools — pptx / docx / xlsx</text>
-  <text x="280" y="428" text-anchor="middle" class="sub">Orchestrates generation outside the chat</text>
+  <rect class="hi" x="100" y="368" width="360" height="80" rx="12"/>
+  <text x="280" y="396" text-anchor="middle" class="lab">MCP Layer (FastMCP)</text>
+  <text x="280" y="418" text-anchor="middle" class="sub">Office tools — pptx / docx / xlsx</text>
+  <text x="280" y="436" text-anchor="middle" class="sub">Acts for that session identity — not a shared god key</text>
 
-  <line class="line ingest" x1="280" y1="440" x2="280" y2="510"/>
-  <text x="300" y="482" class="lbl flow-lbl">Into AWS</text>
+  <line class="line ingest" x1="280" y1="448" x2="280" y2="518"/>
+  <text x="300" y="490" class="lbl flow-lbl">Into AWS · IRSA</text>
 
-  <rect class="cloud" x="88" y="510" width="384" height="148" rx="14"/>
-  <text x="104" y="538" class="cap">AWS ENVIRONMENT</text>
-  <rect class="b" x="112" y="556" width="160" height="72" rx="10"/>
-  <text x="192" y="586" text-anchor="middle" class="lab">Bedrock</text>
-  <text x="192" y="608" text-anchor="middle" class="sub">AI reasoning / gen</text>
-  <rect class="b" x="292" y="556" width="160" height="72" rx="10"/>
-  <text x="372" y="586" text-anchor="middle" class="lab">S3</text>
-  <text x="372" y="608" text-anchor="middle" class="sub">Store Office file</text>
+  <rect class="cloud" x="56" y="518" width="448" height="200" rx="14"/>
+  <text x="72" y="546" class="cap">AWS · LEAST-PRIVILEGE EXECUTION</text>
 
-  <path class="line return" d="M280 658 V720 H40 V234 H88"/>
-  <text x="56" y="470" class="lbl flow-lbl" transform="rotate(-90 56 470)">Presigned URL → OWUI Entry</text>
-  <text x="200" y="744" text-anchor="middle" class="sub">User-scoped — only that requester can download</text>
+  <rect class="hi pulse" x="80" y="566" width="400" height="48" rx="10"/>
+  <text x="280" y="588" text-anchor="middle" class="lab">IAM Role via IRSA</text>
+  <text x="280" y="606" text-anchor="middle" class="sub">Pod / task role — scoped S3 write, no long-lived keys</text>
 
-  <rect class="b" x="100" y="748" width="360" height="48" rx="10"/>
-  <text x="280" y="770" text-anchor="middle" class="foot">OWUI security + per-user presigned URL</text>
-  <text x="280" y="786" text-anchor="middle" class="foot">Same chat entry · bounded delivery</text>
+  <rect class="b" x="80" y="630" width="184" height="64" rx="10"/>
+  <text x="172" y="658" text-anchor="middle" class="lab">Bedrock</text>
+  <text x="172" y="678" text-anchor="middle" class="sub">AI reasoning / gen</text>
+  <rect class="b" x="296" y="630" width="184" height="64" rx="10"/>
+  <text x="388" y="658" text-anchor="middle" class="lab">S3</text>
+  <text x="388" y="678" text-anchor="middle" class="sub">Object under that role</text>
+
+  <path class="line return" d="M280 718 V780 H40 V238 H72"/>
+  <text x="56" y="500" class="lbl flow-lbl" transform="rotate(-90 56 500)">Presigned URL → OWUI</text>
+  <text x="200" y="804" text-anchor="middle" class="sub">User-scoped URL — only that requester can download</text>
+
+  <rect class="b" x="88" y="820" width="384" height="72" rx="10"/>
+  <text x="280" y="846" text-anchor="middle" class="foot">IAM story: session identity → IRSA least privilege → S3</text>
+  <text x="280" y="868" text-anchor="middle" class="foot">Presigned delivery bound to the authenticated user</text>
 """,
     "MCP Office Machine architecture",
-    "Secured OpenWebUI chat → MCP Office tools → Bedrock/S3 in AWS → user-scoped presigned URL back to the OWUI entry.",
+    "OpenWebUI session/SSO identity → MCP tools under IRSA least privilege → Bedrock/S3 → user-scoped presigned URL back to chat.",
     vh=MCP_H,
 )
 
@@ -452,8 +457,8 @@ save(
     "mcp",
     "fr",
     """
-  <text x="24" y="28" class="title">OPENWEBUI · MCP · AWS</text>
-  <text x="24" y="48" class="foot">Le chat demande un PPT — l'agent agit via MCP, Bedrock dans AWS, fichier revient à l'entrée</text>
+  <text x="24" y="28" class="title">OPENWEBUI · MCP · IAM / AWS</text>
+  <text x="24" y="48" class="foot">Identité à l'entrée · IRSA moindre privilège dans AWS · fichier borné vers le même chat</text>
 
   <rect class="b" x="120" y="68" width="320" height="52" rx="12"/>
   <text x="280" y="92" text-anchor="middle" class="lab">Demande Chat Utilisateur</text>
@@ -461,42 +466,47 @@ save(
 
   <line class="line" x1="280" y1="120" x2="280" y2="178"/>
 
-  <rect class="hi pulse" x="88" y="178" width="384" height="112" rx="14"/>
-  <text x="280" y="210" text-anchor="middle" class="cap">OPENWEBUI · ENTRÉE SÉCURISÉE</text>
-  <text x="280" y="236" text-anchor="middle" class="lab">Auth / Chat Lié à la Session</text>
-  <text x="280" y="258" text-anchor="middle" class="sub">Seul l'utilisateur connecté entre dans ce flux</text>
-  <text x="280" y="276" text-anchor="middle" class="sub">Le téléchargement revient ici — même entrée chat</text>
+  <rect class="hi pulse" x="72" y="178" width="416" height="120" rx="14"/>
+  <text x="280" y="208" text-anchor="middle" class="cap">OPENWEBUI · PORTE D'IDENTITÉ</text>
+  <text x="280" y="236" text-anchor="middle" class="lab">Auth Session / SSO</text>
+  <text x="280" y="258" text-anchor="middle" class="sub">Identité connectée seulement — pas d'appel anonyme</text>
+  <text x="280" y="278" text-anchor="middle" class="sub">Le téléchargement revient ici — même user, même entrée</text>
 
-  <line class="line" x1="280" y1="290" x2="280" y2="360"/>
-  <text x="300" y="332" class="lbl flow-lbl">L'Agent Réfléchit → Outils</text>
+  <line class="line" x1="280" y1="298" x2="280" y2="368"/>
+  <text x="300" y="340" class="lbl flow-lbl">L'Agent Réfléchit → Outils</text>
 
-  <rect class="hi" x="100" y="360" width="360" height="80" rx="12"/>
-  <text x="280" y="388" text-anchor="middle" class="lab">Couche MCP (FastMCP)</text>
-  <text x="280" y="410" text-anchor="middle" class="sub">Outils Office — pptx / docx / xlsx</text>
-  <text x="280" y="428" text-anchor="middle" class="sub">Orchestre la génération hors du chat</text>
+  <rect class="hi" x="100" y="368" width="360" height="80" rx="12"/>
+  <text x="280" y="396" text-anchor="middle" class="lab">Couche MCP (FastMCP)</text>
+  <text x="280" y="418" text-anchor="middle" class="sub">Outils Office — pptx / docx / xlsx</text>
+  <text x="280" y="436" text-anchor="middle" class="sub">Agit pour cette identité de session — pas une clé dieu</text>
 
-  <line class="line ingest" x1="280" y1="440" x2="280" y2="510"/>
-  <text x="300" y="482" class="lbl flow-lbl">Vers AWS</text>
+  <line class="line ingest" x1="280" y1="448" x2="280" y2="518"/>
+  <text x="300" y="490" class="lbl flow-lbl">Vers AWS · IRSA</text>
 
-  <rect class="cloud" x="88" y="510" width="384" height="148" rx="14"/>
-  <text x="104" y="538" class="cap">ENVIRONNEMENT AWS</text>
-  <rect class="b" x="112" y="556" width="160" height="72" rx="10"/>
-  <text x="192" y="586" text-anchor="middle" class="lab">Bedrock</text>
-  <text x="192" y="608" text-anchor="middle" class="sub">Raisonnement / gén. IA</text>
-  <rect class="b" x="292" y="556" width="160" height="72" rx="10"/>
-  <text x="372" y="586" text-anchor="middle" class="lab">S3</text>
-  <text x="372" y="608" text-anchor="middle" class="sub">Stocke le fichier Office</text>
+  <rect class="cloud" x="56" y="518" width="448" height="200" rx="14"/>
+  <text x="72" y="546" class="cap">AWS · EXÉCUTION MOINDRE PRIVILÈGE</text>
 
-  <path class="line return" d="M280 658 V720 H40 V234 H88"/>
-  <text x="56" y="470" class="lbl flow-lbl" transform="rotate(-90 56 470)">URL Signée → Entrée OWUI</text>
-  <text x="200" y="744" text-anchor="middle" class="sub">Borné utilisateur — seul le demandeur peut télécharger</text>
+  <rect class="hi pulse" x="80" y="566" width="400" height="48" rx="10"/>
+  <text x="280" y="588" text-anchor="middle" class="lab">Rôle IAM via IRSA</text>
+  <text x="280" y="606" text-anchor="middle" class="sub">Rôle pod / task — écriture S3 bornée, pas de clés longues</text>
 
-  <rect class="b" x="100" y="748" width="360" height="48" rx="10"/>
-  <text x="280" y="770" text-anchor="middle" class="foot">Sécu OWUI + URL signée par utilisateur</text>
-  <text x="280" y="786" text-anchor="middle" class="foot">Même entrée chat · livraison bornée</text>
+  <rect class="b" x="80" y="630" width="184" height="64" rx="10"/>
+  <text x="172" y="658" text-anchor="middle" class="lab">Bedrock</text>
+  <text x="172" y="678" text-anchor="middle" class="sub">Raisonnement / gén. IA</text>
+  <rect class="b" x="296" y="630" width="184" height="64" rx="10"/>
+  <text x="388" y="658" text-anchor="middle" class="lab">S3</text>
+  <text x="388" y="678" text-anchor="middle" class="sub">Objet sous ce rôle</text>
+
+  <path class="line return" d="M280 718 V780 H40 V238 H72"/>
+  <text x="56" y="500" class="lbl flow-lbl" transform="rotate(-90 56 500)">URL Signée → OWUI</text>
+  <text x="200" y="804" text-anchor="middle" class="sub">URL bornée utilisateur — seul le demandeur télécharge</text>
+
+  <rect class="b" x="88" y="820" width="384" height="72" rx="10"/>
+  <text x="280" y="846" text-anchor="middle" class="foot">Fil IAM : identité session → IRSA moindre privilège → S3</text>
+  <text x="280" y="868" text-anchor="middle" class="foot">Livraison signée liée à l'utilisateur authentifié</text>
 """,
     "Architecture MCP Office Machine",
-    "Chat OpenWebUI sécurisé → outils MCP Office → Bedrock/S3 dans AWS → URL signée bornée vers l'entrée OWUI.",
+    "Identité session/SSO OpenWebUI → outils MCP sous IRSA moindre privilège → Bedrock/S3 → URL signée bornée vers le chat.",
     vh=MCP_H,
 )
 

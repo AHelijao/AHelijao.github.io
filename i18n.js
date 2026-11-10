@@ -5,11 +5,10 @@ window.I18N = {
     "rail.aria": "Portfolio — défilement horizontal",
     "nav.prev": "Précédent",
     "nav.next": "Suivant",
-    "cover.line": "Engineer in cyber and software.",
-    "cover.nudge": "Glisser vers la droite →",
-    "cover.nudgeMobile": "Glisser vers le bas ↓",
+    "cover.line": "Engineer in Cybersecurity and Software AI",
+    "cover.edgeHint": "Suivant",
     "who.chapter": "Qui",
-    "who.title": "Ingénieur logiciel et cybersécurité.",
+    "who.title": "Engineer in Cybersecurity and Software AI",
     "who.p1":
       "Je m’appelle Helijao Andriamandranto. Master <strong>Software Engineering</strong> (EPITA) et Master <strong>Cybersécurité</strong> (ECPI, USA). Je construis des systèmes logiciels — du desktop au cloud — et je les pense dès le départ sous l’angle sécurité.",
     "who.p2":
@@ -30,6 +29,12 @@ window.I18N = {
     "thread.title": "Six projets, une progression.",
     "thread.p1":
       "Chaque app ici marque une étape de mon évolution technique — de l’outil local au système agentique. La complexité monte, et la sécurité monte avec : ce n’est pas un add-on en fin de parcours, c’est le fil qui relie desktop, RAG, GenAI cloud, workers et cyber offensive assistée.",
+    "thread.ronin": "Traducteur IA desktop, glossaire verrouillé.",
+    "thread.centinel": "Modèle cyber spécialisé sur les référentiels.",
+    "thread.voice": "GenAI sur callbot Connect+Lex, sans données perso.",
+    "thread.mcp": "Livrables Office via MCP — SSO, IRSA, URL bornée.",
+    "thread.analyzer": "Scan dépôt → Spec sheet, hors du modèle.",
+    "thread.codium": "Assistant pentest IDE, Kali isolé, humain dans la boucle.",
     "ronin.chapter": "Chapitre I · Fondations",
     "ronin.lede": "Un traducteur IA qui reste dans le flux — sur le bureau, puis sur Android.",
     "ronin.body":
@@ -57,13 +62,13 @@ window.I18N = {
     "voice.hr":
       "Contrainte non négociable : aucun accès aux données personnelles — expliquer et guider seulement, isolé du bot scripté live. GenAI cloud, mais bornée, et livrée sans brûler le canal.",
     "mcp.chapter": "Chapitre IV · Agents qui livrent",
-    "mcp.lede": "Faire produire un PPT, un Word, un Excel — pas seulement une belle phrase.",
+    "mcp.lede": "Faire produire un PPT, un Word, un Excel — avec une vraie chaîne d’identité.",
     "mcp.body":
-      "Les équipes se lassent vite d’un agent qui explique sans jamais livrer. Elles veulent un support, un tableau, un deck. Les scripts jetables ne tiennent pas la distance : il fallait des outils réutilisables, et un moyen propre de récupérer le fichier.",
+      "Les équipes se lassent vite d’un agent qui explique sans jamais livrer. Elles veulent un support, un tableau, un deck. Les scripts jetables ne tiennent pas : il fallait des outils réutilisables, et un moyen propre de récupérer le fichier — sans clé partagée ni bucket ouvert.",
     "mcp.body2":
-      "Un serveur MCP (FastMCP) expose la génération Office ; l’agent choisit l’outil, le document est construit, déposé en stockage objet, renvoyé via une URL signée. Le service se déploie en conteneur, à côté de la plateforme d’agents, sans coller tout le monde sur une machine unique.",
+      "OpenWebUI tient la porte (session / SSO). Un serveur MCP (FastMCP) génère le livrable Office ; côté AWS, le worker tourne sous un rôle IAM via IRSA — moindre privilège, écriture S3 bornée, pas de secrets longue durée. Le fichier revient en URL présignée liée à l’utilisateur qui a demandé.",
     "mcp.hr":
-      "Sécurité côté OpenWebUI (session / auth), puis URL signée bornée : seul l’utilisateur qui a demandé le fichier peut le télécharger. L’agent ne parle plus seulement — il livre.",
+      "Fil IAM : identité de session → IRSA → S3 → URL signée user-scoped. L’agent ne parle plus seulement — il livre, sous contrôle d’accès.",
     "analyzer.chapter": "Chapitre V · Scan & distance",
     "analyzer.lede": "Qualifier un dépôt — qualité et posture sécu — sans le verser entier dans le modèle.",
     "analyzer.body":
@@ -97,11 +102,10 @@ window.I18N = {
     "rail.aria": "Portfolio — horizontal scroll",
     "nav.prev": "Previous",
     "nav.next": "Next",
-    "cover.line": "Engineer in cyber and software.",
-    "cover.nudge": "Swipe right →",
-    "cover.nudgeMobile": "Swipe down ↓",
+    "cover.line": "Engineer in Cybersecurity and Software AI",
+    "cover.edgeHint": "Next",
     "who.chapter": "Who",
-    "who.title": "Software and cybersecurity engineer.",
+    "who.title": "Engineer in Cybersecurity and Software AI",
     "who.p1":
       "I’m Helijao Andriamandranto. Master’s in <strong>Software Engineering</strong> (EPITA) and <strong>Cybersecurity</strong> (ECPI, USA). I build software systems — from desktop to cloud — and I design them with security in from the start.",
     "who.p2":
@@ -122,6 +126,12 @@ window.I18N = {
     "thread.title": "Six projects, one progression.",
     "thread.p1":
       "Each app here marks a step in my technical evolution — from a local tool to an agentic system. Complexity rises, and security rises with it: not a bolt-on at the end, but the thread that ties desktop, RAG, cloud GenAI, workers, and assisted offensive cyber together.",
+    "thread.ronin": "Desktop AI translator with a locked glossary.",
+    "thread.centinel": "Cyber model specialized on the frameworks.",
+    "thread.voice": "GenAI on Connect+Lex callbot, no personal data.",
+    "thread.mcp": "Office deliverables via MCP — SSO, IRSA, scoped URL.",
+    "thread.analyzer": "Repo scan → Spec sheet, source stays out of the model.",
+    "thread.codium": "IDE pentest assistant, isolated Kali, human in the loop.",
     "ronin.chapter": "Chapter I · Foundations",
     "ronin.lede": "An AI translator that stays in the flow — on the desktop, then on Android.",
     "ronin.body":
@@ -149,13 +159,13 @@ window.I18N = {
     "voice.hr":
       "Non-negotiable constraint: no personal-data access — explain and guide only, isolated from the live scripted bot. Cloud GenAI, but bounded, shipped without burning the channel.",
     "mcp.chapter": "Chapter IV · Agents that deliver",
-    "mcp.lede": "Make the chat produce a deck, a Word file, a spreadsheet — not only a nice sentence.",
+    "mcp.lede": "Make the chat produce a deck, a Word, an Excel — with a real identity chain.",
     "mcp.body":
-      "Teams tire quickly of an agent that explains and never ships. They want a slide, a table, a document. Throwaway scripts don’t last: we needed reusable tools, and a clean way to get the file back.",
+      "Teams tire quickly of an agent that explains and never ships. They want a slide, a table, a document. Throwaway scripts don’t last: we needed reusable tools, and a clean way to get the file back — without shared keys or an open bucket.",
     "mcp.body2":
-      "An MCP server (FastMCP) exposes Office generation; the agent picks the tool, the document is built, stored in object storage, returned as a signed URL. The service deploys in a container next to the agent platform, instead of living on one laptop.",
+      "OpenWebUI holds the gate (session / SSO). An MCP server (FastMCP) builds the Office deliverable; in AWS the worker runs under an IAM role via IRSA — least privilege, scoped S3 write, no long-lived secrets. The file returns as a user-scoped presigned URL for the requester only.",
     "mcp.hr":
-      "OpenWebUI security (session / auth), then a scoped presigned URL: only the user who requested the file can download it. The agent doesn’t only talk — it delivers.",
+      "IAM thread: session identity → IRSA → S3 → user-scoped signed URL. The agent doesn’t only talk — it delivers under access control.",
     "analyzer.chapter": "Chapter V · Scan & distance",
     "analyzer.lede": "Qualify a repository — quality and security posture — without pouring it into the model.",
     "analyzer.body":

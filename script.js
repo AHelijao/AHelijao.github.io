@@ -2,12 +2,12 @@ const rail = document.getElementById("rail");
 const panels = [...document.querySelectorAll(".panel")];
 const progress = document.getElementById("progress");
 const dotsWrap = document.getElementById("dots");
-const prevBtn = document.getElementById("prev");
-const nextBtn = document.getElementById("next");
+const edgePrev = document.getElementById("edgePrev");
+const edgeNext = document.getElementById("edgeNext");
 const langBtns = [...document.querySelectorAll(".lang [data-lang]")];
 
 /** Cache-bust for architecture SVGs (keep in sync with index.html). */
-const ARCH_VER = "20261110close1";
+const ARCH_VER = "20261110iam1";
 /** Inlined SVG text by URL — CSS @keyframes do not run inside <img>. */
 const archSvgCache = new Map();
 
@@ -21,8 +21,13 @@ let lang =
       : "en";
 
 const mobileMq = window.matchMedia("(max-width: 768px)");
+const touchNavMq = window.matchMedia("(hover: none) and (pointer: coarse)");
 function isMobile() {
   return mobileMq.matches;
+}
+/** Phone / tablet touch — swipe is the primary move; edge click is secondary. */
+function isTouchNav() {
+  return touchNavMq.matches;
 }
 
 panels.forEach((_, i) => {
@@ -115,8 +120,7 @@ function applyLang() {
   localStorage.setItem("portfolio-lang", lang);
 
   document.querySelectorAll("[data-i18n]").forEach((el) => {
-    let key = el.getAttribute("data-i18n") || "";
-    if (key === "cover.nudge" && isMobile()) key = "cover.nudgeMobile";
+    const key = el.getAttribute("data-i18n") || "";
     el.textContent = t(key);
   });
   document.querySelectorAll("[data-i18n-html]").forEach((el) => {
@@ -158,6 +162,12 @@ function sync() {
   const p = panels[index];
   progress.textContent =
     (lang === "en" ? p.dataset.labelEn : p.dataset.labelFr) || "";
+  const atStart = index <= 0;
+  const atEnd = index >= panels.length - 1;
+  if (edgePrev) edgePrev.disabled = atStart;
+  if (edgeNext) edgeNext.disabled = atEnd;
+  document.body.classList.toggle("is-cover", index === 0);
+  document.body.classList.toggle("is-touch-nav", isTouchNav() || isMobile());
 }
 
 function nearest() {
@@ -200,8 +210,8 @@ rail.addEventListener(
   { passive: true }
 );
 
-prevBtn.addEventListener("click", () => go(index - 1));
-nextBtn.addEventListener("click", () => go(index + 1));
+edgePrev?.addEventListener("click", () => go(index - 1));
+edgeNext?.addEventListener("click", () => go(index + 1));
 
 langBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -286,6 +296,9 @@ rail.addEventListener(
 mobileMq.addEventListener("change", () => {
   applyLang();
   go(index, false);
+});
+touchNavMq.addEventListener("change", () => {
+  applyLang();
 });
 
 applyLang();
